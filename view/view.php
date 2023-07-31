@@ -37,6 +37,8 @@
         $name_to = $_POST['name_to'];
         $value_to = $_POST['value_to'];
 
+        var_dump($columns);
+
         if (query_handler::create_view($table->get_id(), $columns, $name_to, $value_to, $view_name)) {
             $_SESSION['view_error'] = "";
             return true;
@@ -56,44 +58,16 @@
     <div class="error"><?php echo $_SESSION['view_error'] ?></div>
     <input  type="hidden" name="table_id" value="<?php echo $table->get_id() ?>" autocomplete="off">
     <input type="text" name="view_name" placeholder="save view as" /><br/>
-    <datalist id="col_names" >
         <?php
             foreach($table->get_headings() as $key=>$value) {
-                echo "<option value='" . $value['name'] . "'>";
+                echo "<input type='checkbox' name='columns[]' value='".$value['name']."'/>".$value['name']."<br/>";
             }
         ?>
-    </datalist>
 
-    <div class="chosen-cols" id="chosen-cols">
 
-    </div>
-
-    <input id="col_drop"  type="text" list="col_names" name="col_name" placeholder="column name" multiple ><br/>
+    
     <input type="text" name="name_to" placeholder="rename selected columns to"><br/>
     <input type="text" name="value_to" placeholder="rename value column to"><br/>
     
     <input type="submit" name="save_view" value="create new view"><br/>
 </form>
-
-<script>
-    const drop_down = document.getElementById("col_drop");
-    const container = document.getElementById("chosen-cols");
-
-            console.log("This is a test")
-    console.log(drop_down);
-
-    drop_down.addEventListener("change", () => {
-        console.log("drop down value", drop_down.value)
-        const new_div = document.createElement("div");
-        new_div.addEventListener('click', () => {
-            new_div.remove();
-        });
-        const new_input = document.createElement("input");
-        new_input.name='columns[]';
-        new_input.value = drop_down.value;
-        new_div.appendChild(new_input);
-        container.appendChild(new_div);
-        drop_down.value = "";
-    })
-
-</script>
