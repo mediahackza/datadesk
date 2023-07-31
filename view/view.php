@@ -1,6 +1,8 @@
 <?php
     include_once('../init.php');
     include_once('../classes/query_handler.php');
+    include('../components/headers/html_header.php');
+include('../components/headers/account_header.php');
 
     if (isset($_SESSION["view_table"])) {
         $table = $_SESSION["view_table"];
@@ -53,21 +55,47 @@
 
 
 ?>
-
-<form action="view.php" method='post'>
-    <div class="error"><?php echo $_SESSION['view_error'] ?></div>
-    <input  type="hidden" name="table_id" value="<?php echo $table->get_id() ?>" autocomplete="off">
-    <input type="text" name="view_name" placeholder="save view as" /><br/>
-        <?php
-            foreach($table->get_headings() as $key=>$value) {
-                echo "<input type='checkbox' name='columns[]' value='".$value['name']."'/>".$value['name']."<br/>";
-            }
-        ?>
-
-
+<div class="page-wrap">
     
-    <input type="text" name="name_to" placeholder="rename selected columns to"><br/>
-    <input type="text" name="value_to" placeholder="rename value column to"><br/>
-    
-    <input type="submit" name="save_view" value="create new view"><br/>
-</form>
+    <div class="page-title">Pivot Data</div>
+    <p>Use this form to create a new view of the data.  You can select which columns to include, and rename the columns and values. This transformation will perform a "pivot longer" transformation on the data. </p>
+    <p>See this <a href="http://localhost:8888/datadesk/assets/references/tidyr.pdf" taget="_blank">R Cheatsheet</a> for an example of this.</p>
+    <table>
+    <form action="view.php" method='post'>
+        <div class="error"><?php echo $_SESSION['view_error'] ?></div>
+        <input  type="hidden" name="table_id" value="<?php echo $table->get_id() ?>" autocomplete="off">
+        <tr><td class="table-label">View name</td><td><input type="text" name="view_name" placeholder="save view as" /></td></tr>
+        <tr><td class="table-label">Select columns to include</td><td>
+            <?php
+                foreach($table->get_headings() as $key=>$value) {
+                    echo "<input type='checkbox' name='columns[]' value='".$value['name']."'/>".$value['name']."<br/>";
+                }
+            ?>
+
+        </td></tr>
+        <tr><td class="table-label">Rename columns</td><td>
+ 
+        
+        <input type="text" name="name_to" placeholder="rename selected columns to">
+        </td></tr>
+        <tr><td class="table-label">Rename values</td><td>
+        <input type="text" name="value_to" placeholder="rename value column to">
+        </td></tr>
+
+        <tr><td></td><td>
+                   
+        <button type="submit" name="save_view" value="Create new view">Create new view</button>
+        </td></tr>
+    </form>
+    </table>
+</div>
+
+<style>
+    .page-wrap { 
+        width: 90%; 
+        max-width: 800px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 100px;
+    }
+</style>
