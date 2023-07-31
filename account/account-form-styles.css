@@ -1,0 +1,26 @@
+.container {
+    margin: auto;
+    width: fit-content;
+    
+
+}
+
+.inner-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.submit {
+    background: rgb(0, 87, 175);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    max-width: 200px;
+    width: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}

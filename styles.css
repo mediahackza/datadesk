@@ -1,0 +1,286 @@
+:root { 
+    --background: #fff;
+    --highlight: dodgerblue;
+    --dark-blue: rgb(0, 87, 175);
+    --text: #333;
+    --back-grey: #F2F3F4;
+}
+
+body { 
+    background: var(--background);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px; 
+    margin: 0px;
+    font-size: 0.8rem;
+ 
+}
+
+.heading {
+    text-align: center;
+    /* font-size: 30px; */
+}
+a { 
+    color: dodgerblue;
+}
+a:hover { 
+color: rgb(6, 111, 216);
+}
+
+main { 
+    width: 90%; 
+    max-width: 1000px;
+    margin-left: auto; 
+    margin-right: auto;
+    /* border: solid 1px red; */
+}
+nav { 
+    background: #eee;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #fff;
+    color: #000;
+    font-weight: 400;
+    text-align: right;
+    /* background: rgb(0, 49, 97); */
+    color: #000;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    border-bottom: solid 1px lightgray;
+}
+
+
+.logo { 
+    text-align: left;
+  
+}
+.logo img { 
+    width: 250px;
+}
+.account { 
+
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+/* Controls  */
+
+
+/* Table sizes */
+table {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    /* font-size: 0.8rem; */
+    background: #f7f7f7;
+}
+
+th { 
+    font-weight: 700; 
+    background: #dbdbdb; 
+    padding: 10px;
+    color: #646464;
+    border: solid 1px #eee;
+    background-image: linear-gradient(#e6e6e6, #dbdbdb);
+    
+}
+td { 
+    padding: 10px;
+    border: solid 1px lightgray;
+    /* background: #fff; */
+}
+
+/* Forms */
+input { 
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/* input[type=submit] { 
+    background: rgb(0, 87, 175);
+    color: #fff; 
+    border: none;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+}
+input[type=submit]:hover { 
+    background: dodgerblue;
+} */
+
+main form   { 
+    display: inline-block;
+}
+
+.status {
+    width: 50px;
+    padding: 15px 30px 12px 30px;
+    /* border-radius: 3px; */
+    color: #707070;
+    /* font-size: 0.9rem; */
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline;
+    position: absolute; 
+    top: 0px; 
+    right: 0px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+}
+
+.status-active {
+    background: var(--highlight);
+    border: inherit;
+    color: #fff;
+    
+}
+.status-inactive { 
+    background: #e0e0e0;
+}
+
+.status-deleted {
+    background: #dc2525;
+    border: inherit;   
+    color: white;
+}
+.status-wrap { 
+    width: 100%; 
+    text-align: right;
+}
+
+.block {
+    background: #F2F3F4; 
+    margin: 5px auto;
+    padding: 5px; 
+    border-radius: 5px;
+    max-width: 1000px;
+    width: 80%;
+    
+}
+
+.desc {
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+.block:hover {
+}
+
+/* .block:hover .detail-container {
+    display: block !important;
+} */
+
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.title {
+    /* text-align: center */
+    margin: 0px 25px;
+    /* font-size: 30px; */
+    font-weight: 500;
+}
+
+.sub-heading {
+    /* font-size: 20px; */
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.detail-container {
+    padding: 10px;
+    /* background: #e0e0e0; */
+    border-radius: 5px;
+    margin: 5px 0;
+    display: block !important;
+}
+
+.details {
+    /* font-size: 14px; */
+    padding: 2px;
+}
+
+.icon-container {
+    /* align-items: end; */
+    /* border: 1px solid red; */
+    flex: 0.2 !important;
+
+}
+
+.col-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+
+/* DATA FILTERS */
+.data-filters {
+
+    width: 100%; 
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+   justify-content: space-evenly;
+   padding-bottom: 20px;
+}
+
+.data-filters button, .data-filters .button { 
+    margin-bottom: 0px;    
+}
+.filter-item { 
+    margin-right: auto;
+}
+.filter-right { 
+    justify-content: flex-end;
+}
+.filter-bottom-margin { 
+    margin-bottom: 20px;
+
+    border-bottom: solid 1px #eee;
+}
+
+
+
+/* Pico Overrides */
+
+:root { 
+    /* font-size: 0.8rem; */
+}
+
+
+.data-filters input { 
+    margin-top:0px;
+}
+
+
+
+/* Pico Modifiers */
+

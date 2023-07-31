@@ -1,0 +1,15 @@
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    max-width: 400px;
+    width: 100%;
+}
+.button-container .submit { 
+    background: var(--red);
+}
+
+.submit-upload {
+    margin: 10px;
+}
+

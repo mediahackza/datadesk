@@ -1,0 +1,236 @@
+:root { 
+    --red: #DA191A; 
+    --green: rgb(0, 169, 0);
+    --json: #a6cee3; 
+    --csv: #b2df8a;
+
+    
+}
+/* Form Elements */
+textarea { 
+    padding: 20px;
+}
+button, .button { 
+    background: var(--red);
+    padding: 10px 20px;
+    border-radius: 3px; 
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    /* font-size: 0.9rem; */
+
+}
+button:hover, .button:hover {
+   filter: brightness(1.1);
+}
+.button-icons { 
+    width: 12px; 
+    margin-right: 10px;
+    display: inline;
+}
+.green { 
+    background: var(--green);
+}
+.warning { 
+    background: red;
+    border-color: inherit;
+}
+.action { 
+    /* background: green; */
+    border-color: inherit;
+}
+.cancel { 
+    background: lightgray !important;
+    color: #000;
+    border-color: inherit;
+}
+
+
+input, select { 
+    padding: 8px 20px; 
+    border: solid 1px lightgray;
+}
+
+
+/* Tags */
+.tag { 
+    /* background: green; */
+    padding: 5px 20px; 
+    border-radius: 20px;
+    color: #000;
+    display: inline-block;
+    background: #eee;
+    cursor: pointer;
+}
+.tag:hover { 
+    filter: brightness(1.1);
+}
+
+
+/* Styles from Index.php */
+.row {
+    /* border: solid 1px red; */
+}
+.block { 
+    position: relative;
+    background: #fff;
+    border: solid 1px lightgray;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.row { 
+    text-align: left;
+}
+.title { 
+    text-align: left !important;
+}
+.block-container { 
+    position: relative;
+}
+
+.block-title { 
+    position: relative;
+    display: grid; 
+    grid-template-columns: 1fr ;
+    /* font-size: 1.8rem; */
+    /* padding: 10px 15px; */
+    /* background: #fff; */
+    /* border-radius: 3px; */
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    /* border: solid 1px #eee; */
+}
+.align-right { 
+    text-align: right !important;
+}
+.block-details { 
+    /* font-size: 1.1rem; */
+    /* padding: 10px; */
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.block-note { 
+    background: #f8f8f8;
+    padding: 20px;
+    border: solid 1px #eee;
+    /* margin-top: 20px; */
+    line-height: 1.5;
+    margin-bottom: 30px;
+
+}
+.note-label { 
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.meta-container { 
+    font-weight: 700;
+}
+.table-label { 
+    font-weight: 700; 
+    width: 30%;
+
+}
+.detail-container { 
+    /* border: solid 1px red; */
+    padding: 0px;
+    border-radius: 0px;
+    margin-bottom: 30px;
+}
+
+
+.block-description { 
+    color: gray;
+    display: inline-block;
+}
+.action-container { 
+    display: inline-block;
+    margin-left: 20px;
+    background: none;
+    /* margin-top: 20px; */
+}
+.action-container * { 
+    display: inline-block;
+    padding-bottom: 2px;
+}
+.action-container svg { 
+    width: 15px;
+}
+.action-container form { 
+    margin-bottom: 0px;
+    background: none;
+}
+.action-container button { 
+    background: #eee;
+    padding: 5px;
+    padding-bottom: 2px;
+}
+.action-container button:hover { 
+    background: var(--red);
+}
+.action-container button:hover svg { 
+    stroke: #fff;
+}
+.action-container svg { 
+    stroke: black;
+}
+
+
+.icon-container { 
+    /* background: #eee; */
+    /* margin-right: 10px; */
+}
+.row { 
+    width: 100%; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2px;
+    /* font-size: 1rem; */
+}
+.data-label { 
+
+    display: inline-block;
+    
+}
+.data-label a { 
+    padding: 7px 30px;
+    background: orange; 
+    color: #000;
+    margin-right: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* font-size: 0.8rem; */
+    font-weight: 700;
+}
+.data-label:hover { 
+    filter: brightness(1.1);
+}
+.data-label.json a { 
+    background: var(--json);
+}
+.data-label.csv a { 
+    background: var(--csv);
+}
+.data-label img { 
+    width: 18px;
+}
+
+
+.data-label-top {
+    font-weight: 700
+}
+.data-link { 
+    margin-top: 2px;
+}
+.page-title { 
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-bottom: 5px; 
+    border-bottom: solid 1px #eee;
+    margin-bottom: 20px;
+}
