@@ -61,6 +61,7 @@ if ($res = $tags->query()) {
 
 
     function save_data() {
+        global $base;
         $table = $GLOBALS['table'];
         $table->set_tags(array());
         if (isset($_POST['add_tags'])) {
@@ -82,21 +83,48 @@ if ($res = $tags->query()) {
             return false;
         }
 
-        if ($_POST['source'] == "") {
+        if (($table->get_type() == 'google_sheet' && $_POST['source'] == "")) {
             echo "source of table can not be blank";
             return false;
         }
 
         global $table;
         $table->set_name($_POST['name']);
-        $table->set_source($_POST['source']);
+
+        switch ($table->get_type()) {
+            case 'google_sheet':
+                $table->set_source($_POST['source']);
+                break;
+            case 'csv_file':
+
+                var_dump($_FILES);
+                echo "<br/>";
+    
+                if (!isset($_FILES['source']) && $_FILES['source']['size'] == 0) {
+                    break;
+                }
+                
+                echo "tryign to update file <br/>";
+                $target_dir = "../uploaded_files/";
+                $file_name = basename($_FILES["source"]["name"]);
+                $file_name  = Utils::check_chars($file_name);
+
+                $target_file = $target_dir .$file_name;
+                $source = "/uploaded_files/" . $file_name;
+                if (move_uploaded_file($_FILES["source"]["tmp_name"], $target_file)) {
+                    // unlink($base . $table->source);
+                    $table->set_source($source);
+                }
+                break;
+        }
+        
         $table->set_description($_POST['description']);
         $table->set_status($_POST['status']);
         $table->set_source_name($_POST['source_name']);
         $table->set_source_link($_POST['source_link']);
 
         if (query_handler::update_meta($table)) {
-            Utils::navigate('home');
+            // Utils::navigate('home');
         }
 
         
@@ -110,7 +138,7 @@ if ($res = $tags->query()) {
 
 ?>
 <div class="edit-wrap">
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <table>
         <input type="hidden" name="edit" value="<?php echo $table->get_id(); ?>" />
         <tr><td class="table-label">Table name</td><td>
@@ -134,8 +162,23 @@ if ($res = $tags->query()) {
         <?php
         include('../components/tag_selector.php')
         ?></td></tr>
-        <tr><td class="table-label">Source</td><td>
-        <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a></td></tr>
+        <tr><td class="table-label">Source</td>
+        <td>
+        <?php
+            if ($table->get_type() == 'google_sheet') {
+        ?>
+             <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
+
+        <?php
+            } else if ($table->get_type() == 'csv_file') {
+        ?>
+            <input type="file" name="source" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
+        <?php
+            }
+        ?>
+
+        </td></tr>
+        <!-- <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a></td></tr> -->
         <tr><td colspan="2"><button type="submit" name="update" value="update" >Update</button></td></tr>
         </table>    
 </form>
