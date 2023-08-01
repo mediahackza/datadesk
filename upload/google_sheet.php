@@ -28,6 +28,13 @@ function save_data() {
         return false;
     }
 
+    if (isset($_POST['source_name'])) {
+        $new_table->set_source_name($_POST['source_name']);
+    }
+    if (isset($_POST['source_link'])) {
+        $new_table->set_source_link($_POST['source_link']);
+    }
+
     $new_table->set_name($_POST['db_name']);
     $new_table->set_source($_POST['data']);
 
@@ -61,6 +68,13 @@ if (isset($_POST['save_link'])) {
         <td><input placehoder="table name" type="text" name="db_name" value="<?php echo $new_table->get_name() ?>" /></td></tr>
         <tr><td class="table-label">Link to google sheet</td><td>
         <input type="text" name="data" value="<?php echo $new_table->get_link() ?>" /> <br/>
+        <tr>
+        <td class="table-label">Source name:</td>
+        <td><input type="text" name="source_name" value="<?php echo $new_table->get_source_name() ?>" /></td>
+        </tr>
+        <tr>
+        <td class="table-label">Source link:</td>
+        <td><input type="text" name="source_link" value="<?php echo $new_table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
         include_once("../components/tag_selector.php");

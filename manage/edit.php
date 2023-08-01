@@ -92,6 +92,8 @@ if ($res = $tags->query()) {
         $table->set_source($_POST['source']);
         $table->set_description($_POST['description']);
         $table->set_status($_POST['status']);
+        $table->set_source_name($_POST['source_name']);
+        $table->set_source_link($_POST['source_link']);
 
         if (query_handler::update_meta($table)) {
             Utils::navigate('home');
@@ -121,6 +123,13 @@ if ($res = $tags->query()) {
         </select></td></tr>
         <tr><td class="table-label">Description</td><td>
         <textarea type="text" name="description"><?php echo $table->get_description(); ?></textarea></td></tr>
+        <tr>
+        <td class="table-label">Source name:</td>
+        <td><input type="text" name="source_name" value="<?php echo $table->get_source_name() ?>" /></td>
+        </tr>
+        <tr>
+        <td class="table-label">Source link:</td>
+        <td><input type="text" name="source_link" value="<?php echo $table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
         include('../components/tag_selector.php')

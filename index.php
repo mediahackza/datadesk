@@ -74,6 +74,20 @@ echo "</div>";
     echo "<table>";
     echo "<tr><td class='table-label'>Description</td><td>" . $t->get_description() . "</td></tr>";
 
+    if ($t->get_source_name() != '' || $t->get_source_name() != NULL) {
+        echo "<tr><td class='table-label'>Source</td><td>";
+
+        $source_disp;
+        if ($t->get_source_link() != '' || $t->get_source_link() != NULL)  {
+            echo "<a href='" . $t->get_source_link() . "' target='_blank'>" . $t->get_source_name() . "</a>";
+        } else {
+            echo $t->get_source_name();
+        }
+
+        echo "</td></tr>";
+
+    }
+
     echo "<tr><td class='table-label'>Last Modified</td><td>" . date("D, j M Y",strtotime($t->get_update()))  . "</td></tr>";
     if (count($t->get_tags())) {
         echo "<tr><td class='table-label'>Tags</td><td>";
