@@ -243,7 +243,6 @@ class query_handler {
         $table->find_meta_data();
         $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', source='".$table->get_source()."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."' WHERE id=".$table->get_id().";";
 
-
         if ($res = self::$db->query($query)) {
             return self::assign_tags($table);
         }
@@ -315,6 +314,8 @@ class query_handler {
         $table->set_status($row['status']);
         $table->set_type($row['type']);
         $table->set_description($row['description']);
+        $table->set_source_name($row['source_name']);
+        $table->set_source_link($row['source_link']);
         $table->fetch_notes();
         return $table;  
     }
