@@ -12,6 +12,7 @@ error_reporting(E_ALL);
     }
 
     if (isset($_POST['cancel'])) {
+        unset($_SESSION['new_table']);
         Utils::navigate('home');
         // die;
     }

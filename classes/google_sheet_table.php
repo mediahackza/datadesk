@@ -37,9 +37,6 @@
                 return false;
             }
             restore_error_handler();
-
-            echo "checking data: <br/>";
-            var_dump($data);
             $this->set_delimiter(",");
             
             parent::set_data($data);
