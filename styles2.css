@@ -172,12 +172,18 @@ input, select {
 .action-container button:hover { 
     background: var(--red);
 }
+.bookmarked {
+    fill: var(--red);
+    stroke: var(--red) !important;
+}
 .action-container button:hover svg { 
-    stroke: #fff;
+    stroke: #fff !important;
 }
 .action-container svg { 
     stroke: black;
 }
+
+
 
 
 .icon-container { 

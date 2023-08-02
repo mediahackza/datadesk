@@ -28,6 +28,7 @@
     $tags = new sql_table($tags_name, $db);
     $notes = new sql_table($note_table_name, $db);
     $table_tags = new sql_table($tag_table_name, $db);
+    $bookmarks = new sql_table($bookmarks_name, $db);
     $tf = new Table_Factory();
 
     session_start();
