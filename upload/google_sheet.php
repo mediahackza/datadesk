@@ -42,6 +42,8 @@ function save_data() {
         // var_dump($new_table);
         if ($res  = query_handler::insert_meta_data($new_table)) {
             Utils::navigate('home');
+        } else {
+            $_SESSION['upload_error'] = $new_table->error;
         }
     }
 
@@ -52,7 +54,7 @@ if (isset($_POST['save_link'])) {
     save_data();
 }
 ?>
-
+    
 <div class="container">
  
 <table>

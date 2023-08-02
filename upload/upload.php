@@ -7,6 +7,10 @@ error_reporting(E_ALL);
     include_once("../init.php");
     include_once("../validate.php");
 
+    if (!isset($_SESSION['upload_error'])) {
+        $_SESSION['upload_error'] = "";
+    }
+
     if (isset($_POST['cancel'])) {
         Utils::navigate('home');
         // die;
@@ -69,6 +73,7 @@ if (isset($_POST['upload_type'])) {
     ?>
    <div class="page-wrap">
         <div class="page-title">New Table</div>
+        <div class="error"><?php echo $_SESSION['upload_error']; ?></div>
     <div class="input-switch">
             <form method="post" id="type_form" >
                 <input type="radio" onclick="change_type()" name="upload_type" value="google sheet" <?php if ($_SESSION['upload_type'] == 'google sheet') { echo "checked";} ?>>Google Sheet</input> &nbsp; 
