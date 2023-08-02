@@ -1,5 +1,13 @@
 <?php
     include_once('csv_table.php');
+    set_error_handler(
+        function ($severity, $message, $file, $line) {
+            throw new ErrorException($message, $severity, $severity, $file, $line);
+        }
+    );
+    
+    
+
 
     class google_sheet_table extends csv_table {
 
@@ -22,7 +30,13 @@
             $link_csv .= "&output=csv";
             $link_tsv .= "&output=tsv";
 
-            $data = file_get_contents($link_csv);
+            try {
+                $data = file_get_contents($link_csv);
+            } catch (Exception $e) {
+                $this->error = "Please make sure the sheet is published";
+                return false;
+            }
+            restore_error_handler();
             $this->set_delimiter(",");
             
             parent::set_data($data);
@@ -47,6 +61,10 @@
             $string = str_replace("edit", "pub", $string);
             $string = str_replace("#", "?", $string);
             return $string;
+
+        }
+
+        function get_data_meta() {
 
         }
 

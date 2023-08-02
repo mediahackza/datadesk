@@ -3,7 +3,11 @@ include_once("../classes/google_sheet_table.php");
 
 
 
-$new_table = new google_sheet_table();
+if (!isset($_SESSION['new_table'])) {
+    $_SESSION['new_table'] = new google_sheet_table();
+} 
+
+$new_table = $_SESSION['new_table'];
 
 
 
@@ -48,7 +52,11 @@ function save_data() {
         $new_table->set_type("google_sheet");
         // var_dump($new_table);
         if ($res  = query_handler::insert_meta_data($new_table)) {
+            unset($_SESSION['new_table']);
             Utils::navigate('home');
+        } else {
+            $_SESSION['upload_error'] = $new_table->error;
+            header("Refresh: 0");
         }
     }
 
@@ -59,7 +67,7 @@ if (isset($_POST['save_link'])) {
     save_data();
 }
 ?>
-
+    
 <div class="container">
  
 <table>

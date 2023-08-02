@@ -7,6 +7,8 @@ include_once('components/headers/account_header.php');
 include_once('components/note_handler.php');
 include_once('classes/notes.php');
 
+$_SESSION['upload_error'] = "";
+
 if (isset($_POST['cancel_search'])) {
     unset($_POST['search']);
     unset($_SESSION['search']);

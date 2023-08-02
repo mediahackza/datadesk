@@ -16,6 +16,7 @@
         private $status;
         private $description;
         public $source;
+        public $error;
         private $source_name;
         private $source_link;
 
@@ -65,14 +66,27 @@
             return array('data' => $new_data, 'headings' => $headings);
         }
 
-        
-
         function __construct() {
             $this->name = "";
             $this->db_name = "";
             // $this->date_created = date("Y-m-d H:i:s");
             $this->status = "active";
             $this->source = "";
+        }
+
+        function get_heading_string() {
+            $heading_string = "";
+            foreach($this->get_headings() as $key=>$h) {
+                $heading_string .= $h['name'] .  ",";
+            } 
+
+            return rtrim($heading_string, ",");
+        }
+
+        function find_meta_data() {
+            $this->col_count = count($this->get_headings());
+            $this->row_count = count($this->get_data());
+
         }
 
         function set_created_date($date) {
@@ -180,8 +194,6 @@
             $this->id = $id;
         }
 
-        
-
         function set_update($update) {
             $this->last_update = $update;
         }
@@ -211,8 +223,6 @@
             return $json_array;
         }
 
-        
-
         function count_cols() {
             return count($this->headings);
         }
@@ -230,6 +240,7 @@
         }
 
         function set_data($array) {
+            // if ()
             $this->data = $array;
         }
 
