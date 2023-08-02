@@ -4,8 +4,8 @@ include_once('init.php');
 include_once('classes/account.php');
 
 if (isset($_SESSION['user'])) {
-    $account = user_obj();
-    // var_dump($account);
+    $account = user_obj()->refresh();
+    $_SESSION['user'] = serialize($account);
 }   else {
     $account = new Account();
     if ($account->attempt_login_token()) {

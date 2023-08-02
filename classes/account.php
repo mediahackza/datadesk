@@ -10,6 +10,7 @@ include_once('utils.php');
         private $id;
         private $token;
         private $logged_in = false;
+        private $bookmarks = array();
 
         function __constructor() {
 
@@ -24,7 +25,13 @@ include_once('utils.php');
             if (isset($_POST['token'])) {
                 $this->set_token($row['token']);
             }
-               
+            $this->fetch_bookmarks();
+        }
+
+        function refresh() {
+            $this->bookmarks = array();
+            $this->fetch_bookmarks();
+            return $this;
         }
 
         function logout() {
@@ -32,6 +39,36 @@ include_once('utils.php');
                 unset($_SESSION['user']);
                 setcookie('login_session', '', time() - 3600, '/');
             }
+        }
+
+        function fetch_bookmarks() {
+            global $bookmarks;
+
+            $bookmarks->columns(array('table_id'));
+            $bookmarks->clear_where();
+            $bookmarks->add_where('user_id', $this->get_id(), '=');
+            $bookmarks->select();
+
+            if ($res = $bookmarks->query()) {
+                foreach($res as $row) {
+                    $this->add_bookmark($row['table_id']);
+                }
+            }
+
+            return false;
+        }
+
+        function add_bookmark($table_id) {
+            $this->bookmarks[] = $table_id;
+        }
+
+        function is_bookmarked($id) {
+            foreach($this->bookmarks as $bookmark) {
+                if ($bookmark == $id) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         function log_in() {
