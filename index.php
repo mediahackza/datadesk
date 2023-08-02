@@ -41,67 +41,6 @@ function print_row($t) {
     $base = $GLOBALS['base'];
 
     include('components/table_item.php');
-     
-//     echo "<div id='table-" . $t->get_id() ."'  class='block'>";
-//     echo "<div class='status-wrap'>
-//     <div class='status status-" . $t->get_status() . "'>" . $t->get_status() . "</div></div>";
-
-//     echo "<div class='block-container'>"; 
-   
-// // Title bar
-//     echo "<div class='block-title'>"; 
-//     echo "<div>" . $t->get_name(); 
-    
-//     // Actions 
-// echo "<div class='action-container' >";
-
-// echo "<div class='col-container icon-container'><form method='post' action='./view/index.php?table_id=".$t->get_id()."' ><button type='submit' value='".$t->get_id()."' name='edit'>";
-// echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
-// echo "</button></form></div>";
-
-// echo "<div class='col-container icon-container'><form method='post' action='./manage/edit.php' ><button type='submit' value='".$t->get_id()."' name='edit'>";
-// echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>';
-// echo "</button></form></div>";
-
-// echo "<div class='col-container icon-container'><form method='post' action='./manage/delete.php' ><button type='submit' value='".$t->get_id()."' name='delete'>";
-// echo '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>';
-// echo "</button></form></div>";
-// echo "</div>";
-//     echo "</div>";
-//     // echo "<div></div>";
-    
-//     echo "</div>";
-
-//     echo "<div class='block-details'>";
-//     echo "<table>";
-//     echo "<tr><td class='table-label'>Description</td><td>" . $t->get_description() . "</td></tr>";
-
-//     echo "<tr><td class='table-label'>Last Modified</td><td>" . date("D, j M Y",strtotime($t->get_update()))  . "</td></tr>";
-//     if (count($t->get_tags())) {
-//         echo "<tr><td class='table-label'>Tags</td><td>";
-//         foreach($t->get_tags() as $key=>$value) {
-//             echo "#" . $value->get_name() . " &nbsp; ";
-//         }
-//         echo "</td></tr>";
-//     }
-
-
-// echo "</table>";
-// echo "</div>";
-
-// echo "<div class='detail-container'>";
-
-
-// echo "<div class='data-label json'><a href='".$base."/api/json.php?table=".$t->get_id()."' target='_blank'>JSON View</a></div>";
-// echo "<div class='data-label json'><a href='".$base."/api/json.php?table=".$t->get_id()."&download' target='_blank' >JSON Download</a></div>";
-// echo "<div class='data-label csv'><a href='".$base."/api/csv.php?table=".$t->get_id()."' target='_blank'>CSV View</a></div>";
-// echo "<div class='data-label csv'><a href='".$base."/api/csv.php?table=".$t->get_id()."&download' target='_blank'>CSV Download</a></div>";
-
-// echo "</div>";
-//     echo "</div>";
-//         echo "<div class='row'>"; 
-//         echo "</div>";
-//         echo "</div>";
 }
 
 

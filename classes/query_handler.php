@@ -220,7 +220,7 @@ class query_handler {
 
     static function insert_meta_data($table) {
         echo $table->get_uploader_id() . "<br/>";
-        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, source, upload_user_id, type, description) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().",  '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."');";
+        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, source, upload_user_id, type, description, source_name, source_link) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().",  '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', '".$table->get_source_name()."', '".$table->get_source_link()."');";
 echo $query;
         if ($res = self::$db->query($query)) {
             $table->set_id(self::$db->insert_id);
@@ -232,7 +232,8 @@ echo $query;
 
 
     static function update_meta($table) {
-        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', status = '".$table->get_status()."' WHERE id=".$table->get_id().";";
+        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', status = '".$table->get_status()."' , source_name='".$table->get_source_name()."', source_link='".$table->get_source_link()."' WHERE id=".$table->get_id().";";
+        echo $query;
 
         if ($res = self::$db->query($query)) {
             return self::assign_tags($table);
@@ -305,6 +306,8 @@ echo $query;
         $table->set_status($row['status']);
         $table->set_type($row['type']);
         $table->set_description($row['description']);
+        $table->set_source_name($row['source_name']);
+        $table->set_source_link($row['source_link']);
         $table->fetch_notes();
         return $table;  
     }

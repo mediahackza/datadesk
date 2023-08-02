@@ -16,6 +16,8 @@
         private $status;
         private $description;
         public $source;
+        private $source_name;
+        private $source_link;
 
         private $notes = array();
         private $tags = array();
@@ -83,6 +85,22 @@
 
         function set_tags($tags) {
             $this->tags = $tags;
+        }
+
+        function get_source_name() {
+            return $this->source_name;
+        }
+
+        function get_source_link() {
+            return $this->source_link;
+        }
+
+        function set_source_name($name) {
+            $this->source_name = $name;
+        }
+
+        function set_source_link($link) {
+            $this->source_link = $link;
         }
 
         function get_id() {
@@ -318,6 +336,8 @@
             $this->set_status($row['status']);
             $this->set_type($row['type']);
             $this->set_description($row['description']);
+            $this->set_source_name($row['source_name']);
+            $this->set_source_link($row['source_link']);
             $this->fetch_notes(); 
             $this->fetch_tags();
         }
