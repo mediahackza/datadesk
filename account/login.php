@@ -2,22 +2,22 @@
     include_once('../init.php'); // get initialisations
     include_once('../classes/account.php'); // get account class
     // include_once('../classes/query_handler.php');
-    if (!isset($_GET['dev'])) {
-        Utils::navigate('welcome');
-        exit;
-    }
+    // if (!isset($_GET['dev'])) {
+    //     Utils::navigate('welcome');
+    //     exit;
+    // }
     if (!isset($_SESSION['login_error'])) {
         $_SESSION['login_error'] = "";
     }
 
     $account; 
 
-    if (isset($_SESSION['user'])) { // check for an logged in user session
-        $account = user_obj(); // if there is one, get the account object
-    } else {
-        $account = new Account(); // otherwise create a new account object
-        $_SESSION['user'] = serialize($account); // and save it in session
-    }
+    // if (isset($_SESSION['user'])) { // check for an logged in user session
+    //     $account = user_obj(); // if there is one, get the account object
+    // } else {
+    //     $account = new Account(); // otherwise create a new account object
+    //     $_SESSION['user'] = serialize($account); // and save it in session
+    // }
 
     if (isset($_POST['login'])) { // when the login button is pressed
         if ($account = set_data()) { // run the set data function to attempt a log in and retrieve the account data
@@ -31,6 +31,7 @@
     // or the account object if the login is successful
     function set_data() { 
         global $account; // the the account object declared above
+        $account = new Account(); // create a new account object
         if (!isset($_POST['email']) || $_POST['email'] == "") { // if the email field is empty
             $_SESSION['login_error'] = "please enter your email"; // set the error
             return false; // return unsuccesful login
