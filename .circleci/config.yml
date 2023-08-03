@@ -10,11 +10,7 @@ executors:
           password: $DOCKER_HUB_PASSWORD
 jobs:
   test:
-    filters:
-      branches:
-        only:
-          - main
-          
+
     executor: my-custom-executor
     steps:
       - checkout
@@ -24,4 +20,8 @@ jobs:
 workflows:
   my-custom-workflow:
     jobs:
-      - test
+      - test:
+          filters:
+            branches:
+              only:
+                - main
