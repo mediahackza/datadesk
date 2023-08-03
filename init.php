@@ -63,5 +63,6 @@
     Utils::add_location('upload', $base."/upload/upload.php");
     Utils::add_location('tags', $base."/tags/index.php");
     Utils::add_location('home', $base);
+    Utils::add_location('welcome', $base."/welcome.php");
 
 ?>

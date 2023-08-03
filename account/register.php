@@ -3,6 +3,10 @@
     include_once('../classes/account.php'); // include account class
     include_once('../classes/query_handler.php'); // include query handler class
 
+    if (!isset($_GET['dev'])) {
+        Utils::navigate('welcome');
+        exit;
+    }
     // the set_data function handles the registration errors and returns false if there is an error
     function set_data() { 
 

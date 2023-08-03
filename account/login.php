@@ -2,6 +2,10 @@
     include_once('../init.php'); // get initialisations
     include_once('../classes/account.php'); // get account class
     // include_once('../classes/query_handler.php');
+    if (!isset($_GET['dev'])) {
+        Utils::navigate('welcome');
+        exit;
+    }
     if (!isset($_SESSION['login_error'])) {
         $_SESSION['login_error'] = "";
     }
