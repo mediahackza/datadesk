@@ -64,5 +64,6 @@
     Utils::add_location('tags', $base."/tags/index.php");
     Utils::add_location('home', $base);
     Utils::add_location('welcome', $base."/welcome.php");
+    Utils::add_location('bookmarks', $base."/bookmarks/index.php");
 
 ?>
