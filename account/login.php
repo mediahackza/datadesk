@@ -82,7 +82,7 @@ include_once("../components/headers/account_header.php"); // adding the navigati
         <div class="spacer"></div>
         <input class="submit button" name="login" type="submit" value="login" /><br/>
 
-        <p>Don't have an account yet? <a href="register.php">Register</a></p>
+        <!-- <p>Don't have an account yet? <a href="register.php">Register</a></p> -->
     </form>
 
 </div>

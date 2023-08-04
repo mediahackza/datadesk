@@ -11,7 +11,10 @@
     <?php     
     } else {
     ?>
-        <div class='account'><a href='<?php echo $base."/account/login.php";?>'>Login</a> | <a href='<?php echo $base."/account/register.php";?>'>Register</a></div>
+        <div class='account'><a href='<?php echo $base."/account/login.php";?>'>Login</a> 
+        
+        <!-- | <a href='<?php echo $base."/account/register.php";?>'>Register</a> -->
+    </div>
     <?php 
     }
         

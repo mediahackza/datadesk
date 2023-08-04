@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
     if ($account->attempt_login_token()) {
         $_SESSION['user'] = serialize($account);
     } else {
-        Utils::navigate('login');
+        Utils::navigate('welcome');
     }
 }
 // else if ($account = query_handler::attempt_login_with_token()) {
