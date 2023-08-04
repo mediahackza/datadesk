@@ -7,7 +7,7 @@ if ($_SESSION['user']) { // if there is a user session
     unset($_SESSION['user']); // unset the user session
 }
 
-Utils::navigate('home'); // return the the main page 
+// Utils::navigate('home'); // return the the main page 
 
 
 ?>

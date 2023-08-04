@@ -6,9 +6,13 @@
     
     if (isset($_SESSION['user'])) {
         $account = user_obj();
-        echo "<div class='account'>" . $account->get_full_name() . " &nbsp; | &nbsp; <a href='".$base."/account/logout.php'>logout</a></div>";
+    ?>
+        <div class='account'><?php echo $account->get_full_name();?> &nbsp; | &nbsp;<?php include_once('account_drop.php')?></div>
+    <?php     
     } else {
-        echo "<div class='account'><a href='".$base."/account/login.php'>Login</a> | <a href='".$base."/account/register.php'>Register</a></div>";
+    ?>
+        <div class='account'><a href='<?php echo $base."/account/login.php";?>'>Login</a> | <a href='<?php echo $base."/account/register.php";?>'>Register</a></div>
+    <?php 
     }
         
     ?>

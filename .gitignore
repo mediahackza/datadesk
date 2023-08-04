@@ -1,1 +1,4 @@
 conf.php
+server_scripts
+deploy.php
+deploy.sh

@@ -122,7 +122,6 @@ include_once('utils.php');
             $users->add_where('password', $password, '=');
 
             $users->select();
-            echo $users->query;
             if ($res = $users->query()) {
                 if (count($res) == 0) {
                     return false;

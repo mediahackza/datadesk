@@ -23,7 +23,7 @@ include_once('csv_table.php');
             $file = fopen($file_name, "r");
 
             if (!$file) {
-                return;
+                return false;
             }
 
 

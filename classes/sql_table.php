@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
+// this extends the mysli class in order to keep the name of initialised database available to the query creator
 class database extends mysqli {
     private $host;
     private $username;
@@ -78,6 +80,7 @@ class sql_table {
         $this->where_data = array();
     }
 
+
     function add_group_by($col_name) {
         $this->group_by_data[] = $col_name;
     }
@@ -89,6 +92,7 @@ class sql_table {
     function add_where($col_name, $value, $operator, $join = "AND") {
         $this->where_data[][$col_name] = array('value' => $value, 'operator' => $operator, 'join' => $join);
     }
+
 
     function add_sorting($col_name, $direction ="desc") {
         $this->sorting_data[$col_name] = $direction;
@@ -140,6 +144,8 @@ class sql_table {
         return $string;
     }
 
+
+
     function sorting() {
         $string = "";
         foreach($this->sorting_data as $column=>$direction) {
@@ -187,7 +193,6 @@ class sql_table {
             return false;
         }
 
-
         if ($res = $this->db->query($this->query)) {
             switch ($this->type) {
                 case 'insert':
@@ -202,6 +207,7 @@ class sql_table {
                     while($row = $res->fetch_assoc()) {
                         $data[] = $row;
                     }
+
                     return $data;
                     break;
             }
