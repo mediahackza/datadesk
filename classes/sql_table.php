@@ -193,7 +193,6 @@ class sql_table {
             return false;
         }
 
-
         if ($res = $this->db->query($this->query)) {
             switch ($this->type) {
                 case 'insert':
@@ -208,6 +207,7 @@ class sql_table {
                     while($row = $res->fetch_assoc()) {
                         $data[] = $row;
                     }
+
                     return $data;
                     break;
             }
