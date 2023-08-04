@@ -33,7 +33,7 @@
             try {
                 $data = file_get_contents($link_csv);
             } catch (Exception $e) {
-                $this->error = "Please make sure the sheet is published";
+                $this->error = "Unable to fetch data from sheet. Please make sure the sheet is published and the link is valid";
                 return false;
             }
             restore_error_handler();
