@@ -51,6 +51,8 @@
             return false;
         }
 
+        echo "Source:";
+        var_dump($source);
         $new_table->set_source($source);
     
         
