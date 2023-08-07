@@ -221,7 +221,7 @@ class query_handler {
     static function insert_meta_data($table) {
         if ($table->set_data($table->get_source()) === false) {
             return false;
-            self::error = "Source could not be read. Please make sure the sheet is published";
+            self::$error = "Source could not be read. Please make sure the sheet is published";
         }
         $table->find_meta_data();
 
@@ -232,7 +232,7 @@ class query_handler {
             return self::assign_tags($table);
         }
         
-        self::error = "Could not insert meta data";
+        self::$error = "Could not insert meta data";
         return false;
     }
 
