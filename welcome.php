@@ -47,9 +47,11 @@ include_once("components/headers/account_header.php"); // adding the navigation 
     </div>
 </div>
 
-<div class="container-four">
-    Built by <a href="https://mediahack.co.za">Media Hack Collective</a>, funded by the <a href="https://newsinitiative.withgoogle.com/" target="_blank">Google News Initiative</a href="https://newsinitiative.withgoogle.com/" target="_blank">, <a href="https://github.com/mediahackza/datadesk" target="_blank">open source</a>. <br/>
-    To find out more contact us at <a href="mailto:datadesk@mediahack.co.za">datadesk@mediahack.co.za</a>
+<div class="container container-four">
+    <div class="container-inner-four">
+        Built by <a href="https://mediahack.co.za">Media Hack Collective</a>, funded by the <a href="https://newsinitiative.withgoogle.com/" target="_blank">Google News Initiative</a href="https://newsinitiative.withgoogle.com/" target="_blank">, <a href="https://github.com/mediahackza/datadesk" target="_blank">open source</a>. <br/>
+        To find out more contact us at <a href="mailto:datadesk@mediahack.co.za">datadesk@mediahack.co.za</a>
+    </div>
 </div>
 
 <?php
@@ -73,6 +75,7 @@ body {
         margin: 0 auto;
         /* background: #00a5a2; */
         grid-gap: 20px;
+        font-size: 1.1rem;
 
         
     }
@@ -91,7 +94,7 @@ body {
         padding-top: 100px; 
         padding-bottom: 100px;
         color: #fff;
-        font-size:1.1rem;
+ 
         line-height: 1.5;
         height: 100%;
     }
@@ -106,7 +109,7 @@ body {
         color: #000;
         padding-top: 100px;
         padding-bottom: 20px;
-        font-size: 1rem;
+
         grid-gap: 50px;
     }
     .container-two { 
@@ -126,10 +129,12 @@ body {
         color: #fff;
         
         
+        
     }
     .container-three { 
         background: #00000099;
         color: #fff;
+
     }
     .container-four { 
         padding: 30px; 
@@ -137,7 +142,12 @@ body {
         color: #fff; 
         text-align: center;
         line-height: 1.5;
+        font-size: 0.9rem;
 
+
+    }
+    .container-inner-four { 
+    
     }
     .container-four a { 
         color: #fff;
