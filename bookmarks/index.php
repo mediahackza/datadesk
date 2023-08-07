@@ -10,8 +10,7 @@ include_once('../components/headers/account_header.php');
     
     $join = new join_table('left', array($bookmarks, $tables), array(array($bookmarks->get_col('table_id'), $tables->get_col('id'))));
     $join->select();
-    if (($res = $join->query()) == false) {
-
+    if (($res = $join->query()) !== false) {
         foreach($res as $key=>$row){
             $t = $tf->create_table($row);
             include('../components/table_item.php');
@@ -21,6 +20,7 @@ include_once('../components/headers/account_header.php');
             echo "<div class='no-results'>No bookmarks found.</div>";
         }
     } else {
+        echo "something went wrong.";
         echo $join->error;
     }
 
