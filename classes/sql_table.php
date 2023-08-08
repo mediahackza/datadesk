@@ -166,6 +166,11 @@ class sql_table {
         $string = '';
 
         foreach($this->select_columns as $column) {
+
+            if (strpos($column, "count") !== false) {
+                $string .= "count(".$this->table.".".substr($column, 6) . ", ";
+                continue;
+            }
             $string .= $this->table . "." . $column . ", ";
         }
 
@@ -361,7 +366,11 @@ class join_table extends sql_table{
         $string = "";
 
         foreach($this->tables as $table) {
-            $string .= $table->select_string() . ",";
+            $param = $table->select_string();
+            if (strlen($param) > 0) {
+                $string .= $table->select_string() . ",";
+            }   
+            
         }
 
         return rtrim($string, ",");
@@ -439,6 +448,9 @@ class join_table extends sql_table{
                 break;
             case 'full':
                 return "FULL JOIN";
+                break;
+            default:
+                return "JOIN";
                 break;
         }
     }
