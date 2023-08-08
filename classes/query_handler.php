@@ -309,7 +309,7 @@ class query_handler {
         $table->set_name($row['str_name']);
         $table->set_db_name($row['db_name']);
         $table->set_last_updated($row['last_updated']);
-        $table->set_source($row['source']);
+        $table->set_source($row['data_source']);
         $table->set_uploader_id($row['upload_user_id']);
         $table->set_status($row['status']);
         $table->set_type($row['type']);

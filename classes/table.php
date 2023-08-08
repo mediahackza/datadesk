@@ -342,7 +342,7 @@
             $this->set_name($row['str_name']);
             $this->set_db_name($row['db_name']);
             $this->set_last_updated($row['last_updated']);
-            $this->set_source($row['source']);
+            $this->set_source($row['data_source']);
             $this->set_uploader_id($row['upload_user_id']);
             $this->set_status($row['status']);
             $this->set_type($row['type']);
