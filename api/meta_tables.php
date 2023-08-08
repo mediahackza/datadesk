@@ -28,7 +28,7 @@ if ($res = $join_2->query()) { // if the query is successful
 }
 
 $tables->clear_where();
-$tables->columns(array('*', 'source as data_source'));
+$tables->columns(array('*'));
 $tables->where('status', 'active', '=');
 $tables->clear_sorting();
 $tables->add_sorting('id', 'DESC');
@@ -64,7 +64,6 @@ if ($res = $table_join_tags->query()) {
             if ($note_res = $notes->query()) {
                 $temp_table['notes'] = $note_res;
             }
-            unset($temp_table['source']);
             $temp_table['json_link'] = $base . "/api/json.php?table=" . $temp_table['id'];
             $temp_table['csv_link'] = $base . "/api/csv.php?table=" . $temp_table['id'];
             $output['tables'][] = $temp_table;
