@@ -4,6 +4,8 @@
     ini_set('display_startup_errors', 1);
  
 
+    session_start();
+
     include_once('conf.php');
     include_once('classes/sql_table.php');
     include_once('classes/query_handler.php');
@@ -31,7 +33,7 @@
     $bookmarks = new sql_table($bookmarks_name, $db);
     $tf = new Table_Factory();
 
-    session_start();
+
     function find_base() {
         global $site_base_directory;
         $base = "";
@@ -65,5 +67,4 @@
     Utils::add_location('home', $base);
     Utils::add_location('welcome', $base."/welcome.php");
     Utils::add_location('bookmarks', $base."/bookmarks/index.php");
-
 ?>

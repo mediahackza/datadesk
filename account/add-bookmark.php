@@ -8,7 +8,7 @@ include_once('../init.php');
         if (user_obj()->is_bookmarked($id)) {
             $bookmarks->delete(array('user_id' => user_obj()->get_id(), 'table_id' => $id));
             $bookmarks->query();
-            Utils::navigate('home');
+            Utils::navigate('previous');
         }
 
         $bookmarks->insert(array(
@@ -20,7 +20,7 @@ include_once('../init.php');
             user_obj()->add_bookmark($id);
         };
 
-        Utils::navigate('home');
+        Utils::navigate('previous');
     }
 
 ?>

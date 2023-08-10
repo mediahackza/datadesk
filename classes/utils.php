@@ -3,6 +3,15 @@
     class Utils {
 
         static public $locations = array();
+        static private function restore_session() {
+            if (isset($_SESSION['utils_locations'])) {
+                self::$locations = $_SESSION['utils_locations'];
+            }
+        }
+
+        static private function save_session() {
+            $_SESSION['utils_locations'] = self::$locations;
+        }
         
         static function split($string, $char) {
             $array = array();
@@ -35,10 +44,30 @@
         }
 
         static function add_location($name, $url) {
+            self::restore_session();
             self::$locations[$name] = $url;
+            self::save_session();
+        }
+
+        static public function remove_location($name) {
+            self::restore_session();
+            if (isset(self::$locations[$name])) {
+                unset(self::$locations[$name]);
+            }
+            
+            self::save_session();
+        }
+
+        static function get_location($name) {
+            self::restore_session();
+            return self::$locations[$name];
         }
 
         static function navigate($name) {
+            self::restore_session();
+            if (!isset(self::$locations[$name])) {
+                exit(header("Location: ".self::$locations['home']));
+            }
             exit(header("Location: ".self::$locations[$name]));
             
         }

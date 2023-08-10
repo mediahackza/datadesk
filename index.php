@@ -1,11 +1,14 @@
 <?php
 include_once('init.php');
+// Utils::add_location('previous', $base);
 include_once('validate.php');
 include('components/account_list.php');
 include_once('components/headers/html_header.php');
 include_once('components/headers/account_header.php');
 include_once('components/note_handler.php');
 include_once('classes/notes.php');
+
+Utils::remove_location('previous');
 
 $_SESSION['upload_error'] = "";
 
