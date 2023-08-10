@@ -225,7 +225,7 @@ class query_handler {
         }
         $table->find_meta_data();
 
-        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, source, upload_user_id, status, type, description, col_count, row_count, headings) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().", '".$table->get_status()."', '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', ".$table->col_count. ", ".$table->row_count.", '".Utils::check_quotes($table->get_heading_string())."');";
+        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, data_source, upload_user_id, status, type, description, col_count, row_count, headings) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().", '".$table->get_status()."', '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', ".$table->col_count. ", ".$table->row_count.", '".Utils::check_quotes($table->get_heading_string())."');";
         echo $query;
         if ($res = self::$db->query($query)) {
             $table->set_id(self::$db->insert_id);
