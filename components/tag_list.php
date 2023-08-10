@@ -19,9 +19,9 @@ if (!isset($_SESSION['home-data']['tags'])) {
         }
     }
 
-    $_SESSION['home-data']['tags'] = $tags_list;
+    $_SESSION['home-data']['tags'] = serialize($tags_list);
 } else {
-    $tags_list = $_SESSION['home-data']['tags'];
+    $tags_list = unserialize($_SESSION['home-data']['tags']);
 }
 
 
@@ -58,7 +58,7 @@ foreach($tags_list as $tag) {
         $inactive_inner .= "<option value='".$tag->get_name()."'>";
     }
 }
-$_SESSION['home-data']['tags'] = $tags_list;
+$_SESSION['home-data']['tags'] = serialize($tags_list);
 
 
 

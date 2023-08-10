@@ -124,7 +124,7 @@ if ($res = $tags->query()) {
         $table->set_source_link($_POST['source_link']);
 
         if (query_handler::update_meta($table)) {
-            Utils::navigate('home');
+            Utils::navigate('previous');
         }
 
         
