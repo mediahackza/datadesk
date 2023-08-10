@@ -7,6 +7,6 @@
         $table = query_handler::delete_table($_POST['delete']);
     }
 
-    Utils::navigate('home');
+    Utils::navigate('previous');
 
 ?>

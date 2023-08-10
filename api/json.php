@@ -18,6 +18,7 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
  // if the table is a googlesheet
             
             if ($table->set_data($table->get_source()) == false){
+                echo "something went wron trying o set the data";
                 die(json_encode(array('error' => $table->error)));
             } // get the data from the google api and save it as an array in the table object
 

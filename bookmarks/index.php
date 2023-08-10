@@ -1,8 +1,13 @@
 <?php
 include_once('../init.php');
+
+Utils::add_location('previous', Utils::get_location('bookmarks'));
+
 include_once('../validate.php');
 include_once('../components/headers/html_header.php');
 include_once('../components/headers/account_header.php');
+
+
 
     $bookmarks->clear_where();
     $bookmarks->add_where('user_id', user_obj()->get_id(), '=');
