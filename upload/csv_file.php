@@ -77,8 +77,9 @@
 ?>
 <div class="container">
 
-<table>
+
     <form method="post" class="inner-container" enctype="multipart/form-data">
+    <table>
         <tr><td class="table-label">Save in Datadesk as:</td><td>
         <input placehoder="table name" type="text" name="db_name" value="<?php echo $new_table->get_name() ?>" /> </td></tr>
         <tr><td class="table-label">Link to google sheet:</td><td>
@@ -103,8 +104,9 @@
         <!-- <input type="submit" name="print_json" value="print to json" /> -->
         <a href="/"><button class="cancel" type="" name="cancel" value="cancel" >Cancel</button></a>
 </td></tr>
-    </form>
 </table>
+    </form>
+
 
 </div>
 

@@ -19,6 +19,34 @@
             return $this->source;
         }
 
+        function set_source($link) {
+            $pos = strripos($link, "/");
+            
+            
+            $params = substr($link, $pos+1);
+            $temp_link = substr($link, 0, $pos+1);
+            if (strpos($params, "?") != false) {
+                $params = substr($params, strpos($params, "?")+1);
+            } else {
+                $params = substr($params, strpos($params, "#")+1);
+            }
+            $arr_params = Utils::split($params, "&");
+            $id = "";
+            foreach($arr_params as $p) {
+                $arr_p = Utils::split($p, "=");
+                if ($arr_p[0] == "gid") {
+                    $id = $arr_p[1];
+                    break;
+                }
+            }
+            if (strpos($link, "edit") != false) {
+                $this->source = $temp_link . "edit#gid=" . $id;
+            } else {
+                $this->source = $temp_link . "pub?gid=" . $id;
+            }
+            
+        }
+
         function set_data($link) {
 
             $link_csv = $this->check_sheet_id($link);
