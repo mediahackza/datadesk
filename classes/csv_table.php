@@ -40,7 +40,7 @@
         function set_data($string) {
             $string = str_replace("\r", "", $string);
             $this->csv_string = $string;
-            $this->init_data();
+            return $this->init_data();
         }
 
         function get_link() {
@@ -49,9 +49,7 @@
         }
 
         function get_source() {
-            global $base;
             $link = $this->get_link();
-
             $data = file_get_contents($link);
 
             // $this->set_delimiter($data);
@@ -81,7 +79,7 @@
             for ($i = $index; $i < count($line_array); $i++) {
                 $this->add_row($line_array[$i]);
             }
-
+            return true;
         }
 
         function add_row($row) {
