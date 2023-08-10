@@ -57,6 +57,7 @@
     }
 
     ?>
+    <tr><td class='table-label'>Source file</td><td><a href='<?php echo $t->source;?>' target="_blank">Link</a></td></tr>
  </table>
  </div>
 
