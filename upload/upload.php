@@ -1,11 +1,11 @@
 
-<?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+<?php
+   ini_set('display_errors', 1);
+   ini_set('display_startup_errors', 1);
+   error_reporting(E_ALL);
+   include('validate.php');
 
-    include_once("../init.php");
-    include_once("../validate.php");
+//    unset($_SESSION['new_table']);
 
     if (!isset($_SESSION['upload_error'])) {
         $_SESSION['upload_error'] = "";
@@ -18,21 +18,20 @@ error_reporting(E_ALL);
     }
 
     if (!isset($_SESSION['upload_type'])) {
-        $type = 'csv file';
-        $_SESSION['upload_type'] = 'csv file';
+        $type = 'google sheet';
+        $_SESSION['upload_type'] = 'google sheet';
     } else {
         $type = $_SESSION['upload_type'];
     }
 
-    include_once("../components/headers/html_header.php");
-    include_once("../components/headers/account_header.php");
-
     $add_tags_list = array();
+$tags = $GLOBALS['tags'];
 
 $tags->columns(array('*'));
 $tags->select();
 
 $tags_list = array();
+$GLOBALS['tag_list'] = $tags_list;
 
 if ($res = $tags->query()) {
     foreach($res as $row) {
@@ -42,9 +41,11 @@ if ($res = $tags->query()) {
     }
 }
 
-
+var_dump($tags_list);
 function make_tag($tag) {
-    global $tags_list, $tags;
+    global $tags;
+    $tags_list = $GLOBALS['tag_list'];
+    var_dump($tags_list);
 
     foreach ($tags_list as $key=>$value) {
         if ($value->get_name() == $tag->get_name()) {
@@ -65,6 +66,7 @@ function make_tag($tag) {
 if (isset($_POST['upload_type'])) {
     $type = $_POST['upload_type'];
     $_SESSION['upload_type'] = $type;
+    unset($_SESSION['new_table']);
 }
 
 

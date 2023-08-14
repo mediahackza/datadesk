@@ -1,6 +1,5 @@
 <?php
-
-include_once('../init.php');
+    $bookmarks = $GLOBALS['bookmarks'];
 
     if (isset($_POST['bookmark'])) {
         $id = $_POST['bookmark'];

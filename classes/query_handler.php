@@ -322,7 +322,6 @@ class query_handler {
 
     static function fetch_table_by_id($id) {
         $query = "SELECT *, ".self::$meta_table_name.".id as table_id FROM " . self::$meta_table_name . " INNER JOIN " . self::$user_table_name . " ON ".self::$meta_table_name.".upload_user_id = ". self::$user_table_name . ".id AND " . self::$meta_table_name . ".id=" . $id;
-
         if ($res = self::$db->query($query)) {
             $row = $res->fetch_assoc();
 

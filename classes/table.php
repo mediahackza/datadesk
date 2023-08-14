@@ -142,7 +142,7 @@
         }
 
         function fetch_notes() {
-            global $notes;
+            $notes = $GLOBALS['notes'];
             $notes->columns(array('*'));
             $notes->clear_where();
             $notes->add_where("table_id", $this->id, '=');

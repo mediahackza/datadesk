@@ -1,11 +1,4 @@
 <?php
-    include_once('../init.php'); // get initialisations
-    include_once('../classes/account.php'); // get account class
-    // include_once('../classes/query_handler.php');
-    // if (!isset($_GET['dev'])) {
-    //     Utils::navigate('welcome');
-    //     exit;
-    // }
     if (!isset($_SESSION['login_error'])) {
         $_SESSION['login_error'] = "";
     }
@@ -57,10 +50,6 @@
         $_SESSION['login_error'] = ""; // if the function runs this far there is no error
         return $account; // return the account object from the database 
     }
-
-    
-include_once('../components/headers/html_header.php'); //  adding the html header with styles
-include_once("../components/headers/account_header.php"); // adding the navigation bar
 ?>
 <!-- this is the login box on the page -->
 <div class="container">
@@ -86,9 +75,3 @@ include_once("../components/headers/account_header.php"); // adding the navigati
     </form>
 
 </div>
-
-<?php
-
-include('../components/html_footer.php'); // adding the html footer
-
-?>

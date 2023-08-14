@@ -1,16 +1,6 @@
 <?php
-include_once('../init.php');
-include_once('../classes/notes.php');
-include_once('../components/note_handler.php');
-include_once('../classes/query_handler.php');
-include_once('../classes/table.php');
-include_once('../classes/google_sheet_table.php');
-include('../components/account_list.php');
 
-
-include_once('../components/headers/html_header.php');
-include_once('../components/headers/account_header.php');
-
+$tags = $GLOBALS['tags'];
 $tags->columns(array('*'));
 $tags->select();
 
@@ -46,8 +36,8 @@ if ($res = $tags->query()) {
 }
 
 
-    if (isset($_POST['edit'])) {
-        $id = $_POST['edit'];
+    if (isset($params['table_id'])) {
+        $id = $params['table_id'];
         $table = query_handler::fetch_table_by_id($id);
         query_handler::populate_tags($table);
         $_SESSION['edit'] = $id;
@@ -160,7 +150,7 @@ if ($res = $tags->query()) {
         <td><input type="text" name="source_link" value="<?php echo $table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
-        include('../components/tag_selector.php')
+        include('components/tag_selector.php')
         ?></td></tr>
         <tr><td class="table-label">Source</td>
         <td>
@@ -193,16 +183,15 @@ if ($res = $tags->query()) {
         $note_data = $value;
         $edit_note = true;
         // echo $note_data . "<br/>";
-        include('../components/note.php');
+        include('components/note.php');
         if (!$show_all) {
             break;
         }
     }
 echo "</div>";
 
-    include('../components/note_input.php');
+    include('components/note_input.php');
 
-    include_once('../components/html_footer.php');
 ?>
 
 </div>

@@ -1,8 +1,5 @@
 <?php
 
-include('../init.php');
-include('../components/headers/html_header.php');
-include('../components/headers/account_header.php');
 
 $tags = query_handler::fetch_tags();
 
@@ -11,7 +8,7 @@ $tags = query_handler::fetch_tags();
 ?><div class="page-wrap">
   <div class="page-title">Edit Tags</div>
 
-    <div class="right"><form method="post" action="./add.php"><button type="submit">Add a new tag</button></form></div>
+    <div class="right"><form method="post" action="./add"><button type="submit">Add a new tag</button></form></div>
     
     <table>
         <tr>
@@ -27,8 +24,8 @@ $tags = query_handler::fetch_tags();
             echo "<tr>";
             // echo "<td>".$t->get_id()."</td>";
             echo "<td>".$t->get_name()."</td>";
-            echo "<td><a href='./add.php?tag_name=".$t->get_name()."&id=".$t->get_id()."'>edit</a></td>";
-            echo "<td><a href='./delete.php?id=" . $t->get_id()."'>delete</a></td>";
+            echo "<td><a href='".$base."/tags/edit/".$t->get_id()."'>edit</a></td>";
+            echo "<td><a href='".$base."/tags/delete/" . $t->get_id()."'>delete</a></td>";
             echo "</tr>";
         }
     

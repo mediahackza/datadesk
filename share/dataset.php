@@ -1,28 +1,13 @@
 <?php
 
-include_once('../init.php');
-include_once('../classes/utils.php');
-include_once('../classes/table.php');
-include_once('../classes/google_sheet_table.php');
-include_once('../components/account_list.php');
-include_once('../classes/notes.php');
-include_once('../components/note_handler.php');
-
-include('../components/headers/html_header.php');
-include('../components/headers/account_header.php');
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 $table_id;
 
-if (!isset($_GET['table_id'])) {
-    Utils::navigate('home');
+if (!isset($params['table_id'])) {
+    echo "params arenn't set";
+    // Utils::navigate('home');
     die;
 } else {
-    $table_id = $_GET['table_id'];
+    $table_id = $params['table_id'];
 }
 
     $table = query_handler::fetch_table_by_id($table_id);

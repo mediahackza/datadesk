@@ -11,19 +11,19 @@
     <!-- // Actions  -->
  <div class='action-container' >
 
- <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/view/index.php?table_id=" . $t->get_id() ?>' ><button type='submit' value='<?php echo $t->get_id() ?>' name='edit'>
+ <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/view/" . $t->get_id() ?>' ><button type='submit' value='<?php echo $t->get_id() ?>' name='edit'>
  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
  </button></form></div>
 
- <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/manage/edit.php"; ?>' ><button type='submit' value='<?php echo $t->get_id(); ?>' name='edit'>
+ <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/manage/edit/" . $t->get_id(); ?>' ><button type='submit' value='<?php echo $t->get_id(); ?>' name='edit'>
  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
  </button></form></div>
 
- <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/manage/delete.php";?>' ><button type='submit' value='<?php echo $t->get_id() ?>' name='delete'>
+ <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/delete-table";?>' ><button type='submit' value='<?php echo $t->get_id() ?>' name='delete'>
  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
  </button></form></div>
 
- <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/account/add-bookmark.php";?>' ><button type='submit' value='<?php echo $t->get_id(); ?>' name='bookmark'>
+ <div class='col-container icon-container'><form method='post' action='<?php echo $base . "/add-bookmark";?>' ><button type='submit' value='<?php echo $t->get_id(); ?>' name='bookmark'>
  <?php
      $class = "";
      if (user_obj()->is_bookmarked($t->get_id())) {

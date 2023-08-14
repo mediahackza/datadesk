@@ -1,9 +1,3 @@
-<?php
-include_once('init.php');
-include_once('components/headers/html_header.php'); //  adding the html header with styles
-include_once("components/headers/account_header.php"); // adding the navigation bar
-?>
-
 <div class="container container-one">
     <div class="container-inner">
         <div></div>

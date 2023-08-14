@@ -1,16 +1,13 @@
 <?php
-    include_once('../init.php');
-    include_once('../classes/query_handler.php');
-    include('../components/headers/html_header.php');
-include('../components/headers/account_header.php');
-
+    include_once('classes/table.php');
     if (isset($_SESSION["view_table"])) {
-        $table = $_SESSION["view_table"];
+        $table = unserialize($_SESSION["view_table"]);
     }
 
     if (!isset($_SESSION['view_error'])) {
         $_SESSION['view_error'] = "";
     }
+
 
     function save_view() {
         global $table;

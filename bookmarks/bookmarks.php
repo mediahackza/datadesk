@@ -1,12 +1,12 @@
 <?php
-include_once('../init.php');
 
 Utils::add_location('previous', Utils::get_location('bookmarks'));
 
-include_once('../validate.php');
-include_once('../components/headers/html_header.php');
-include_once('../components/headers/account_header.php');
+include_once('validate.php');
 
+$bookmarks = $GLOBALS['bookmarks'];
+$tables = $GLOBALS['tables'];
+$tf = $GLOBALS['tf'];
 
 
     $bookmarks->clear_where();
@@ -18,7 +18,7 @@ include_once('../components/headers/account_header.php');
     if (($res = $join->query()) !== false) {
         foreach($res as $key=>$row){
             $t = $tf->create_table($row);
-            include('../components/table_item.php');
+            include('components/table_item.php');
         }  
         
         if (count($res) == 0) {
@@ -31,8 +31,4 @@ include_once('../components/headers/account_header.php');
 
 ?>
 
-
-<?php
-    include_once('../components/html_footer.php');
-?>
 

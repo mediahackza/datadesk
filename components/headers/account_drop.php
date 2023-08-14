@@ -6,7 +6,7 @@ if (isset($_POST['menu_choice'])) {
         default:
             break;
         case 'logout':
-            header("Location: ".$base."/account/logout.php");
+            header("Location: ".$base."/logout");
             break;
         case 'bookmarks':
             Utils::navigate('bookmarks');
@@ -40,7 +40,7 @@ function is_selected($dir) {
         <option value='account' <?php if(is_selected("")) { echo "selected";} ?> >my account</option>
         <option value=''>my profile</option>
 
-        <option value='bookmarks' <?php if (is_selected('/bookmarks/index.php')) { echo "selected";} ?> >my bookmarks</option>
+        <option value='bookmarks' <?php if (is_selected('/bookmarks')) { echo "selected";} ?> >my bookmarks</option>
         <option value="logout">logout</option>
     </select>
 </form>

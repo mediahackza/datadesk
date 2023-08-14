@@ -1,14 +1,15 @@
 <?php
-include_once('init.php');
 // Utils::add_location('previous', $base);
 include_once('validate.php');
-include('components/account_list.php');
-include_once('components/headers/html_header.php');
-include_once('components/headers/account_header.php');
 include_once('components/note_handler.php');
 include_once('classes/notes.php');
 
 Utils::remove_location('previous');
+
+$table_tags = $GLOBALS['table_tags'];
+$tables = $GLOBALS['tables'];
+$tf = $GLOBALS['tf'];
+$base = $GLOBALS['base'];
 
 $_SESSION['upload_error'] = "";
 
@@ -58,18 +59,12 @@ if (isset($_POST['search'])) {
     $_SESSION['search'] = $_POST['search'];
 }
 
-// query_handler::set_table_sorting($_SESSION['sorting']);
-// query_handler::set_table_search_term($_SESSION['search']);
-
-
-
-
 
 ?>
 
 <!-- Data Filters --> 
 <div class="data-filters filter-right filter-bottom-margin">
-    <form method="post" action="upload/upload.php">
+    <form method="post" action="upload">
                     <button class="action green" type="submit" name="upload" value="upload data">
                         <img src="./assets/icons/plus-white.png" class="button-icons">Add Dataset
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg> -->
