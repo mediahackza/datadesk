@@ -182,6 +182,10 @@
             return $this->notes;
         }
 
+        function get_delimiter() {
+            return $this->delimiter;
+        }
+
         function set_description($desc) {
             $this->description = $desc;
         }
