@@ -90,7 +90,7 @@
         }
 
         function add_row($row) {
-            $temp = Utils::split($row, $this->delimiter);
+            $temp = Utils::split($row, $this->delimiter, true);
             $this->data[] = $temp;
         }
 
