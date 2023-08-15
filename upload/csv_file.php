@@ -44,6 +44,8 @@
         $target_file = $target_dir .$file_name;
 
         
+        $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+
 
         $source = "/uploaded_files/" . $file_name;
         if (move_uploaded_file($_FILES["data"]["tmp_name"], $target_file)) {
@@ -52,8 +54,15 @@
         }
 
         echo "Source:";
-        var_dump($source);
         $new_table->set_source($source);
+
+        if ($extension == "tsv") {
+            $new_table->set_delimiter("\t");
+        }
+
+        if ($extension == "csv") {
+            $new_table->set_delimiter(",");
+        }
     
         
         $new_table->set_description($_POST['description']);
