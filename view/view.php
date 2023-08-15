@@ -5,7 +5,7 @@
 include('../components/headers/account_header.php');
 
     if (isset($_SESSION["view_table"])) {
-        $table = $_SESSION["view_table"];
+        $table = unserialize($_SESSION["view_table"]);
     }
 
     if (!isset($_SESSION['view_error'])) {

@@ -28,7 +28,7 @@ if (!isset($_GET['table_id'])) {
     $table = query_handler::fetch_table_by_id($table_id);
     $table->set_data($table->get_source());
 
-    $_SESSION["view_table"] = $table;
+    $_SESSION["view_table"] = serialize($table);
 
     $temp = query_handler::fetch_views_by_table_id($table_id);
     $views_tables = array();
