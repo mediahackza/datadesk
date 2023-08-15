@@ -4,10 +4,10 @@ include_once("../classes/google_sheet_table.php");
 
 
 if (!isset($_SESSION['new_table'])) {
-    $_SESSION['new_table'] = new google_sheet_table();
+    $_SESSION['new_table'] = serialize(new google_sheet_table());
 } 
 
-$new_table = $_SESSION['new_table'];
+$new_table = unserialize($_SESSION['new_table']);
 
 
 
