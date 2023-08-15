@@ -88,6 +88,13 @@ if (!isset($params['table_id'])) {
         <h2><?php echo $table->get_description(); ?></h2>
         </div>
         
+        <div class="share-box" id="share-link" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <input id="share-in" type="text" value="<?php echo $base . '/dataset/' . $table_id; ?>" readonly>
+            <div id="copy-button" class="copy-button">Copy</div>
+        </div>
+
+
         <table>
         <tr><td class="table-label">Source</td><td>
         <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
@@ -114,6 +121,7 @@ if (!isset($params['table_id'])) {
         <a href="<?php echo $base . '/api/json.php?table=' . $table_id . $view_string ?>" target="_blank">source</a>
     </div> -->
 
+    
     <div class="data-table">
         <table>
             <thead>
@@ -176,6 +184,20 @@ if (!isset($params['table_id'])) {
 
     </div>
 
+    <script>
+        const share_box = document.getElementById('share-link');
+        const share_text = document.getElementById('share-in');
+        const copy_button = document.getElementById('copy-button');
+
+        share_box.addEventListener('click', () => {
+            share_text.select();
+            share_text.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(share_text.value);
+            copy_button.innerHTML = "Copied!";
+            copy_button.classList.add('copied');
+        })
+    </script>
+
 <style>
     .view-wrap { 
         width: 90%; 
@@ -186,6 +208,20 @@ if (!isset($params['table_id'])) {
     .note {
         padding: 10px;
 
+    }
+    
+    .copied {
+        background: #00a5a2;
+        color: #fff;
+    }
+
+    .share-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;   
+    }
+    .share-box > * {
+        padding: 10px 0px;
     }
 
     .type {

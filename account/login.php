@@ -15,7 +15,12 @@
     if (isset($_POST['login'])) { // when the login button is pressed
         if ($account = set_data()) { // run the set data function to attempt a log in and retrieve the account data
             $_SESSION['user'] = serialize($account); // and save it in the session
-            Utils::navigate('home'); // then navigate to the home page
+
+            if (Utils::get_location('previous') != null) { // if there is a previous location
+                Utils::navigate('previous'); // navigate to it
+            } else {
+                Utils::navigate('home'); // otherwise navigate to the home page
+            }
         }      
     }
 
