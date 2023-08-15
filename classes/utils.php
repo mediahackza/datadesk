@@ -27,7 +27,6 @@
             
             $pos = strpos($string, $char);
             while (!($pos === false)) {
-                echo $string."<br/>";
 
                 if ($account_wrapping) {
 
@@ -35,9 +34,6 @@
                     foreach($wrappers as $start=>$end) {
                         $start_pos = strpos($string, $start, 0);
                         if ($start_pos !== false && $start_pos < $pos) {
-                            echo $string."<br/>";
-                            echo "I found one at start $start_pos <br/>";
-                            echo "<br/>";
                             $end_pos = strpos($string, $end, $start_pos+1);
                             if ($end_pos !== false && $end_pos > $max_pos) {
                                 $max_pos = $end_pos;
@@ -54,7 +50,6 @@
             }
 
             $array[] = $string;
-            echo "<br/><br/><br/>";
             return $array;
         }
 
