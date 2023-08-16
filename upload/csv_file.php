@@ -1,9 +1,11 @@
 <?php
     $new_table = new csv_table();
-    // var_dump($new_table);
+
+    $GLOBALS['new_table'] = $new_table;
 
     function save_data() {
-        global $new_table, $base;
+        global $base;
+        $new_table = $GLOBALS['new_table'];
         
         if (isset($_POST['add_tags'])) {
             $add_tags_list = $_POST['add_tags'];
@@ -36,7 +38,7 @@
     
         $new_table->set_name($_POST['db_name']);
 
-        $target_dir = "../uploaded_files/";
+        $target_dir =  "uploaded_files/";
         
         $file_name = basename($_FILES["data"]["name"]);
         $file_name  = Utils::check_chars($file_name);
@@ -46,13 +48,13 @@
         
 
         $source = "/uploaded_files/" . $file_name;
+        echo $target_file . " " . $_FILES['data']['tmp_name'];
         if (move_uploaded_file($_FILES["data"]["tmp_name"], $target_file)) {
         } else {
             return false;
         }
 
         echo "Source:";
-        var_dump($source);
         $new_table->set_source($source);
     
         

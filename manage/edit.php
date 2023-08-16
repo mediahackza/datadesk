@@ -1,19 +1,26 @@
 <?php
 
+include('components/note_handler.php');
+
 $tags = $GLOBALS['tags'];
 $tags->columns(array('*'));
 $tags->select();
 
+// $tags_list = query_handler::fetch_tags();
 $tags_list = array();
+
 $GLOBALS['tags_list'] = $tags_list;
 
 
 function make_tag($tag, $tags_list) {
     global $tags;
-
     foreach ($tags_list as $key=>$value) {
+
         if ($value->get_name() == $tag->get_name()) {
             $tag->set_id($value->get_id());
+
+            var_dump($tag);
+            echo "<br/><br/>";
             return $tag;
         }
     }
@@ -33,6 +40,8 @@ if ($res = $tags->query()) {
         $t->set_data_from_row($row);
         $tags_list[$t->get_name()] = $t;
     }
+
+    $GLOBALS['tags_list'] = $tags_list;
 }
 
 
@@ -94,7 +103,7 @@ if ($res = $tags->query()) {
                 }
                 
                 echo "tryign to update file <br/>";
-                $target_dir = "../uploaded_files/";
+                $target_dir = "uploaded_files/";
                 $file_name = basename($_FILES["source"]["name"]);
                 $file_name  = Utils::check_chars($file_name);
 
@@ -113,7 +122,7 @@ if ($res = $tags->query()) {
         $table->set_source_link($_POST['source_link']);
 
         if (query_handler::update_meta($table)) {
-            Utils::navigate('previous');
+            Utils::navigate('home');
         }
 
         
@@ -127,8 +136,9 @@ if ($res = $tags->query()) {
 
 ?>
 <div class="edit-wrap">
-<table>
 <form method="post" enctype="multipart/form-data">
+<table>
+
 
         <input type="hidden" name="edit" value="<?php echo $table->get_id(); ?>" />
         <tr><td class="table-label">Table name</td><td>
@@ -170,9 +180,10 @@ if ($res = $tags->query()) {
         </td></tr>
         <!-- <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a></td></tr> -->
         <tr><td colspan="2"><button type="submit" name="update" value="update" >Update</button></td></tr>
+
+</table> 
    
 </form>
-</table> 
 
 
 

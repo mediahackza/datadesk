@@ -35,13 +35,13 @@ if ($res = $tags->query()) {
         $t->set_data_from_row($row);
         $tags_list[$t->get_name()] = $t;
     }
+
+    $GLOBALS['tags_list'] = $tags_list;
 }
 
-var_dump($tags_list);
 function make_tag($tag) {
     global $tags;
     $tags_list = $GLOBALS['tag_list'];
-    var_dump($tags_list);
 
     foreach ($tags_list as $key=>$value) {
         if ($value->get_name() == $tag->get_name()) {

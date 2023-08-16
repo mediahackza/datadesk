@@ -11,10 +11,8 @@ if (isset($params['id'])) {
     $tags->add_where('id', $params['id'], '=');
     $tags->select();
     if ($res = $tags->query()) {
-        var_dump($res);
         $tag->set_data_from_row($res[0]);
     }
-    var_dump($tag);
     $update = true;
 }
 

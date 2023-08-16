@@ -47,7 +47,6 @@ function save_data() {
     if (isset($_POST['save_link'])) {
         $new_table->set_created_date(date("Y-m-d H:i:s"));
         $new_table->set_type("google_sheet");
-        // var_dump($new_table);
         if ($res  = query_handler::insert_meta_data($new_table)) {
             unset($_SESSION['new_table']);
             Utils::navigate('home');
