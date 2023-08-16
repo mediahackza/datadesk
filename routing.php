@@ -2,10 +2,13 @@
     
     class Route {
 
-        private function route_to($file, $val = false, $params = []) {
+        private function route_to($file, $val = false, $prev = false,  $params = []) {
             include('init.php');
-            if ($val) {
+            if ($prev) {
                 Utils::add_location('previous', $GLOBALS['base']."/".$_REQUEST['uri']);
+            }
+            if ($val) {
+                
                 include('validate.php');
             }
             include_once('components/headers/html_header.php');
@@ -17,7 +20,7 @@
             // 
         }
 
-        private function simpleRoute($file, $route, $val = false){
+        private function simpleRoute($file, $route, $val = false, $prev = false){
 
         
             //replacing first and last forward slashes
@@ -33,13 +36,13 @@
     
             if($reqUri == $route){
                 $params = [];
-                $this->route_to($file, $val);
+                $this->route_to($file, $val, $prev);
     
             }
     
         }
     
-        function add($route,$file, $val = false){
+        function add($route,$file, $val = false, $prev = false){
             
             //will store all the parameters value in this array
             $params = [];
@@ -52,7 +55,7 @@
     
             //if the route does not contain any param call simpleRoute();
             if(empty($paramMatches[0])){
-                $this->simpleRoute($file,$route, $val);
+                $this->simpleRoute($file,$route, $val, $prev);
                 return;
             }
     
@@ -116,7 +119,7 @@
             //now matching route with regex
             if(preg_match("/$reqUri/", $route))
             {
-                $this->route_to($file,$val, $params);
+                $this->route_to($file,$val,$prev, $params);
     
             }
         }
@@ -129,17 +132,17 @@
 
     $route = new Route();
     $route->add('/welcome', 'welcome.php');
-    $route->add('index.php', 'index.php', true);
+    $route->add('index.php', 'index.php', true, true);
     $route->add('/login', 'account/login.php');
     $route->add('/tags', 'tags/index.php', true);
     $route->add('/upload', 'upload/upload.php', true);
     $route->add('/logout', 'account/logout.php');
-    $route->add('/dataset/{table_id}', 'share/dataset.php', true);
-    $route->add('bookmarks', 'bookmarks/bookmarks.php', true);
-    $route->add('view/{table_id}', 'view/view_table.php', true);
-    $route->add('manage/edit/{table_id}', 'manage/edit.php', true);
-    $route->add('create_view', 'view/view.php', true);
-    $route->add('tags/add', 'tags/add.php', true);
+    $route->add('/dataset/{table_id}', 'share/dataset.php', true, true);
+    $route->add('bookmarks', 'bookmarks/bookmarks.php', true, true);
+    $route->add('view/{table_id}', 'view/view_table.php', true, true);
+    $route->add('manage/edit/{table_id}', 'manage/edit.php', true, true);
+    $route->add('create_view', 'view/view.php', true, true);
+    $route->add('tags/add', 'tags/add.php', true, true);
     $route->add('tags/delete/{id}', 'tags/delete.php', true);
     $route->add('tags/edit/{id}', 'tags/add.php', true);
     

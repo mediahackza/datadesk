@@ -28,7 +28,7 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
                 $value_to = $post['value_to']; // get the value to column from the post data
 
                 $piv_d = $table->pivot_table($piv_cols, $name_to, $value_to); // pivout the data using the post pivot details
-                // var_dump($piv_d);
+
                 
                 $json_array = $table->generate_json($piv_d['data'], $piv_d['headings']); // generate the json array from the pivoted data
             } else if (isset($_GET['view_id'])){ // if the user requests a previously saved pivot 

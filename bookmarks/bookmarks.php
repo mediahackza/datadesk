@@ -8,6 +8,7 @@ $tables = $GLOBALS['tables'];
 $tf = $GLOBALS['tf'];
 
 
+
     $bookmarks->clear_where();
     $bookmarks->add_where('user_id', user_obj()->get_id(), '=');
     $tables->columns(array("*"));

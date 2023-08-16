@@ -75,57 +75,6 @@ if ($res = $table_join_tags->query()) {
 
 }
 
-// if ($res = $table_join_tags->query()) {
-//     // var_dump($res);
-//     // echo json_encode($res);
-//     foreach($res as $row) {
-//         // echo json_encode($row);
-//         $tags->clear_where();
-//         $table_tags->clear_where();
-//         $tags->columns(array('*'));
-//         $table_tags->add_where('table_id', $row['id'], '=');
-//         $join = new join_table('right', array($tags, $table_tags), array(array($tags->get_col('id'), $table_tags->get_col('tag_id'))));
-
-//         $join->select();
-
-        
-//         $row['tags'] = $join->query();
-
-//         $output['tables'][] = $row;
-//     }
-// }
-
-// echo json_encode($output); // return the output array as json
-// $sql = "SELECT * FROM tables where status='active'"; // get all the tables from the database that are publicly available
-// if ($res = $db->query($sql)) { // if the query is successful
-//     while ($row = $res->fetch_assoc()) { // for each table item from the database
-
-//         $tags = array(); // declare ths table's array of tags
-//         // and fetch the tags associated with the table by id
-//         $sql =  "SELECT a.* from tags as a RIGHT JOIN table_tags as b ON b.tag_id = a.id WHERE b.table_id = " . $row['id'];
-        
-//         if ($inner_res = $db->query($sql)){ // if tags fetch is successful
-//             while ($inner_row = $inner_res->fetch_assoc()) {
-//                 $tags[] = $inner_row; // save each tag to the table's array of tags
-//             }
-//         }
-//         $row['tags'] = $tags; // save the array of tags to the table item
-//         $notes = array();
-//         $sql = "SELECT * FROM notes WHERE table_id = " . $row['id'];
-
-//         if ($inner_res = $db->query($sql)) {
-//             while ($inner_row = $inner_res->fetch_assoc()) {
-//                 $notes[] = $inner_row;
-//             }
-//         }
-
-//         $row['notes'] = $notes;
-//         $row['json_link'] = $base . "/api/json.php?table=" . $row['id'];
-//         $row['csv_link'] = $base . "/api/csv.php?table=" . $row['id'];
-//         $output['tables'][] = $row;
-//     }
-// }
-
 echo json_encode($output);
 
 ?>

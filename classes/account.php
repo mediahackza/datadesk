@@ -17,7 +17,6 @@ include_once('utils.php');
         }
 
         function set_data_from_row($row) {
-            // var_dump($row);
             $this->set_email($row['email']);
             $this->set_first_name($row['name']);
             $this->set_last_name($row['surname']);
@@ -54,7 +53,6 @@ include_once('utils.php');
                     $this->add_bookmark($row['table_id']);
                 }
             }
-
             return false;
         }
 
@@ -63,6 +61,7 @@ include_once('utils.php');
         }
 
         function is_bookmarked($id) {
+
             foreach($this->bookmarks as $bookmark) {
                 if ($bookmark == $id) {
                     return true;

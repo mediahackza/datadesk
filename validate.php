@@ -3,7 +3,7 @@
 include_once('classes/account.php');
 
 if (isset($_SESSION['user'])) {
-    $account = user_obj();
+    $account = user_obj()->refresh();
     $_SESSION['user'] = serialize($account);
 }   else {
     $account = new Account();
