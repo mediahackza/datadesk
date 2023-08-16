@@ -362,7 +362,6 @@ class sql_table {
         } 
 
         $this->query = $sql;
-        echo $this->query;
     }
 
 
