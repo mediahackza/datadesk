@@ -4,6 +4,6 @@ RewriteBase /datadesk
 
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !\.(css|png|jpg|csv)$
+RewriteCond %{REQUEST_URI} !\.(css|png|jpg|csv|tsv)$
 
 RewriteRule ^(.+)$ routing.php?uri=$1 [QSA,L]

@@ -1,8 +1,7 @@
 <?php
 
-Utils::add_location('previous', Utils::get_location('bookmarks'));
+// Utils::add_location('previous', Utils::get_location('bookmarks'));
 
-include_once('validate.php');
 
 $bookmarks = $GLOBALS['bookmarks'];
 $tables = $GLOBALS['tables'];

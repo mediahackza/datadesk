@@ -334,6 +334,37 @@ class sql_table {
 
     }
 
+    function update($set_data) {
+        $this->type = 'update';
+
+        $sql = "UPDATE " . $this->table . " SET ";
+
+        foreach($set_data as $column=>$value) {
+            switch($this->get_type($column)) {
+                case false:
+                    $this->error = "undefined column name: " . $column;
+                    throw new Exception($this->error);
+                    break;
+                case 'varchar':
+                    $sql .= $column . "='" . $value . "',";
+                    break;
+                case 'int':
+                    $sql .= $column . "=" . $value . ",";
+                    break;
+                }    
+        }
+
+        $sql = rtrim($sql, ",");
+
+        $w = $this->where();
+        if ($w != "") {
+            $sql .= " WHERE " . $w;
+        } 
+
+        $this->query = $sql;
+        echo $this->query;
+    }
+
 
 }
 

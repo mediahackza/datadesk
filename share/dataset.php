@@ -13,8 +13,7 @@ if (!isset($params['table_id'])) {
 
 }
 
-Utils::add_location('previous', $base . '/dataset/' . $table_id);
-include('validate.php');
+// Utils::add_location('previous', $base . '/dataset/' . $table_id);
 
     $table = query_handler::fetch_table_by_id($table_id);
     $table->set_data($table->get_source());

@@ -1,5 +1,4 @@
 <?php
-    include_once('classes/table.php');
     if (isset($_SESSION["view_table"])) {
         $table = unserialize($_SESSION["view_table"]);
     }

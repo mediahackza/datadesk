@@ -106,10 +106,12 @@ class query_handler {
     }
 
     static function attempt_login($email, $password) {
+        echo "attempting login";
         $password = encryption::encrypt($password);
         $query = "SELECT * FROM " . self::$user_table_name. " WHERE email='". $email. "' AND password='" . $password . "';";
 
         if ($res = self::$db->query($query)) {
+            echo "login successful";
             return self::handle_login_res($res);
         }
 
@@ -144,6 +146,7 @@ class query_handler {
 
     static function update_user_token($id, $token) {
         $query = "UPDATE " . self::$user_table_name . " SET token='" . $token . "' WHERE id='" . $id . "';";
+        echo $query;
         if ($res = self::$db->query($query)) {
             return true;
         }

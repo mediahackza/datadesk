@@ -1,6 +1,6 @@
 <?php
 // Utils::add_location('previous', $base);
-include_once('validate.php');
+
 include_once('components/note_handler.php');
 include_once('classes/notes.php');
 
