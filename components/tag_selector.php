@@ -1,11 +1,3 @@
-<?php
-
-
-
-
-
-?>
-
 
 <div id="active_tag_display" >
 <?php

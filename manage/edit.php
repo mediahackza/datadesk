@@ -5,11 +5,11 @@ $tags->columns(array('*'));
 $tags->select();
 
 $tags_list = array();
+$GLOBALS['tags_list'] = $tags_list;
 
 
-
-function make_tag($tag) {
-    global $tags_list, $tags;
+function make_tag($tag, $tags_list) {
+    global $tags;
 
     foreach ($tags_list as $key=>$value) {
         if ($value->get_name() == $tag->get_name()) {
@@ -50,16 +50,16 @@ if ($res = $tags->query()) {
     }
 
 
-    function save_data() {
+    function save_data($table) {
         global $base;
-        $table = $GLOBALS['table'];
+        $tags_list = $GLOBALS['tags_list'];
         $table->set_tags(array());
         if (isset($_POST['add_tags'])) {
             $tags = $_POST['add_tags'];
             foreach($tags as $tag) {
                 $t = new Tag();
                 $t->set_name($tag);
-                $t = make_tag($t);
+                $t = make_tag($t, $tags_list);
                 $table->add_tag($t);
             }
             
@@ -78,7 +78,6 @@ if ($res = $tags->query()) {
             return false;
         }
 
-        global $table;
         $table->set_name($_POST['name']);
 
         switch ($table->get_type()) {
@@ -121,15 +120,16 @@ if ($res = $tags->query()) {
     }
 
     if (isset($_POST['update'])) {
-        save_data();
+        save_data($table);
     }
 
     
 
 ?>
 <div class="edit-wrap">
+<table>
 <form method="post" enctype="multipart/form-data">
-    <table>
+
         <input type="hidden" name="edit" value="<?php echo $table->get_id(); ?>" />
         <tr><td class="table-label">Table name</td><td>
         <input type ="text" name="name" value="<?php echo $table->get_name(); ?>" /><br/>
@@ -170,8 +170,9 @@ if ($res = $tags->query()) {
         </td></tr>
         <!-- <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a></td></tr> -->
         <tr><td colspan="2"><button type="submit" name="update" value="update" >Update</button></td></tr>
-        </table>    
+   
 </form>
+</table> 
 
 
 

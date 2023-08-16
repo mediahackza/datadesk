@@ -104,15 +104,17 @@ if (!isset($params['table_id'])) {
         <tr><td class="table-label">Uploaded by</td><td><?php echo get_account($table->get_uploader_id())->get_full_name(); ?></td></tr>
         <tr><td class="table-label">Uploaded on</td><td><?php echo $table->get_created_date(); ?></td></tr>
         <tr><td class="table-label">Last updated</td><td><?php echo $table->get_update(); ?></td></tr>  
-        <tr><td class="table-label">Link to view data:</td><td><a href="<?php 
-        $link = $base . '/api/json.php?table=' . $table_id;
-        if (isset($_POST['view_id']) && $_POST['view_id'] != "unformatted") {
-            $link .= "&view_id=" . $views_tables[$view_id]['id'];
-        }
-
-        echo $link;
-        ?>" target="_blank">Link</a></td></tr>
+        
         </table>
+        <div class='detail-container' style="margin-top: 20px; margin-bottom: 20px">
+
+
+            <div class='data-label json'><a href='<?php echo $base ?>/api/json.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>' target='_blank'>JSON View</a></div>
+            <div class='data-label json'><a href='<?php echo $base ?>/api/json.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>&download' target='_blank' >JSON Download</a></div>
+            <div class='data-label csv'><a href='<?php echo $base ?>/api/csv.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>' target='_blank'>CSV View</a></div>
+            <div class='data-label csv'><a href='<?php echo $base ?>/api/csv.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>&download' target='_blank'>CSV Download</a></div>
+
+            </div>
 
     <!-- <div class="source-link">
         <a href="<?php echo $base . '/api/json.php?table=' . $table_id . $view_string ?>" target="_blank">source</a>

@@ -205,6 +205,22 @@
             }
         }
 
+        function get_csv_string($array = null, $headings = null) {
+            if ($array == null) {
+                $array = $this->get_data();
+            }
+            if ($headings == null) {
+                $headings = $this->get_headings();
+            }
+            $csv_string = "";
+            $csv_string = Utils::to_csv(array_column($headings, 'name')) . "\n";
+            
+            foreach($array as $key=>$value) {
+                $csv_string .= Utils::to_csv($value) . "\n";
+            }
+            return $csv_string;
+        }
+
         function generate_json($array = null, $headings = null) {
 
             if ($array == null) {
