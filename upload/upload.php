@@ -27,7 +27,6 @@ $tags->columns(array('*'));
 $tags->select();
 
 $tags_list = array();
-$GLOBALS['tag_list'] = $tags_list;
 
 if ($res = $tags->query()) {
     foreach($res as $row) {
@@ -41,7 +40,7 @@ if ($res = $tags->query()) {
 
 function make_tag($tag) {
     global $tags;
-    $tags_list = $GLOBALS['tag_list'];
+    $tags_list = $GLOBALS['tags_list'];
 
     foreach ($tags_list as $key=>$value) {
         if ($value->get_name() == $tag->get_name()) {
