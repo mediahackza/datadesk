@@ -21,6 +21,11 @@ include_once('csv_table.php');
             }
 
             $file = fopen($file_name, "r");
+            if ($extension == "tsv") {
+                $this->set_delimiter("\t");
+            } else {
+                $this->set_delimiter(",");
+            }
 
             if (!$file) {
                 return false;

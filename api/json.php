@@ -13,7 +13,6 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
 
     if (isset($_GET['table'])) { // if there is a table id in the url
         $table = query_handler::fetch_table_by_id($_GET['table']); // fetch the table from the database using the id in the url
-        
         $json_array; // declare the json array
  // if the table is a googlesheet
             
@@ -21,7 +20,6 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
                 echo "something went wron trying o set the data";
                 die(json_encode(array('error' => $table->error)));
             } // get the data from the google api and save it as an array in the table object
-
             if (isset($post['pivot']) && $post['pivot'] == true) { // if the user has requested a pivot
                 $piv_cols = $post['pivot_cols']; // get the pivot columns from the post data
                 $name_to = $post['name_to'];    // get the name to column from the post data

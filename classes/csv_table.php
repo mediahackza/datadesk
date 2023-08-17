@@ -50,6 +50,13 @@
 
         function get_source() {
             $link = $this->get_link();
+            $extension = pathinfo($link, PATHINFO_EXTENSION);
+
+            if ($extension == "tsv") {
+                $this->set_delimiter("\t");
+            } else {
+                $this->set_delimiter(",");
+            }
             $data = file_get_contents($link);
 
             // $this->set_delimiter($data);
@@ -83,7 +90,7 @@
         }
 
         function add_row($row) {
-            $temp = Utils::split($row, $this->delimiter);
+            $temp = Utils::split($row, $this->delimiter, true);
             $this->data[] = $temp;
         }
 

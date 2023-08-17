@@ -80,7 +80,7 @@ body {
         width: 300px;
     }
     .container-inner { 
-        width: 90%; 
+        /* width: 90%;  */
         max-width: 1000px; 
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -88,7 +88,6 @@ body {
         padding-top: 100px; 
         padding-bottom: 100px;
         color: #fff;
- 
         line-height: 1.5;
         height: 100%;
     }
@@ -131,7 +130,7 @@ body {
 
     }
     .container-four { 
-        padding: 30px; 
+        /* padding: 30px;  */
         background: #000; 
         color: #fff; 
         text-align: center;

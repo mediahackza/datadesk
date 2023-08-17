@@ -29,7 +29,6 @@
 
         function pivot_table($cols, $name_to, $value_to) {
         
-
             $old_data = $this->get_data();
             $new_data = array();
             $index_array = array();
@@ -180,6 +179,10 @@
 
         function get_notes() {
             return $this->notes;
+        }
+
+        function get_delimiter() {
+            return $this->delimiter;
         }
 
         function set_description($desc) {

@@ -26,7 +26,6 @@ include_once('../classes/query_handler.php'); // include query handler class
             $csv_array = $table->get_csv_string($piv_d['data'], $piv_d['headings']);
 
         } else {
-            echo "I'm obstinant and will use OG data";
             $csv_array = $table->get_csv_string(); 
         }
 

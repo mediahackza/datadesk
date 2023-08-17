@@ -13,11 +13,36 @@
             $_SESSION['utils_locations'] = self::$locations;
         }
         
-        static function split($string, $char) {
+        static function split($string, $char, $account_wrapping = false) {
             $array = array();
 
+            $wrappers = array(
+                "'" => "'",
+                '"' => '"',
+                '{' => '}',
+                '[' => ']',
+                '(' => ')'
+            );
+
+            
             $pos = strpos($string, $char);
             while (!($pos === false)) {
+
+                if ($account_wrapping) {
+
+                    $max_pos = $pos;
+                    foreach($wrappers as $start=>$end) {
+                        $start_pos = strpos($string, $start, 0);
+                        if ($start_pos !== false && $start_pos < $pos) {
+                            $end_pos = strpos($string, $end, $start_pos+1);
+                            if ($end_pos !== false && $end_pos > $max_pos) {
+                                $max_pos = $end_pos;
+                            }
+                            $pos = strpos($string, $char, $max_pos);
+                        }
+                    }
+
+                }
                 $temp = substr($string, 0, $pos);
                 $array[] = $temp;
                 $string = substr($string, $pos+1);  
@@ -25,7 +50,6 @@
             }
 
             $array[] = $string;
-
             return $array;
         }
 

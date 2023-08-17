@@ -1,0 +1,11 @@
+Sheet	Notes
+coal-units	This sheet lists all the individual units for each coal station
+coal-units	Each row needs a unique id and a station_id which maps to the coal-stations sheet
+gas-stations	This sheet lists all the individual units for each gas, liquid fuel turbine station
+gas-units	Each row needs a unique id and a station_id which maps to the gas-statsions sheet
+pumped-storage-stations	This sheet lists all the individual units for each pumped storage station
+pumped-storage-units	Each row needs a unique id and a station_id which maps to the pumped-storage-stations sheet
+hydro-stations	This sheet lists all the individual units for each hydropower station
+hydro-units	Each row needs a unique id and a station_id which maps to the hydro-stations sheet
+wind-stations	This sheet lists all the individual units for each wind-powered station
+wind-units	Each row needs a unique id and a station_id which maps to the wind-stations sheet

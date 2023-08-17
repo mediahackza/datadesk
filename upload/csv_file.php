@@ -46,6 +46,8 @@
         $target_file = $target_dir .$file_name;
 
         
+        $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+
 
         $source = "/uploaded_files/" . $file_name;
         echo $target_file . " " . $_FILES['data']['tmp_name'];
@@ -56,6 +58,14 @@
 
         echo "Source:";
         $new_table->set_source($source);
+
+        if ($extension == "tsv") {
+            $new_table->set_delimiter("\t");
+        }
+
+        if ($extension == "csv") {
+            $new_table->set_delimiter(",");
+        }
     
         
         $new_table->set_description($_POST['description']);
