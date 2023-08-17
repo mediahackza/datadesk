@@ -1,9 +1,11 @@
 <?php
     $new_table = new csv_table();
-    // var_dump($new_table);
+
+    $GLOBALS['new_table'] = $new_table;
 
     function save_data() {
-        global $new_table, $base;
+        global $base;
+        $new_table = $GLOBALS['new_table'];
         
         if (isset($_POST['add_tags'])) {
             $add_tags_list = $_POST['add_tags'];
@@ -36,7 +38,7 @@
     
         $new_table->set_name($_POST['db_name']);
 
-        $target_dir = "../uploaded_files/";
+        $target_dir =  "uploaded_files/";
         
         $file_name = basename($_FILES["data"]["name"]);
         $file_name  = Utils::check_chars($file_name);
@@ -48,6 +50,7 @@
 
 
         $source = "/uploaded_files/" . $file_name;
+        echo $target_file . " " . $_FILES['data']['tmp_name'];
         if (move_uploaded_file($_FILES["data"]["tmp_name"], $target_file)) {
         } else {
             return false;
@@ -91,7 +94,7 @@
     <table>
         <tr><td class="table-label">Save in Datadesk as:</td><td>
         <input placehoder="table name" type="text" name="db_name" value="<?php echo $new_table->get_name() ?>" /> </td></tr>
-        <tr><td class="table-label">Link to google sheet:</td><td>
+        <tr><td class="table-label">CSV file:</td><td>
         <input type="file" name="data" /></td></tr>
         <tr>
         <td class="table-label">Source name:</td>
@@ -102,7 +105,7 @@
         <td><input type="text" name="source_link" value="<?php echo $new_table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags:</td><td>
         <?php
-        include_once("../components/tag_selector.php");
+        include_once("components/tag_selector.php");
         ?>
         <tr><td class="table-label">Description:</td><td>
         <textarea name="description" maxlength= "1000" ><?php echo $new_table->get_description() ?></textarea> </td></td>

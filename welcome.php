@@ -1,9 +1,3 @@
-<?php
-include_once('init.php');
-include_once('components/headers/html_header.php'); //  adding the html header with styles
-include_once("components/headers/account_header.php"); // adding the navigation bar
-?>
-
 <div class="container container-one">
     <div class="container-inner">
         <div></div>
@@ -62,7 +56,7 @@ include_once('components/html_footer.php')
 
 body { 
 
-    background: url('./assets/images/keyboard.jpg') no-repeat center center fixed; 
+    background: url('<?php echo $base . "/assets/images/keyboard.jpg"; ?>') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

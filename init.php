@@ -1,42 +1,9 @@
 <?php
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    ini_set( "memory_limit","256M");
- 
+    include_once('conf.php');
 
     session_start();
-
-    include_once('conf.php');
-    include_once('classes/sql_table.php');
-    include_once('classes/query_handler.php');
-    include_once('classes/utils.php');
-    include_once('classes/notes.php');
-    include_once('classes/tags.php');
-    include_once('classes/table_factory.php');
-
     
-
-    $db = new database($host, $username, $password, $db_name);
-
-    query_handler::set_db($db);
-    query_handler::set_meta_table($table_tracking_name);
-    query_handler::set_account_table($account_table_name);
-    query_handler::set_note_table($note_table_name);
-    query_handler::set_tag_table($tag_table_name);
-    query_handler::set_view_table($table_view_name);
-
-    $users = new sql_table($account_table_name, $db);
-    $tables = new sql_table($table_tracking_name, $db);
-    $tags = new sql_table($tags_name, $db);
-    $notes = new sql_table($note_table_name, $db);
-    $table_tags = new sql_table($tag_table_name, $db);
-    $bookmarks = new sql_table($bookmarks_name, $db);
-    $tf = new Table_Factory();
-
-
-    function find_base() {
-        global $site_base_directory;
+    function find_base($site_base_directory) {
         $base = "";
         if (empty($_SERVER['HTTPS'])) {
             $base .= "http://";
@@ -50,7 +17,53 @@
         return $base;
     }
 
-    $base = find_base();
+    $base = find_base($site_base_directory);
+    $GLOBALS['base'] = $base;
+
+   
+    
+    include_once('classes/sql_table.php');
+    include_once('classes/query_handler.php');
+    include_once('classes/table_factory.php');
+
+    $db = new database($host, $username, $password, $db_name);
+
+    $GLOBALS['users'] = new sql_table($account_table_name, $db);
+    $GLOBALS['tables'] = new sql_table($table_tracking_name, $db);
+    $GLOBALS['tags'] = new sql_table($tags_name, $db);
+    $GLOBALS['notes'] = new sql_table($note_table_name, $db);
+    $GLOBALS['table_tags'] = new sql_table($tag_table_name, $db);
+    $GLOBALS['bookmarks'] = new sql_table($bookmarks_name, $db);
+    $GLOBALS['tf'] = new Table_Factory();
+
+    include_once('classes/table.php');
+    include_once('classes/utils.php');
+    include_once('classes/notes.php');
+    include_once('classes/tags.php');
+    include_once('components/account_list.php');
+
+
+    Utils::add_location('login', $base."/login");
+    Utils::add_location('upload', $base."/upload");
+    Utils::add_location('tags', $base."/tags");
+    Utils::add_location('home', $base);
+    Utils::add_location('welcome', $base."/welcome");
+    Utils::add_location('bookmarks', $base."/bookmarks");
+    
+
+    
+
+    
+
+    query_handler::set_db($db);
+    query_handler::set_meta_table($table_tracking_name);
+    query_handler::set_account_table($account_table_name);
+    query_handler::set_note_table($note_table_name);
+    query_handler::set_tag_table($tag_table_name);
+    query_handler::set_view_table($table_view_name);
+
+    
+    
     // $base = "http://localhost:8888/datadesk";
 
     function user_obj() {
@@ -60,12 +73,8 @@
             return unserialize($_SESSION['user']);
         }
     }
+    
+    // include_once("validate.php");
+    
 
-
-    Utils::add_location('login', $base."/account/login.php");
-    Utils::add_location('upload', $base."/upload/upload.php");
-    Utils::add_location('tags', $base."/tags/index.php");
-    Utils::add_location('home', $base);
-    Utils::add_location('welcome', $base."/welcome.php");
-    Utils::add_location('bookmarks', $base."/bookmarks/index.php");
 ?>

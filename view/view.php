@@ -1,9 +1,4 @@
 <?php
-    include_once('../init.php');
-    include_once('../classes/query_handler.php');
-    include('../components/headers/html_header.php');
-include('../components/headers/account_header.php');
-
     if (isset($_SESSION["view_table"])) {
         $table = unserialize($_SESSION["view_table"]);
     }
@@ -12,8 +7,11 @@ include('../components/headers/account_header.php');
         $_SESSION['view_error'] = "";
     }
 
+    $GLOBALS['table'] = $table;
+
+
     function save_view() {
-        global $table;
+        $table = $GLOBALS['table'];
         if (!(isset($_POST['view_name'])) || $_POST['view_name'] == '') {
             $_SESSION['view_error'] = "Please enter a name for the view";
             return false;
@@ -49,7 +47,7 @@ include('../components/headers/account_header.php');
     }  
 
     if (isset($_POST['save_view']) && save_view()) {
-        header("Location: ".$base."/view/index.php?table_id=".$table->get_id());
+        header("Location: ".$base."/view/".$table->get_id());
     }
         
 
@@ -61,7 +59,7 @@ include('../components/headers/account_header.php');
     <p>Use this form to create a new view of the data.  You can select which columns to include, and rename the columns and values. This transformation will perform a "pivot longer" transformation on the data. </p>
     <p>See this <a href="http://localhost:8888/datadesk/assets/references/tidyr.pdf" taget="_blank">R Cheatsheet</a> for an example of this.</p>
     <table>
-    <form action="view.php" method='post'>
+    <form method='post'>
         <div class="error"><?php echo $_SESSION['view_error'] ?></div>
         <input  type="hidden" name="table_id" value="<?php echo $table->get_id() ?>" autocomplete="off">
         <tr><td class="table-label">View name</td><td><input type="text" name="view_name" placeholder="save view as" /></td></tr>

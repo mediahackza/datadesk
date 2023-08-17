@@ -1,18 +1,15 @@
 <?php 
-include_once("../classes/google_sheet_table.php");
-
-
 
 if (!isset($_SESSION['new_table'])) {
     $_SESSION['new_table'] = serialize(new google_sheet_table());
 } 
 
 $new_table = unserialize($_SESSION['new_table']);
-
+$GLOBALS['new_table'] = $new_table;
 
 
 function save_data() {
-    global $new_table;
+    $new_table = $GLOBALS['new_table'];
 
     if (isset($_POST['add_tags'])) {
         $add_tags_list = $_POST['add_tags'];
@@ -50,7 +47,6 @@ function save_data() {
     if (isset($_POST['save_link'])) {
         $new_table->set_created_date(date("Y-m-d H:i:s"));
         $new_table->set_type("google_sheet");
-        // var_dump($new_table);
         if ($res  = query_handler::insert_meta_data($new_table)) {
             unset($_SESSION['new_table']);
             Utils::navigate('home');
@@ -86,7 +82,7 @@ if (isset($_POST['save_link'])) {
         <td><input type="text" name="source_link" value="<?php echo $new_table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
-        include_once("../components/tag_selector.php");
+        include_once("components/tag_selector.php");
         ?>
         </td></tr>
         <tr><td class="table-label">Description:</td><td>

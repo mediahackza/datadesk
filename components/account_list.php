@@ -1,5 +1,7 @@
 <?php
-$accounts = array(); 
+$accounts = array();
+
+$users = $GLOBALS['users'];
 
 $users->columns(array('id', 'email', 'name', 'surname'));
 $users->select();
@@ -11,8 +13,10 @@ if ($res = $users->query()) {
     }
 }
 
+$GLOBALS['accounts'] = $accounts;
+
 function get_account($id) {
-    global $accounts;
+    $accounts = $GLOBALS['accounts'];
     foreach($accounts as $key=>$value) {
         if ($value->get_id() == $id) {
             return $value;

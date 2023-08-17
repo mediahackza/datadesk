@@ -1,29 +1,26 @@
 <?php
-include_once('../init.php');
-include_once('../classes/notes.php');
-include_once('../components/note_handler.php');
-include_once('../classes/query_handler.php');
-include_once('../classes/table.php');
-include_once('../classes/google_sheet_table.php');
-include('../components/account_list.php');
 
+include('components/note_handler.php');
 
-include_once('../components/headers/html_header.php');
-include_once('../components/headers/account_header.php');
-
+$tags = $GLOBALS['tags'];
 $tags->columns(array('*'));
 $tags->select();
 
+// $tags_list = query_handler::fetch_tags();
 $tags_list = array();
 
+$GLOBALS['tags_list'] = $tags_list;
 
 
-function make_tag($tag) {
-    global $tags_list, $tags;
-
+function make_tag($tag, $tags_list) {
+    global $tags;
     foreach ($tags_list as $key=>$value) {
+
         if ($value->get_name() == $tag->get_name()) {
             $tag->set_id($value->get_id());
+
+            var_dump($tag);
+            echo "<br/><br/>";
             return $tag;
         }
     }
@@ -43,11 +40,13 @@ if ($res = $tags->query()) {
         $t->set_data_from_row($row);
         $tags_list[$t->get_name()] = $t;
     }
+
+    $GLOBALS['tags_list'] = $tags_list;
 }
 
 
-    if (isset($_POST['edit'])) {
-        $id = $_POST['edit'];
+    if (isset($params['table_id'])) {
+        $id = $params['table_id'];
         $table = query_handler::fetch_table_by_id($id);
         query_handler::populate_tags($table);
         $_SESSION['edit'] = $id;
@@ -60,16 +59,16 @@ if ($res = $tags->query()) {
     }
 
 
-    function save_data() {
+    function save_data($table) {
         global $base;
-        $table = $GLOBALS['table'];
+        $tags_list = $GLOBALS['tags_list'];
         $table->set_tags(array());
         if (isset($_POST['add_tags'])) {
             $tags = $_POST['add_tags'];
             foreach($tags as $tag) {
                 $t = new Tag();
                 $t->set_name($tag);
-                $t = make_tag($t);
+                $t = make_tag($t, $tags_list);
                 $table->add_tag($t);
             }
             
@@ -88,7 +87,6 @@ if ($res = $tags->query()) {
             return false;
         }
 
-        global $table;
         $table->set_name($_POST['name']);
 
         switch ($table->get_type()) {
@@ -105,7 +103,7 @@ if ($res = $tags->query()) {
                 }
                 
                 echo "tryign to update file <br/>";
-                $target_dir = "../uploaded_files/";
+                $target_dir = "uploaded_files/";
                 $file_name = basename($_FILES["source"]["name"]);
                 $file_name  = Utils::check_chars($file_name);
 
@@ -124,14 +122,14 @@ if ($res = $tags->query()) {
         $table->set_source_link($_POST['source_link']);
 
         if (query_handler::update_meta($table)) {
-            Utils::navigate('previous');
+            Utils::navigate('home');
         }
 
         
     }
 
     if (isset($_POST['update'])) {
-        save_data();
+        save_data($table);
     }
 
     
@@ -139,7 +137,9 @@ if ($res = $tags->query()) {
 ?>
 <div class="edit-wrap">
 <form method="post" enctype="multipart/form-data">
-    <table>
+<table>
+
+
         <input type="hidden" name="edit" value="<?php echo $table->get_id(); ?>" />
         <tr><td class="table-label">Table name</td><td>
         <input type ="text" name="name" value="<?php echo $table->get_name(); ?>" /><br/>
@@ -160,7 +160,7 @@ if ($res = $tags->query()) {
         <td><input type="text" name="source_link" value="<?php echo $table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
-        include('../components/tag_selector.php')
+        include('components/tag_selector.php')
         ?></td></tr>
         <tr><td class="table-label">Source</td>
         <td>
@@ -180,7 +180,9 @@ if ($res = $tags->query()) {
         </td></tr>
         <!-- <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a></td></tr> -->
         <tr><td colspan="2"><button type="submit" name="update" value="update" >Update</button></td></tr>
-        </table>    
+
+</table> 
+   
 </form>
 
 
@@ -193,16 +195,15 @@ if ($res = $tags->query()) {
         $note_data = $value;
         $edit_note = true;
         // echo $note_data . "<br/>";
-        include('../components/note.php');
+        include('components/note.php');
         if (!$show_all) {
             break;
         }
     }
 echo "</div>";
 
-    include('../components/note_input.php');
+    include('components/note_input.php');
 
-    include_once('../components/html_footer.php');
 ?>
 
 </div>

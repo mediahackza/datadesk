@@ -1,32 +1,19 @@
 <?php
 
-include_once('../init.php');
-include_once('../classes/utils.php');
-include_once('../classes/table.php');
-include_once('../classes/google_sheet_table.php');
-include_once('../components/account_list.php');
-include_once('../classes/notes.php');
-include_once('../components/note_handler.php');
-
-include('../components/headers/html_header.php');
-include('../components/headers/account_header.php');
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 
 $table_id;
 
-if (!isset($_GET['table_id'])) {
+if (!isset($params['table_id'])) {
     Utils::navigate('home');
     die;
 } else {
-    $table_id = $_GET['table_id'];
+    $table_id = $params['table_id'];
 }
 
     $table = query_handler::fetch_table_by_id($table_id);
     $table->set_data($table->get_source());
+
 
     $_SESSION["view_table"] = serialize($table);
 
@@ -87,7 +74,7 @@ if (!isset($_GET['table_id'])) {
     </form>
 </div>
 <div class="controls-item">
-        <form action="view.php" method='post'>
+        <form action="../create_view" method='post'>
             <input type="hidden" name="table_id" value="<?php echo $table_id; ?>">
             <button type="submit" name="submit" value="Create new view">Create new view</button>
             
@@ -102,6 +89,13 @@ if (!isset($_GET['table_id'])) {
         <h2><?php echo $table->get_description(); ?></h2>
         </div>
         
+        <div class="share-box" id="share-link" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <input id="share-in" type="text" value="<?php echo $base . '/dataset/' . $table_id; ?>" readonly>
+            <div id="copy-button" class="copy-button">Copy</div>
+        </div>
+            
+
         <table>
         <tr><td class="table-label">Source</td><td>
         <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
@@ -111,23 +105,29 @@ if (!isset($_GET['table_id'])) {
    <tr><td class="table-label">
         Name in database</td><td><?php echo $table->get_db_name(); ?></td></tr>
         <tr><td class="table-label">Type</td><td><?php echo $table->get_type(); ?></td></tr>
+        <tr><td class="table-label">Source name:</td><td><?php echo $table->get_source_name(); ?></td></tr>
+        <tr><td class="table-label">Source Link:</td><td><?php echo $table->get_source_link(); ?></td></tr>
         <tr><td class="table-label">Uploaded by</td><td><?php echo get_account($table->get_uploader_id())->get_full_name(); ?></td></tr>
         <tr><td class="table-label">Uploaded on</td><td><?php echo $table->get_created_date(); ?></td></tr>
         <tr><td class="table-label">Last updated</td><td><?php echo $table->get_update(); ?></td></tr>  
-        <tr><td class="table-label">Link to view data:</td><td><a href="<?php 
-        $link = $base . '/api/json.php?table=' . $table_id;
-        if (isset($_POST['view_id']) && $_POST['view_id'] != "unformatted") {
-            $link .= "&view_id=" . $views_tables[$view_id]['id'];
-        }
-
-        echo $link;
-        ?>" target="_blank">Link</a></td></tr>
+        
         </table>
+
+        <div class='detail-container' style="margin-top: 20px; margin-bottom: 20px">
+
+
+            <div class='data-label json'><a href='<?php echo $base ?>/api/json.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>' target='_blank'>JSON View</a></div>
+            <div class='data-label json'><a href='<?php echo $base ?>/api/json.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>&download' target='_blank' >JSON Download</a></div>
+            <div class='data-label csv'><a href='<?php echo $base ?>/api/csv.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>' target='_blank'>CSV View</a></div>
+            <div class='data-label csv'><a href='<?php echo $base ?>/api/csv.php?table=<?php echo $table->get_id(); if (isset($_POST['view_id'])) { echo "&view_id=". $views_tables[$_POST['view_id']]['id'];} ?>&download' target='_blank'>CSV Download</a></div>
+
+            </div>
 
     <!-- <div class="source-link">
         <a href="<?php echo $base . '/api/json.php?table=' . $table_id . $view_string ?>" target="_blank">source</a>
     </div> -->
 
+    
     <div class="data-table">
         <table>
             <thead>
@@ -190,6 +190,20 @@ if (!isset($_GET['table_id'])) {
 
     </div>
 
+    <script>
+        const share_box = document.getElementById('share-link');
+        const share_text = document.getElementById('share-in');
+        const copy_button = document.getElementById('copy-button');
+
+        share_box.addEventListener('click', () => {
+            share_text.select();
+            share_text.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(share_text.value);
+            copy_button.innerHTML = "Copied!";
+            copy_button.classList.add('copied');
+        })
+    </script>
+
 <style>
     .view-wrap { 
         width: 90%; 
@@ -200,6 +214,20 @@ if (!isset($_GET['table_id'])) {
     .note {
         padding: 10px;
 
+    }
+    
+    .copied {
+        background: #00a5a2;
+        color: #fff;
+    }
+
+    .share-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;   
+    }
+    .share-box > * {
+        padding: 10px 0px;
     }
 
     .type {
