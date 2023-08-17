@@ -77,7 +77,7 @@ if (!isset($params['table_id'])) {
     </form>
 </div>
 <div class="controls-item">
-        <form action="view.php" method='post'>
+        <form action="<?php echo $base . "/create_view"; ?>" method='post'>
             <input type="hidden" name="table_id" value="<?php echo $table_id; ?>">
             <button type="submit" name="submit" value="Create new view">Create new view</button>
             
