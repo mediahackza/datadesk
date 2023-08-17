@@ -106,10 +106,12 @@ class query_handler {
     }
 
     static function attempt_login($email, $password) {
+        echo "attempting login";
         $password = encryption::encrypt($password);
         $query = "SELECT * FROM " . self::$user_table_name. " WHERE email='". $email. "' AND password='" . $password . "';";
 
         if ($res = self::$db->query($query)) {
+            echo "login successful";
             return self::handle_login_res($res);
         }
 
@@ -144,6 +146,7 @@ class query_handler {
 
     static function update_user_token($id, $token) {
         $query = "UPDATE " . self::$user_table_name . " SET token='" . $token . "' WHERE id='" . $id . "';";
+        echo $query;
         if ($res = self::$db->query($query)) {
             return true;
         }
@@ -225,7 +228,8 @@ class query_handler {
         }
         $table->find_meta_data();
 
-        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, data_source, upload_user_id, status, type, description, col_count, row_count, headings, delimiter) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().", '".$table->get_status()."', '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', ".$table->col_count. ", ".$table->row_count.", '".Utils::check_quotes($table->get_heading_string())."', '".$table->get_delimiter()."');";
+        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, data_source, upload_user_id, type, description, col_count, row_count, headings, source_name, source_link) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().", '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', ".$table->col_count. ", ".$table->row_count.", '".Utils::check_quotes($table->get_heading_string())."', '".$table->get_source_name()."', '".$table->get_source_link()."');";
+        echo $query;
         if ($res = self::$db->query($query)) {
             $table->set_id(self::$db->insert_id);
             return self::assign_tags($table);
@@ -240,8 +244,8 @@ class query_handler {
         $table->set_data($table->get_source());
 
         $table->find_meta_data();
-        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', data_source='".$table->get_source()."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."', delimiter='".$table->get_delimiter()."' WHERE id=".$table->get_id().";";
-
+        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', data_source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."', source_name='".$table->get_source_name()."', source_link='".$table->get_source_link()."', status='".$table->get_status()."' WHERE id=".$table->get_id().";";
+        echo $query;
         if ($res = self::$db->query($query)) {
             return self::assign_tags($table);
         }
@@ -321,7 +325,6 @@ class query_handler {
 
     static function fetch_table_by_id($id) {
         $query = "SELECT *, ".self::$meta_table_name.".id as table_id FROM " . self::$meta_table_name . " INNER JOIN " . self::$user_table_name . " ON ".self::$meta_table_name.".upload_user_id = ". self::$user_table_name . ".id AND " . self::$meta_table_name . ".id=" . $id;
-
         if ($res = self::$db->query($query)) {
             $row = $res->fetch_assoc();
 

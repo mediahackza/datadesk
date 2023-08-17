@@ -17,7 +17,6 @@ include_once('utils.php');
         }
 
         function set_data_from_row($row) {
-            // var_dump($row);
             $this->set_email($row['email']);
             $this->set_first_name($row['name']);
             $this->set_last_name($row['surname']);
@@ -54,7 +53,6 @@ include_once('utils.php');
                     $this->add_bookmark($row['table_id']);
                 }
             }
-
             return false;
         }
 
@@ -63,6 +61,7 @@ include_once('utils.php');
         }
 
         function is_bookmarked($id) {
+
             foreach($this->bookmarks as $bookmark) {
                 if ($bookmark == $id) {
                     return true;
@@ -123,15 +122,34 @@ include_once('utils.php');
 
             $users->select();
             if ($res = $users->query()) {
-                if (count($res) == 0) {
+                echo "found user";
+                if (count($res) != 1) {
                     return false;
                 }
                 $this->set_data_from_row($res[0]);
                 $this->log_in();
+                $this->update_token();
+
                 return true;
             } else {
                 return false;
             }
+        }
+
+        function update_token() {
+            global $users;
+            $token = Utils::generate_token($this->get_id());
+            $data = Utils::decode_token($token);
+            $users->clear_where();
+            $users->add_where('id', $this->get_id(), '=');
+            $users->update(array('token' => $data['token']));
+
+            if ($res = $users->query()) {
+                $this->set_token($data['token']);
+                setcookie('login_session', $token, time() + 1209600, "/");
+                return true;
+            }   
+            return false;
         }
 
         function attempt_login_token() {
@@ -150,7 +168,6 @@ include_once('utils.php');
                         return false;
                     }
                     $this->set_data_from_row($res[0]);
-                    echo "logged in successfully from cookie";
                     return true; 
                 }
                 

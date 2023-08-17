@@ -102,7 +102,11 @@
             return $this->has_headings;
         }
 
-        function get_csv_string() {
+        function get_csv_string($array = null, $headings = null) {
+
+            if ($array != null && $headings != null) {
+                return parent::get_csv_string($array, $headings);
+            }
             return $this->csv_string;
         }
 

@@ -84,6 +84,9 @@
 
         static function get_location($name) {
             self::restore_session();
+            if (!isset(self::$locations[$name])) {
+                return null;
+            }
             return self::$locations[$name];
         }
 

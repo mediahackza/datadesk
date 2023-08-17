@@ -1,19 +1,18 @@
 <?php
 
-include_once('../init.php');
-include_once('../conf.php');
-
-include('../components/headers/html_header.php');
-include('../components/headers/account_header.php');
 
 $update = false;
 $tag = new tag();
 
-if (isset($_GET['tag_name']) && isset($_GET['id'])) {
-    $tag_name = $_GET['tag_name'];
-    $tag->set_name($tag_name);
-    $tag->set_id($_GET['id']);
-
+if (isset($params['id'])) {
+    $tags = $GLOBALS['tags'];
+    $tags->columns(array('*'));
+    $tags->clear_where();
+    $tags->add_where('id', $params['id'], '=');
+    $tags->select();
+    if ($res = $tags->query()) {
+        $tag->set_data_from_row($res[0]);
+    }
     $update = true;
 }
 

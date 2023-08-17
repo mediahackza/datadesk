@@ -11,7 +11,7 @@
     <?php     
     } else {
     ?>
-        <div class='account'><a href='<?php echo $base."/account/login.php";?>'>Login</a> 
+        <div class='account'><a href='<?php echo $base."/login";?>'>Login</a> 
         
         <!-- | <a href='<?php echo $base."/account/register.php";?>'>Register</a> -->
     </div>

@@ -1,11 +1,4 @@
 <?php
-    include_once('../init.php'); // get initialisations
-    include_once('../classes/account.php'); // get account class
-    // include_once('../classes/query_handler.php');
-    // if (!isset($_GET['dev'])) {
-    //     Utils::navigate('welcome');
-    //     exit;
-    // }
     if (!isset($_SESSION['login_error'])) {
         $_SESSION['login_error'] = "";
     }
@@ -22,7 +15,12 @@
     if (isset($_POST['login'])) { // when the login button is pressed
         if ($account = set_data()) { // run the set data function to attempt a log in and retrieve the account data
             $_SESSION['user'] = serialize($account); // and save it in the session
-            Utils::navigate('home'); // then navigate to the home page
+
+            if (Utils::get_location('previous') != null) { // if there is a previous location
+                Utils::navigate('previous'); // navigate to it
+            } else {
+                Utils::navigate('home'); // otherwise navigate to the home page
+            }
         }      
     }
 
@@ -47,6 +45,7 @@
 
         // if the function runs this far the email and password fields are not empty
         // and a login attempt will be made
+        echo "going to attempt login";
         if (!$account->attempt_login($_POST['email'], $_POST['password'])) { // attenmpt a logion using email and password
             // if login attempt was unsuccesful
             
@@ -57,10 +56,6 @@
         $_SESSION['login_error'] = ""; // if the function runs this far there is no error
         return $account; // return the account object from the database 
     }
-
-    
-include_once('../components/headers/html_header.php'); //  adding the html header with styles
-include_once("../components/headers/account_header.php"); // adding the navigation bar
 ?>
 <!-- this is the login box on the page -->
 <div class="container">
@@ -86,9 +81,3 @@ include_once("../components/headers/account_header.php"); // adding the navigati
     </form>
 
 </div>
-
-<?php
-
-include('../components/html_footer.php'); // adding the html footer
-
-?>
