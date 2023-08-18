@@ -44,6 +44,7 @@ class sql_table {
     public $where_data = array();
     public $sorting_data = array();
     public $group_by_data = array();
+    public $type;
 
 
     // the constructor takes in a table name and a database object
