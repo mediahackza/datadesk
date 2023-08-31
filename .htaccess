@@ -1,6 +1,7 @@
+php_value memory_limit 256M
 RewriteEngine On
 
-RewriteBase /datadesk
+RewriteBase /
 
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d

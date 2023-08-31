@@ -1,6 +1,5 @@
-<?php 
-    
-    class Route {
+<?php
+ class Route {
 
         private function route_to($file, $val = false, $prev = false,  $params = []) {
             include('init.php');
@@ -145,7 +144,7 @@
     $route->add('tags/add', 'tags/add.php', true, true);
     $route->add('tags/delete/{id}', 'tags/delete.php', true);
     $route->add('tags/edit/{id}', 'tags/add.php', true);
-    
+
     $route->add('add-bookmark', 'account/add-bookmark.php', true);
     $route->add('delete-table', 'manage/delete.php', true);
 
