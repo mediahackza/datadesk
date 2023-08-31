@@ -1,5 +1,6 @@
 <?php
-    include_once('conf.php');
+    include('conf.php');
+    define( 'WP_MEMORY_LIMIT', '256M' );
 
     session_start();
     

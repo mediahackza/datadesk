@@ -15,6 +15,7 @@ $tags_name = "tags";
 $note_table_name = "notes";
 $tag_table_name = "table_tags";
 $table_view_name = "table_view";
+$bookmarks_name = "bookmarks";
 
 
 switch($_SERVER['SERVER_NAME']) {

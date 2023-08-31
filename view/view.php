@@ -57,7 +57,7 @@
     
     <div class="page-title">Pivot Data</div>
     <p>Use this form to create a new view of the data.  You can select which columns to include, and rename the columns and values. This transformation will perform a "pivot longer" transformation on the data. </p>
-    <p>See this <a href="http://localhost:8888/datadesk/assets/references/tidyr.pdf" taget="_blank">R Cheatsheet</a> for an example of this.</p>
+    <p>See this <a href="<?php echo $base; ?>/assets/references/tidyr.pdf" taget="_blank">R Cheatsheet</a> for an example of this.</p>
     <table>
     <form method='post'>
         <div class="error"><?php echo $_SESSION['view_error'] ?></div>
