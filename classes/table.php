@@ -6,7 +6,7 @@
         private $id;
         private $name;
         private $headings;
-        private $data;
+        public $data;
         private $db_name;
         private $date_created;
         private $last_update;
