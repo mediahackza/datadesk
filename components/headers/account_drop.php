@@ -11,6 +11,9 @@ if (isset($_POST['menu_choice'])) {
         case 'bookmarks':
             Utils::navigate('bookmarks');
             break;
+        case 'collections':
+            Utils::navigate('collections');
+            break;
     }
 }
 
@@ -39,7 +42,7 @@ function is_selected($dir) {
     <select name="menu_choice" id="account-menu" onchange="submitAccountForm()">
         <option value='account' <?php if(is_selected("")) { echo "selected";} ?> >my account</option>
         <option value=''>my profile</option>
-
+        <option value="collections" >Collections</option>
         <option value='bookmarks' <?php if (is_selected('/bookmarks')) { echo "selected";} ?> >my bookmarks</option>
         <option value="logout">logout</option>
     </select>
