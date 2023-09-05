@@ -3,76 +3,76 @@
 
 include_once('../conf.php'); // include configuration
 include_once('../init.php'); // include initialisations
-
+$post = json_decode(file_get_contents('php://input'), true);
 
 include_once('../classes/query_handler.php');   // include query handler class
 
 $output = array('tables' => array(), 'tags' => array()); // declare the output array
-$sql = "select count(a.id) as count, c.id, c.name from tables as a JOIN table_tags as b ON a.id = b.table_id JOIN tags as c ON c.id = b.tag_id WHERE status = 'active' GROUP BY c.name, c.id;"; // get all the tags and the number of tables they are associated with
 
-$tags->columns(array('id', "count(id) as count", 'name'));
-$tables->clear_where();
-$tables->where('status', 'active', '=');
-$tags->clear_group_by();
-$tags->add_group_by('id');
-$tags->add_group_by('name');
-$join_1 = new join_table('', array($tables, $table_tags), array(array($tables->get_col('id'), $table_tags->get_col('table_id'))));
-$join_2 = new Join_table('', array($join_1, $tags), array(array($table_tags->get_col('tag_id'), $tags->get_col('id'))));
+$tables = $GLOBALS['tables'];
+$table_tags = $GLOBALS['table_tags'];
+$tags = $GLOBALS['tags'];
 
-$join_2->select();
-// echo $join_2->query;
-if ($res = $join_2->query()) { // if the query is successful
-    foreach($res as $row) { // save each tag from the database into the output array
-        $output['tags'][] = $row;
-    }
+if (isset($post['verbose']) || isset($_GET['verbose'])) {
+    $verbose = true;
+    $tables->columns(array('*'));
+} else {
+    $verbose = false;
+    $tables->columns(array('id', 'str_name', 'description'));
 }
 
 $tables->clear_where();
-$tables->columns(array('*'));
-$tables->where('status', 'active', '=');
-$tables->clear_sorting();
-$tables->add_sorting('id', 'DESC');
-$tags->columns(array('id as tag_id', 'name as tag_name'));
-$table_tags->columns(array());
-$tags->clear_group_by();
-// $tag->clear_sorting();
-// $tags->add_sorting('id', 'DESC');
+$tables->add_where('status', 'active', '=');
 
-$table_join_tags_mid = new join_table('', array($tables, $table_tags), array(array($tables->get_col('id'), $table_tags->get_col('table_id'))));
-$table_join_tags = new join_table('', array($table_join_tags_mid, $tags), array(array($table_tags->get_col('tag_id'), $tags->get_col('id'))));
-$table_join_tags->select();
+if (isset($post['id'])) {
+    $tables->add_where('id', $post['id'], '=');
+}
 
-// echo $table_join_tags->query;
+if (isset($_GET['id'])) {
+    $tables->add_where('id', $_GET['id'], '=');
+}
 
-// echo $table_join_tags->query;
 
-if ($res = $table_join_tags->query()) {
-    $temp_table = $res[0];
-    for ($i =0; $i < count($res); $i++) {
+$tables->select();
 
-        if ($res[$i]['id'] == $temp_table['id']) {
-            $temp_tag = array('id' => $res[$i]['tag_id'], 'name' => $res[$i]['tag_name']);
-            $temp_table['tags'][] = $temp_tag;
-        } else {
-            unset($temp_table['tag_id']);
-            unset($temp_table['tag_name']);
-            $notes->columns(array('*'));
-            $notes->clear_where();
-            $notes->add_where('table_id', $temp_table['id'], '=');
-            $notes->select();
+// echo $tables->query;
 
-            if ($note_res = $notes->query()) {
-                $temp_table['notes'] = $note_res;
+
+if ($res = $tables->query()) {
+    // foreach($res as $key => $value) {
+    //     $tags->columns('*');
+    //     $tags->clear_where();
+    //     $tagble_tags->clear_where();
+    //     $table_tags->add_where('table_id', $res['id'], '=');
+
+    //     $join = new join_table('left', array($tables, $table_tags),array(array($tables->get_col('id'), $table_tags->get_col('table_id'))));
+    //     $join->select();
+
+    //     if($res = $join->query()) {
+
+    //     }
+    // }
+        if ($verbose) {
+            foreach ($res as $t) {
+                $post['id'] = $t['id'];
+                include('meta_notes.php');
+                $t['notes'] = $out_notes;
+                include('meta_tags.php');
+                $t['tags'] = $out_tags;
+
+                $output['tables'][] = $t;
             }
-            $temp_table['json_link'] = $base . "/api/json.php?table=" . $temp_table['id'];
-            $temp_table['csv_link'] = $base . "/api/csv.php?table=" . $temp_table['id'];
-            $output['tables'][] = $temp_table;
-            $temp_table = $res[$i];
-
-            
+        } else {
+            $output['tables'] = $res;
         }
-    }
+}
 
+$tags->clear_where();
+$tags->columns(array('*'));
+$tags->select();
+
+if ($res = $tags->query()) {
+    $output['tags'] = $res;
 }
 
 echo json_encode($output);

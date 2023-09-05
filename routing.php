@@ -145,6 +145,7 @@
     $route->add('tags/add', 'tags/add.php', true, true);
     $route->add('tags/delete/{id}', 'tags/delete.php', true);
     $route->add('tags/edit/{id}', 'tags/add.php', true);
+    $route->add('/collections', 'collections/index.php', true);
     
     $route->add('add-bookmark', 'account/add-bookmark.php', true);
     $route->add('delete-table', 'manage/delete.php', true);

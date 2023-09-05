@@ -50,7 +50,7 @@
     Utils::add_location('home', $base);
     Utils::add_location('welcome', $base."/welcome");
     Utils::add_location('bookmarks', $base."/bookmarks");
-    
+    Utils::add_location('collections', $base."/collections");
 
     
 
