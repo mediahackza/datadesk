@@ -1,12 +1,12 @@
 <?php
-    include_once('../init.php'); // include initialisations
-    include_once('../classes/account.php'); // include account class
-    include_once('../classes/query_handler.php'); // include query handler class
+    // include_once('../init.php'); // include initialisations
+    // include_once('../classes/account.php'); // include account class
+    // include_once('../classes/query_handler.php'); // include query handler class
 
-    if (!isset($_GET['dev'])) {
-        Utils::navigate('welcome');
-        exit;
-    }
+    // if (!isset($_GET['dev'])) {
+    //     Utils::navigate('welcome');
+    //     exit;
+    // }
     // the set_data function handles the registration errors and returns false if there is an error
     function set_data() { 
 
@@ -54,8 +54,8 @@
     }
 
 
-    include_once("../components/headers/html_header.php"); // include the html header with styles
-    include_once("../components/headers/account_header.php"); // include the navigation bar
+    // include_once("../components/headers/html_header.php"); // include the html header with styles
+    // include_once("../components/headers/account_header.php"); // include the navigation bar
 
 ?>
 
@@ -81,5 +81,5 @@
 </div>
 
 <?php
-    include_once("../components/html_footer.php"); // include the html footer
+    // include_once("../components/html_footer.php"); // include the html footer
 ?>
