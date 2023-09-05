@@ -7,6 +7,10 @@
     //     Utils::navigate('welcome');
     //     exit;
     // }
+
+    if (!isset($_SESSION['login_error'])) {
+        $_SESSION['login_error'] = "";
+    }
     // the set_data function handles the registration errors and returns false if there is an error
     function set_data() { 
 
