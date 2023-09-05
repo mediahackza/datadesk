@@ -62,7 +62,7 @@
 <!-- this is the registration box on the page -->
 <div class ="container">
 
-    <div class="error" ></div>
+    <div class="error" ><?php echo $_SESSION['login_error'];?></div>
     <form method="post" class="inner-container">
 
         <h2 class="heading">Register</h2>
