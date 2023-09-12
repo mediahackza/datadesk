@@ -122,7 +122,6 @@ include_once('utils.php');
 
             $users->select();
             if ($res = $users->query()) {
-                echo "found user";
                 if (count($res) != 1) {
                     return false;
                 }

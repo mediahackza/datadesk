@@ -17,14 +17,13 @@
             $array = array();
 
             $wrappers = array(
-                "'" => "'",
+                // "'" => "'",
                 '"' => '"',
                 '{' => '}',
                 '[' => ']',
                 '(' => ')'
             );
 
-            
             $pos = strpos($string, $char);
             while (!($pos === false)) {
 
@@ -38,18 +37,28 @@
                             if ($end_pos !== false && $end_pos > $max_pos) {
                                 $max_pos = $end_pos;
                             }
-                            $pos = strpos($string, $char, $max_pos);
+                            $pos = strpos($string, $char, $max_pos-1);
+                            
+                            if ($pos === false) {
+                                $pos = strlen($string) ;
+                            }
+
+                            
                         }
-                    }
+                     }
 
                 }
                 $temp = substr($string, 0, $pos);
                 $array[] = $temp;
                 $string = substr($string, $pos+1);  
+
                 $pos = strpos($string, $char);
             }
 
-            $array[] = $string;
+            if ($string !== '') {
+                $array[] = $string;
+            }
+            
             return $array;
         }
 

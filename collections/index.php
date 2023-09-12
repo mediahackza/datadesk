@@ -2,7 +2,7 @@
 
     $tables = $GLOBALS['tables'];
 
-    $tables->columns('*');
+    $tables->columns(['*']);
     $tables->clear_where();
     $tables->add_where('type', 'collection', '=');
 
@@ -16,5 +16,5 @@
 
 <form>
     <input type="text" name="collection-name" placeholder="name of collection" />
-    <input type="submit" />
+    <input type="submit" value="add a new collection"/>
 </form>
