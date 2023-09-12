@@ -49,6 +49,7 @@
 
                 }
                 $temp = substr($string, 0, $pos);
+                // $temp = str_replace('"', '', $temp);
                 $array[] = $temp;
                 $string = substr($string, $pos+1);  
 
