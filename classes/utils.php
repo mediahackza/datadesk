@@ -154,6 +154,22 @@
             }
             return $temp;
         }
+
+        static function fetch_table($id) {
+            $tables = $GLOBALS['tables'];
+        
+            $tables->columns(array('*'));
+            $tables->clear_where();
+            $tables->add_where('id', $id, '=');
+            $tables->select();
+    
+            if ($res = $tables->query()) {
+                $table = $GLOBALS['tf']->create_table($res[0]);
+                return $table;
+            }
+
+            return false;
+        }
     }
 
 ?>

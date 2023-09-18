@@ -136,7 +136,7 @@
     $route->add('/tags', 'tags/index.php', true);
     $route->add('/upload', 'upload/upload.php', true);
     $route->add('/logout', 'account/logout.php');
-    $route->add('/dataset/{table_id}', 'share/dataset.php', true, true);
+    $route->add('/dataset/{table_id}', 'view/view_table.php', true, true);
     $route->add('bookmarks', 'bookmarks/bookmarks.php', true, true);
     $route->add('view/{table_id}', 'view/view_table.php', true, true);
     $route->add('manage/edit/{table_id}', 'manage/edit.php', true, true);

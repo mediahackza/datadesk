@@ -3,12 +3,19 @@
 
 //    unset($_SESSION['new_table']);
 
-    if (!isset($_SESSION['upload_error'])) {
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+    if (!isset($_SESSION['upload_error'])) { //  init upload error for session
         $_SESSION['upload_error'] = "";
     }
 
-    if (isset($_POST['cancel'])) {
-        unset($_SESSION['new_table']);
+    if (isset($_POST['cancel'])) { // if upload is cancelled
+        unset($_SESSION['new_table']); // clear $_SESSION data
+        unset($_SESSION['upload_error']);
+        unset($_SESSION['upload_type']);
+
         Utils::navigate('home');
         // die;
     }
@@ -21,51 +28,91 @@
     }
 
     $add_tags_list = array();
-$tags = $GLOBALS['tags'];
+    $tags = $GLOBALS['tags'];
 
-$tags->columns(array('*'));
-$tags->select();
+    $tags->columns(array('*'));
+    $tags->select();
 
-$tags_list = array();
+    $tags_list = array();
 
-if ($res = $tags->query()) {
-    foreach($res as $row) {
-        $t = new Tag();
-        $t->set_data_from_row($row);
-        $tags_list[$t->get_name()] = $t;
-    }
-
-    $GLOBALS['tags_list'] = $tags_list;
-}
-
-function make_tag($tag) {
-    global $tags;
-    $tags_list = $GLOBALS['tags_list'];
-
-    foreach ($tags_list as $key=>$value) {
-        if ($value->get_name() == $tag->get_name()) {
-            $tag->set_id($value->get_id());
-            return $tag;
+    if ($res = $tags->query()) {
+        foreach($res as $row) {
+            $t = new Tag();
+            $t->set_data_from_row($row);
+            $tags_list[$t->get_name()] = $t;
         }
+
+        $GLOBALS['tags_list'] = $tags_list;
     }
 
-    $tags->insert(array('name' => $tag->get_name()));
-    $id = $tags->query();
-    $tag->set_id($id);
-    unset($_SESSION['home-data']['tags']);
-    return $tag;
-    
+    function make_tag($tag) {
+        global $tags;
+        $tags_list = $GLOBALS['tags_list'];
 
-}
+        foreach ($tags_list as $key=>$value) {
+            if ($value->get_name() == $tag->get_name()) {
+                $tag->set_id($value->get_id());
+                return $tag;
+            }
+        }
 
-if (isset($_POST['upload_type'])) {
-    $type = $_POST['upload_type'];
-    $_SESSION['upload_type'] = $type;
-    unset($_SESSION['new_table']);
-}
+        $tags->insert(array('name' => $tag->get_name()));
+        $id = $tags->query();
+        $tag->set_id($id);
+        unset($_SESSION['home-data']['tags']);
+        return $tag;
+        
+
+    }
+
+    if (isset($_POST['upload_type'])) {
+        $type = $_POST['upload_type'];
+        $_SESSION['upload_type'] = $type;
+        unset($_SESSION['new_table']);
+    }
 
 
+    function global_save_data() {
+        $new_table = $GLOBALS['new_table'];
+        $success = true;
 
+        if (isset($_POST['add_tags'])) {
+            $add_tags_list = $_POST['add_tags'];
+            foreach ($add_tags_list as $tag) {
+                $t = new Tag();
+                $t->set_name($tag);
+                $t = make_tag($t);
+                $new_table->add_tag($t);
+            }
+        }
+
+        if (!isset($_POST['db_name']) || $_POST['db_name'] == "") {
+            $_SESSION['upload_error'] = "No name given for data set";
+            $success = false;
+        }
+
+        if (!isset($_POST['category']) || $_POST['category'] == '') {
+            $_SESSION['upload_error'] = "Category can not be left blank";
+            $success = false;
+        }
+        if (isset($_POST['source_name'])) {
+            $new_table->set_source_name($_POST['source_name']);
+        }
+
+        if (isset($_POST['source_link'])) {
+            $new_table->set_source_link($_POST['source_link']);
+        }
+
+        $new_table->set_category($_POST['category']);
+        $new_table->set_name($_POST['db_name']);
+        $new_table->set_description($_POST['description']);
+        $new_table->set_uploader_id(user_obj()->get_id());
+        $new_table->set_created_date(date("Y-m-d H:i:s"));
+
+        $_SESSION['new_table'] = serialize($new_table);
+
+        return $success;
+    }
 
 
     ?>

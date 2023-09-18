@@ -45,17 +45,19 @@ if ($res = $tags->query()) {
 }
 
 
+
+
+
     if (isset($params['table_id'])) {
         $id = $params['table_id'];
-        $table = query_handler::fetch_table_by_id($id);
-        query_handler::populate_tags($table);
+        $table = Utils::fetch_table($id);
+        
         $_SESSION['edit'] = $id;
     }
 
     if (isset($_SESSION['edit'])) {
         $id = $_SESSION['edit'];
-        $table = query_handler::fetch_table_by_id($id);
-        query_handler::populate_tags($table);
+        $table = Utils::fetch_table($id);
     }
 
 
@@ -120,6 +122,7 @@ if ($res = $tags->query()) {
         $table->set_status($_POST['status']);
         $table->set_source_name($_POST['source_name']);
         $table->set_source_link($_POST['source_link']);
+        $table->set_category($_POST['category']);
 
         if (query_handler::update_meta($table)) {
             Utils::navigate('home');
@@ -160,7 +163,12 @@ if ($res = $tags->query()) {
         <td><input type="text" name="source_link" value="<?php echo $table->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
-        include('components/tag_selector.php')
+        include('components/tag_selector.php');
+        ?></td></tr>
+        <tr><td class="table-label">Category</td><td>
+        <?php
+        $table_cat_data = $table;
+        include('components/category_selector.php');
         ?></td></tr>
         <tr><td class="table-label">Source</td>
         <td>

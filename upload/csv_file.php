@@ -1,42 +1,28 @@
 <?php
-    $new_table = new csv_table();
 
-    $GLOBALS['new_table'] = $new_table;
+
+    if (!isset($_SESSION['new_table']) || unserialize($_SESSION['new_table'])->get_type() != 'csv_file') {
+        echo "initialising  new csv table";
+        $_SESSION['new_table'] = serialize(new csv_table());
+
+    } 
+
+    $GLOBALS['new_table'] = unserialize($_SESSION['new_table']);
+
+
 
     function save_data() {
-        global $base;
-        $new_table = $GLOBALS['new_table'];
-        
-        if (isset($_POST['add_tags'])) {
-            $add_tags_list = $_POST['add_tags'];
-            foreach($add_tags_list as $tag) {
-                $t = new Tag();
-                $t->set_name($tag);
-                $t = make_tag($t);
-                $new_table->add_tag($t);
-            }
-        }
 
-        if (!isset($_POST['db_name']) || $_POST['db_name'] == "") {
-            echo "no name";
+        if (!global_save_data()) {
             return false;
         } 
+        global $base;
+        $new_table = $GLOBALS['new_table'];
     
         if (!isset($_FILES['data']) || $_FILES['data']['size'] == 0) {
-            echo "no data";
+            $_SESSION['upload_error'] = "No file has been given";
             return false;
         }
-
-        if (isset($_POST['source_name'])) {
-            $new_table->set_source_name($_POST['source_name']);
-        }
-
-        if (isset($_POST['source_link'])) {
-            $new_table->set_source_link($_POST['source_link']);
-        }
-
-    
-        $new_table->set_name($_POST['db_name']);
 
         $target_dir =  "uploaded_files/";
         
@@ -45,18 +31,16 @@
 
         $target_file = $target_dir .$file_name;
 
-        
         $extension = pathinfo($file_name, PATHINFO_EXTENSION);
-
 
         $source = "/uploaded_files/" . $file_name;
         echo $target_file . " " . $_FILES['data']['tmp_name'];
         if (move_uploaded_file($_FILES["data"]["tmp_name"], $target_file)) {
         } else {
+            $_SESSION['upload_error'] = "Oops. Something went wrong transfering you file";
             return false;
         }
 
-        echo "Source:";
         $new_table->set_source($source);
 
         if ($extension == "tsv") {
@@ -67,21 +51,20 @@
             $new_table->set_delimiter(",");
         }
     
-        
-        $new_table->set_description($_POST['description']);
-        $new_table->set_uploader_id(user_obj()->get_id());
-
-        $new_table->set_created_date(date("Y-m-d H:i:s"));
-        $new_table->set_type("csv_file");
         if ($res  = query_handler::insert_meta_data($new_table)) {
+            unset($_SESSION['new_table']);
             return true;
         }
+
+        $_SESSION['upload_error'] = "Something went wrong uploading data to database." . $new_table->error;
         return false;
     }
 
     if (isset($_POST['save_link'])) {
         if (save_data()) {
             Utils::navigate('home');
+        } else {
+            header("Refresh: 0");
         }
         
     }
@@ -93,22 +76,29 @@
     <form method="post" class="inner-container" enctype="multipart/form-data">
     <table>
         <tr><td class="table-label">Save in Datadesk as:</td><td>
-        <input placehoder="table name" type="text" name="db_name" value="<?php echo $new_table->get_name() ?>" /> </td></tr>
+        <input placehoder="table name" type="text" name="db_name" value="<?php echo $GLOBALS['new_table']->get_name() ?>" /> </td></tr>
         <tr><td class="table-label">CSV file:</td><td>
         <input type="file" name="data" /></td></tr>
         <tr>
         <td class="table-label">Source name:</td>
-        <td><input type="text" name="source_name" value="<?php echo $new_table->get_source_name() ?>" /></td>
+        <td><input type="text" name="source_name" value="<?php echo $GLOBALS['new_table']->get_source_name() ?>" /></td>
         </tr>
         <tr>
         <td class="table-label">Source link:</td>
-        <td><input type="text" name="source_link" value="<?php echo $new_table->get_source_link() ?>" /></td></tr>
+        <td><input type="text" name="source_link" value="<?php echo $GLOBALS['new_table']->get_source_link() ?>" /></td></tr>
         <tr><td class="table-label">Tags:</td><td>
         <?php
         include_once("components/tag_selector.php");
         ?>
+        </td></tr>
+        <tr><td class="table-label">Category:</td><td>
+            <?php
+            $table_cat_data = $GLOBALS['new_table'];
+            include_once("components/category_selector.php");
+            ?>
+        </td></tr>
         <tr><td class="table-label">Description:</td><td>
-        <textarea name="description" maxlength= "1000" ><?php echo $new_table->get_description() ?></textarea> </td></td>
+        <textarea name="description" maxlength= "1000" ><?php echo $GLOBALS['new_table']->get_description() ?></textarea> </td></td>
   
     <tr><td colspan="2">
         <!-- <input type="submit" name="save_sql" value="save to database" /> -->

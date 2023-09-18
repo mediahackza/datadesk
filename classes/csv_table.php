@@ -13,6 +13,7 @@
             parent::__construct();
             $this->csv_string = "";
             $this->delimiter = ",";
+            $this->set_type('csv_file');
         }
         
 

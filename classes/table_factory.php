@@ -19,7 +19,7 @@ include('google_sheet_table.php');
             );
         } 
 
-        function add_type($type, $class) {
+        function add_type($type, $callback) {
             $this->types[$type] = $callback;
         }
 
