@@ -19,12 +19,23 @@
         public $error;
         private $source_name;
         private $source_link;
+        private $category;
+        public $col_count;
+        public $row_count;
 
         private $notes = array();
         private $tags = array();
 
         function get_link() {
             return $this->source;
+        }
+
+        public function get_category() {
+            return $this->category;
+        }
+
+        function set_category($category) {
+            $this->category = $category;
         }
 
         function pivot_table($cols, $name_to, $value_to) {
@@ -275,7 +286,8 @@
             $this->db_name = Utils::check_chars($this->db_name);
         }
 
-        function set_type($type){
+        public function set_type($type){
+            echo "setting this table to type $type <br/>";
             $this->type = $type;
         }
 
@@ -368,6 +380,7 @@
             $this->set_description($row['description']);
             $this->set_source_name($row['source_name']);
             $this->set_source_link($row['source_link']);
+            $this->set_category($row['category']);
             $this->fetch_notes(); 
             $this->fetch_tags();
         }

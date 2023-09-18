@@ -11,8 +11,9 @@
 
     class google_sheet_table extends csv_table {
 
-        function __constructor() {
-            parent::__constructor();
+        function __construct() {
+            parent::__construct();
+            $this->set_type('google_sheet');
         }
 
         function get_link() {
