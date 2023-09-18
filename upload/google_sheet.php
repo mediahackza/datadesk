@@ -1,7 +1,6 @@
 <?php 
 
 if (!isset($_SESSION['new_table']) || unserialize($_SESSION['new_table'])->get_type() != 'google_sheet') {
-    echo "initialising  new google table";
     $_SESSION['new_table'] = serialize(new google_sheet_table());
 
 } 

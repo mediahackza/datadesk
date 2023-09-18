@@ -2,7 +2,6 @@
 
 
     if (!isset($_SESSION['new_table']) || unserialize($_SESSION['new_table'])->get_type() != 'csv_file') {
-        echo "initialising  new csv table";
         $_SESSION['new_table'] = serialize(new csv_table());
 
     } 
