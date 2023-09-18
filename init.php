@@ -12,7 +12,13 @@
             $base .= "https://";
         }
         
-        $base .= $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']. $site_base_directory;
+        $base .= $_SERVER['SERVER_NAME'];
+
+        if ($_SERVER['SERVER_NAME'] == 'localhost') {
+            $base .=  ":" . $_SERVER['SERVER_PORT'];
+        } 
+
+        $base .= $site_base_directory;
         // $base = "http://localhost:8888/datadesk";
 
         return $base;
