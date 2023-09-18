@@ -244,7 +244,7 @@ class query_handler {
         $table->set_data($table->get_source());
 
         $table->find_meta_data();
-        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', data_source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."', source_name='".$table->get_source_name()."', source_link='".$table->get_source_link()."', status='".$table->get_status()."' WHERE id=".$table->get_id().";";
+        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', data_source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."', source_name='".$table->get_source_name()."', source_link='".$table->get_source_link()."', status='".$table->get_status()."', category='".$table->get_category()."' WHERE id=".$table->get_id().";";
         echo $query;
         if ($res = self::$db->query($query)) {
             return self::assign_tags($table);

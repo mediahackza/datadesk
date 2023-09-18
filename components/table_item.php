@@ -40,6 +40,7 @@
 
      <div class='block-details'>
      <table>
+     <tr><td class="table-label">Category</td><td><?php echo $t->get_category() ?></td></tr>
      <tr><td class='table-label'>Description</td><td><?php echo $t->get_description() ?></td></tr>
 
      <tr><td class='table-label'>Last Modified</td><td><?php echo date('D, j M Y',strtotime($t->get_update())) ?></td></tr>

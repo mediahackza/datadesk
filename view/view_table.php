@@ -11,7 +11,7 @@ if (!isset($params['table_id'])) {
     $table_id = $params['table_id'];
 }
 
-    $table = query_handler::fetch_table_by_id($table_id);
+    $table = Utils::fetch_table($table_id);
     $table->set_data($table->get_source());
 
 
@@ -97,6 +97,7 @@ if (!isset($params['table_id'])) {
             
 
         <table>
+        
         <tr><td class="table-label">Source</td><td>
         <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
         </td></tr>
@@ -105,6 +106,7 @@ if (!isset($params['table_id'])) {
    <tr><td class="table-label">
         Name in database</td><td><?php echo $table->get_db_name(); ?></td></tr>
         <tr><td class="table-label">Type</td><td><?php echo $table->get_type(); ?></td></tr>
+        <tr><td class="table-label">Category</td><td><?php echo $table->get_category() ?></td></tr>
         <tr><td class="table-label">Source name:</td><td><?php echo $table->get_source_name(); ?></td></tr>
         <tr><td class="table-label">Source Link:</td><td><?php echo $table->get_source_link(); ?></td></tr>
         <tr><td class="table-label">Uploaded by</td><td><?php echo get_account($table->get_uploader_id())->get_full_name(); ?></td></tr>

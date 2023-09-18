@@ -287,7 +287,6 @@
         }
 
         public function set_type($type){
-            echo "setting this table to type $type <br/>";
             $this->type = $type;
         }
 
