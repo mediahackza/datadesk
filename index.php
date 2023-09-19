@@ -218,7 +218,6 @@ switch($_SESSION['sorting']) {
 }
 
 if ($_SESSION['category_sorting'] != '') {
-    echo "category sorting is " . $_SESSION['category_sorting']; 
     $tables->add_where('category', $_SESSION['category_sorting'], '=');
 }
 
