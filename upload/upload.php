@@ -108,6 +108,7 @@ error_reporting(E_ALL);
         $new_table->set_description($_POST['description']);
         $new_table->set_uploader_id(user_obj()->get_id());
         $new_table->set_created_date(date("Y-m-d H:i:s"));
+        $new_table->set_published_date($_POST['published_date']);
 
         $_SESSION['new_table'] = serialize($new_table);
 

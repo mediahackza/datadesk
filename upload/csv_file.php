@@ -85,6 +85,10 @@
         <tr>
         <td class="table-label">Source link:</td>
         <td><input type="text" name="source_link" value="<?php echo $GLOBALS['new_table']->get_source_link() ?>" /></td></tr>
+        <tr>
+            <td class="table-label">Date published:</td>
+            <td><input type="text" name="published_date" value="<?php echo $GLOBALS['new_table']->get_published_date() ?>" /></td>
+        </tr>
         <tr><td class="table-label">Tags:</td><td>
         <?php
         include_once("components/tag_selector.php");

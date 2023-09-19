@@ -123,6 +123,7 @@ if ($res = $tags->query()) {
         $table->set_source_name($_POST['source_name']);
         $table->set_source_link($_POST['source_link']);
         $table->set_category($_POST['category']);
+        $table->set_published_date($_POST['published_date']);
 
         if (query_handler::update_meta($table)) {
             Utils::navigate('home');
@@ -161,6 +162,7 @@ if ($res = $tags->query()) {
         <tr>
         <td class="table-label">Source link:</td>
         <td><input type="text" name="source_link" value="<?php echo $table->get_source_link() ?>" /></td></tr>
+        <tr><td class="table-label">Source published:</td><td><input type="text" name="published_date" value ="<?php echo $table->get_published_date(); ?>" /></td></tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
         include('components/tag_selector.php');

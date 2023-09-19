@@ -20,6 +20,7 @@
         private $source_name;
         private $source_link;
         private $category;
+        private $publish_date;
         public $col_count;
         public $row_count;
 
@@ -36,6 +37,14 @@
 
         function set_category($category) {
             $this->category = $category;
+        }
+
+        function get_published_date() {
+            return $this->publish_date;
+        }
+
+        function set_published_date($pd) {
+                $this->publish_date = $pd;
         }
 
         function pivot_table($cols, $name_to, $value_to) {
@@ -380,6 +389,7 @@
             $this->set_source_name($row['source_name']);
             $this->set_source_link($row['source_link']);
             $this->set_category($row['category']);
+            $this->set_published_date($row['published_date']);
             $this->fetch_notes(); 
             $this->fetch_tags();
         }

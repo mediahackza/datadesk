@@ -228,7 +228,7 @@ class query_handler {
         }
         $table->find_meta_data();
 
-        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, data_source, upload_user_id, type, description, col_count, row_count, headings, source_name, source_link, category) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().", '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', ".$table->col_count. ", ".$table->row_count.", '".Utils::check_quotes($table->get_heading_string())."', '".$table->get_source_name()."', '".$table->get_source_link()."', '".$table->get_category()."');";
+        $query = "INSERT INTO " . self::$meta_table_name . " (str_name, db_name, date_added,last_updated, data_source, upload_user_id, type, description, col_count, row_count, headings, source_name, source_link, category, published_date) VALUES ('" . $table->get_name() . "', '" . $table->get_db_name() . "', STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'),STR_TO_DATE('". $table->get_created_date()  ."', '%Y-%m-%d %H:%i:%s'), '".$table->source."', ".$table->get_uploader_id().", '".$table->get_type()."', '".Utils::check_quotes($table->get_description())."', ".$table->col_count. ", ".$table->row_count.", '".Utils::check_quotes($table->get_heading_string())."', '".$table->get_source_name()."', '".$table->get_source_link()."', '".$table->get_category()."', '".$table->get_published_date()."');";
         echo $query;
         if ($res = self::$db->query($query)) {
             $table->set_id(self::$db->insert_id);
@@ -244,7 +244,7 @@ class query_handler {
         $table->set_data($table->get_source());
 
         $table->find_meta_data();
-        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', data_source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."', source_name='".$table->get_source_name()."', source_link='".$table->get_source_link()."', status='".$table->get_status()."', category='".$table->get_category()."' WHERE id=".$table->get_id().";";
+        $query = "UPDATE " . self::$meta_table_name . " SET last_updated=CURRENT_TIMESTAMP, str_name='". $table->get_name()."', data_source='".$table->source."', description='".Utils::check_quotes($table->get_description())."', row_count=".$table->row_count.", col_count=".$table->col_count.", headings='".Utils::check_quotes($table->get_heading_string())."', source_name='".$table->get_source_name()."', source_link='".$table->get_source_link()."', status='".$table->get_status()."', category='".$table->get_category()."', published_date='".$table->get_published_date()."' WHERE id=".$table->get_id().";";
         echo $query;
         if ($res = self::$db->query($query)) {
             return self::assign_tags($table);
