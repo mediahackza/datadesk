@@ -230,7 +230,6 @@ $table_tags->columns(array('table_id'));
 $join = new join_table('left', array($tables, $table_tags),array(array($tables->get_col('id'), $table_tags->get_col('table_id'))));
 $join->select();
 
-echo $join->query;
 
 if ($tabs = $join->query()) {;
     foreach($tabs as $key=>$value) {
