@@ -28,6 +28,10 @@ if (!isset($_SESSION['sorting'])) {
     $_SESSION['sorting'] = "";
 }
 
+if (!isset($_SESSION['category_sorting'])) {
+    $_SESSION['category_sorting'] = "";
+}
+
 if (isset($_POST['delete'])) {
     echo $_POST['delete'];
 }
@@ -53,6 +57,10 @@ function print_row($t) {
 if (isset($_POST['sorting'])) {
     $_SESSION['sorting'] = $_POST['sorting'];
     
+}
+
+if (isset($_POST['category_sorting'])) {
+    $_SESSION['category_sorting'] = $_POST['category_sorting'];
 }
 
 if (isset($_POST['search'])) {
@@ -100,6 +108,35 @@ if (isset($_POST['search'])) {
                     <!-- <option value="oldest_mod" <?php if ((isset($_SESSION['sorting'])) && ($_SESSION['sorting'] == 'oldest_mod')) { echo "selected='selected'";} ?> >oldest modification first</option> -->
                 </select>
             </form>
+
+            <?php 
+                $categories_list = [
+                    'unset',
+                    'Climate',
+                    'Economy',
+                    'Education',
+                    'Governance',
+                    'Health',
+                    'Lifestyle',
+                    'Sports'
+                ];
+            ?>
+            <form method="post" id="category_filter_form" >
+                <select name="category_sorting">
+                    <option value="">Sort by category</option>
+                    <?php 
+                        foreach($categories_list as $key=>$value) {
+                            $opt = "<option value='". $value ."'";
+                            if (isset($_SESSION['category_sorting']) && $_SESSION['category_sorting'] == $value) {
+                                $opt .= "selected='selected'";
+                            }
+
+                            $opt .= ">" . $value . "</option>";
+                            echo $opt;
+                        }
+                    ?>
+                </select>
+            </form>
         </div>
         <div class="filter-item">
         <?php include('components/tag_list.php'); ?>
@@ -112,7 +149,10 @@ if (isset($_POST['search'])) {
 
     const filter_form = document.getElementById('filter_form');
     const search_form = document.getElementById('search_form');
+    const category_filter = document.getElementById('category_filter_form');
+
     const filter_select = filter_form.elements['sorting'];
+    const cat_filter_select = category_filter.elements['category_sorting'];
 
     console.log(filter_select);
 
@@ -120,6 +160,10 @@ if (isset($_POST['search'])) {
     
         filter_form.submit();
     });
+
+    cat_filter_select.addEventListener('change' , () => {
+        category_filter.submit();
+    })
 
 </script>
 
@@ -173,12 +217,20 @@ switch($_SESSION['sorting']) {
         $tables->clear_sorting();
 }
 
+if ($_SESSION['category_sorting'] != '') {
+    echo "category sorting is " . $_SESSION['category_sorting']; 
+    $tables->add_where('category', $_SESSION['category_sorting'], '=');
+}
+
+
 $tables->columns(array('*'));
 
 
 $table_tags->columns(array('table_id'));
 $join = new join_table('left', array($tables, $table_tags),array(array($tables->get_col('id'), $table_tags->get_col('table_id'))));
 $join->select();
+
+echo $join->query;
 
 if ($tabs = $join->query()) {;
     foreach($tabs as $key=>$value) {
