@@ -39,7 +39,7 @@
         // returns:
         //   null
         function set_data($string) {
-            $string = str_replace("\r", "", $string);
+            // $string = str_replace("\r", "\n", $string);
             $this->csv_string = $string;
             return $this->init_data();
         }
@@ -71,11 +71,13 @@
             $index = 0;
 
             foreach ($line_array as $index=>$line) {
+                $line_array[$index] = str_replace("\r",'', $line);
                 if ($line == "") {
                     array_splice($line_array, $index, 1);
                 }
             }
             $this->data = array();
+            $index = 0;
             if ($this->has_headings) {
                 $this->set_headings($line_array[0]);
                 $index = 1;
@@ -91,6 +93,8 @@
         }
 
         function add_row($row) {
+            // $row = str_replace("\r", ' ', $row);
+            // echo $row . "<br/>";
             $temp = Utils::split($row, $this->delimiter, true);
             $this->data[] = $temp;
         }

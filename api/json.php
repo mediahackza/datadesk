@@ -4,6 +4,9 @@
 
 // the user can also specify that they want to download the json file by including ?download in the url
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 include_once('../init.php'); // include initialisations
 include_once('../classes/query_handler.php'); // include query handler class
@@ -17,6 +20,7 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
  // if the table is a googlesheet
             
             if ($table->set_data($table->get_source()) == false){
+                echo $table->get_source();
                 echo "something went wron trying o set the data";
                 die(json_encode(array('error' => $table->error)));
             } // get the data from the google api and save it as an array in the table object
