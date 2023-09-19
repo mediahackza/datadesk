@@ -12,11 +12,9 @@
         static private function save_session() {
             $_SESSION['utils_locations'] = self::$locations;
         }
-        
-        static function split($string, $char, $account_wrapping = false) {
-            $array = array();
 
-            $wrappers = array(
+        static function check_wrappers($string, $pos, $char) {
+            $wrappers = array( // list of wrapping elements to watch out for 
                 // "'" => "'",
                 '"' => '"',
                 '{' => '}',
@@ -24,42 +22,59 @@
                 '(' => ')'
             );
 
-            $pos = strpos($string, $char);
-            while (!($pos === false)) {
+            $max_pos = $pos; //
+            $min_pos = $pos;
 
-                if ($account_wrapping) {
+            foreach($wrappers as $start=>$end) { // loop through list of wrappers to check for outer most wrapping elements
+                $start_pos = strpos($string, $start, 0); // finding postion of opening wrapper character
+                if ($start_pos !== false && $start_pos < $min_pos) { // if character found and is before the delimiter instance
+                    $end_pos = strpos($string, $end, $start_pos+1); // find the position of its respective closing character
+                    if ($end_pos !== false && $end_pos > $max_pos) { // if there is a closing character and it occurs after the outer most found wrapper character
+                        $max_pos = $end_pos; // set the outer most position to the found closing wrapper position
+                        $min_pos = $start_pos; // set the first most wrapper position to the found wrapper opening position
+                    }
+                    // $pos = strpos($string, $char, $max_pos-1);
+                    
+                    // if ($pos === false) {
+                    //     $pos = strlen($string) ;
+                    // }
 
-                    $max_pos = $pos;
-                    foreach($wrappers as $start=>$end) {
-                        $start_pos = strpos($string, $start, 0);
-                        if ($start_pos !== false && $start_pos < $pos) {
-                            $end_pos = strpos($string, $end, $start_pos+1);
-                            if ($end_pos !== false && $end_pos > $max_pos) {
-                                $max_pos = $end_pos;
-                            }
-                            $pos = strpos($string, $char, $max_pos-1);
-                            
-                            if ($pos === false) {
-                                $pos = strlen($string) ;
-                            }
+                    
+                }
+                }
 
-                            
-                        }
-                     }
+                $pos = strpos($string, $char, $max_pos); // find the next instance of delimiter outside of wrapper
+
+                if ($pos === false) { // if no delimiter is found 
+                $pos = strlen($string); // use the length of the string as the next marker
+                }
+
+                return $pos;
+        }
+        
+        static function split($string, $char, $account_wrapping = false) {
+            $array = array(); // initialise an empty array to store split output 
+
+            
+
+            $pos = strpos($string, $char); // get initial postion of delimiter in string
+            while (!($pos === false)) { // begin to loop through string until no instance of delimiter is found
+                // echo $string . "<br/>";
+                if ($account_wrapping) { // if the function has been called to ignored wrapped delimiters
+
+                    $pos = self::check_wrappers($string, $pos, $char);
 
                 }
-                $temp = substr($string, 0, $pos);
-                // $temp = str_replace('"', '', $temp);
-                $array[] = $temp;
-                $string = substr($string, $pos+1);  
 
-                $pos = strpos($string, $char);
+
+                $temp = substr($string, 0, $pos); // copy the substring up to found marker 
+                $array[] = $temp; // add it to result array
+                $string = substr($string, $pos+1); // remove the substring from the initial string
+
+                $pos = strpos($string, $char); // find next instance of delimiter
             }
 
-            if ($string !== '') {
-                $array[] = $string;
-            }
-            
+            $array[] = $string;
             return $array;
         }
 
