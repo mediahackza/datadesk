@@ -1,18 +1,13 @@
 <?php
 
-include('components/note_handler.php');
 
-$tags = $GLOBALS['tags'];
-$tags->columns(array('*'));
-$tags->select();
+$tags = $GLOBALS['tags']; // get the $tags sql_table
+$tags->columns(array('*')); // set the selection to all columns from tags table
+$tags->select(); // genertate select query
 
-// $tags_list = query_handler::fetch_tags();
-$tags_list = array();
+$tags_list = array(); // initialise list of tags
 
-$GLOBALS['tags_list'] = $tags_list;
-
-
-function make_tag($tag, $tags_list) {
+function make_tag($tag, $tags_list) { 
     global $tags;
     foreach ($tags_list as $key=>$value) {
 
@@ -34,32 +29,22 @@ function make_tag($tag, $tags_list) {
 
 }
 
-if ($res = $tags->query()) {
-    foreach($res as $row) {
-        $t = new Tag();
-        $t->set_data_from_row($row);
-        $tags_list[$t->get_name()] = $t;
+if ($res = $tags->query()) { // run the query to fetch the list of tags
+    foreach($res as $row) { // loop through list of tags from query
+        $t = new Tag(); // make items into tag objects
+        $t->set_data_from_row($row); // set the data for each tag object
+        $tags_list[$t->get_name()] = $t; // add to the list of tags
     }
 
-    $GLOBALS['tags_list'] = $tags_list;
+    $GLOBALS['tags_list'] = $tags_list; // make tags list global
 }
 
 
+if (!isset($_SESSION['edit_table']) || unserialize($_SESSION['edit_table'])->get_id() != $params['table_id']) { // check for correct table in session 
+    $_SESSION['edit_table'] = serialize(Utils::fetch_table($params['table_id'])); // fetch the table from database if it's not in session
+}
 
-
-
-    if (isset($params['table_id'])) {
-        $id = $params['table_id'];
-        $table = Utils::fetch_table($id);
-        
-        $_SESSION['edit'] = $id;
-    }
-
-    if (isset($_SESSION['edit'])) {
-        $id = $_SESSION['edit'];
-        $table = Utils::fetch_table($id);
-    }
-
+$table = unserialize($_SESSION['edit_table']); // get table from session
 
     function save_data($table) {
         global $base;
@@ -124,18 +109,22 @@ if ($res = $tags->query()) {
         $table->set_source_link($_POST['source_link']);
         $table->set_category($_POST['category']);
         $table->set_published_date($_POST['published_date']);
-
-        if (query_handler::update_meta($table)) {
-            Utils::navigate('home');
-        }
+        $table->save_notes();
+        return $table;
 
         
     }
 
     if (isset($_POST['update'])) {
-        save_data($table);
+        if ($res = save_data($table)) {
+            $table = $res;
+        }
     }
-
+    
+    if (isset($_POST['update'])) {
+        query_handler::update_meta($table);
+    }
+    
     
 
 ?>
@@ -198,8 +187,11 @@ if ($res = $tags->query()) {
 
 
 <?php
-    $t = $table;
-    echo "<div class='block-note'>";
+    $GLOBALS['table'] = $table; // set global table to table
+    include('components/note_handler.php');  // include not handler
+
+    $t = $GLOBALS['table']; // set table to $t to be used in not.php
+    echo "<div class='block-note'>"; 
     $show_all = true;
     foreach($t->get_notes() as $key=>$value) {
         $note_data = $value;
@@ -212,8 +204,12 @@ if ($res = $tags->query()) {
     }
 echo "</div>";
 
-    include('components/note_input.php');
+    $_SESSION['edit_table'] = serialize($t);
 
+    include('components/note_input.php');
+    $_SESSION['edit_table'] = serialize($GLOBALS['table']);
+
+    
 ?>
 
 </div>

@@ -223,8 +223,9 @@ class query_handler {
 
     static function insert_meta_data($table) {
         if ($table->set_data($table->get_source()) === false) {
-            return false;
             self::$error = "Source could not be read. Please make sure the sheet is published";
+            return false;
+            
         }
         $table->find_meta_data();
 
@@ -232,6 +233,7 @@ class query_handler {
         echo $query;
         if ($res = self::$db->query($query)) {
             $table->set_id(self::$db->insert_id);
+            $table->save_notes();
             return self::assign_tags($table);
         }
         
@@ -463,7 +465,7 @@ class query_handler {
     }
 
     static function add_note($note) {
-        $query = "INSERT INTO " . self::$notes_table_name . " (table_id, note, author, date) VALUES (".$note->get_table_id().", '".$note->get_note()."', ".$note->get_author() .", STR_TO_DATE('".$note->get_date()."', '%Y-%m-%d %H:%i:%s'))";
+        $query = "INSERT INTO " . self::$notes_table_name . " (table_id, note, author, date, type) VALUES (".$note->get_table_id().", '".$note->get_note()."', ".$note->get_author() .", STR_TO_DATE('".$note->get_date()."', '%Y-%m-%d %H:%i:%s'), '".$note->get_type()."')";
 
         if ($res = self::$db->query($query)) {
             return true;
@@ -481,6 +483,7 @@ class query_handler {
             while ($row = $res->fetch_assoc()) {
                 $note = new Note();
                 $note->set_data_from_row($row);
+                $note->set_saved(true);
                 $notes[] = $note;
             }
 

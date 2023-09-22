@@ -47,6 +47,25 @@
                 $this->publish_date = $pd;
         }
 
+        function save_notes() {
+            foreach($this->notes as $key=>$value) {
+                var_dump($value);
+                $value->save_note();      
+            }
+        }
+
+        function delete_note($note) {
+            foreach($this->notes as $key=>$value) {
+                if ($value->get_id() == $note->get_id()) {
+                    array_splice($this->notes, $key, 1);
+                    $note->delete();
+                    return true;    
+                }
+            }
+
+            return false;
+        }
+
         function pivot_table($cols, $name_to, $value_to) {
         
             $old_data = $this->get_data();
@@ -91,6 +110,7 @@
             // $this->date_created = date("Y-m-d H:i:s");
             $this->status = "active";
             $this->source = "";
+            $this->id = 0;
         }
 
         function get_heading_string() {
@@ -201,6 +221,15 @@
             return $this->notes;
         }
 
+        function add_note($notes) {
+            if (count($this->notes) > 0) {
+                $notes->set_id(($this->notes[count($this->notes) -1])->get_id() + 1);
+            } else {
+                $notes->set_id(1);
+            }
+            $this->notes[] = $notes;
+        }
+
         function get_delimiter() {
             return $this->delimiter;
         }
@@ -215,6 +244,9 @@
 
         function set_id($id) {
             $this->id = $id;
+            foreach($this->notes as $note) {
+                $note->set_table_id($this->id);
+            }
         }
 
         function set_update($update) {

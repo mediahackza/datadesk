@@ -45,7 +45,6 @@
 
         // if the function runs this far the email and password fields are not empty
         // and a login attempt will be made
-        echo "going to attempt login";
         if (!$account->attempt_login($_POST['email'], $_POST['password'])) { // attenmpt a logion using email and password
             // if login attempt was unsuccesful
             

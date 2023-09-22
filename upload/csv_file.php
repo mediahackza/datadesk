@@ -8,8 +8,6 @@
 
     $GLOBALS['new_table'] = unserialize($_SESSION['new_table']);
 
-
-
     function save_data() {
 
         if (!global_save_data()) {
@@ -51,6 +49,7 @@
         }
     
         if ($res  = query_handler::insert_meta_data($new_table)) {
+            $new_table->save_notes();
             unset($_SESSION['new_table']);
             return true;
         }

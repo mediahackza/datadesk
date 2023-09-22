@@ -23,10 +23,11 @@ function save_data() {
     $new_table->set_source($_POST['data']);
 
         if ($res  = query_handler::insert_meta_data($new_table)) {
+            $new_table->save_notes();
             unset($_SESSION['new_table']);
             return true;
         } 
-        $_SESSION['upload_error'] = "Oops something went wrong upload data to database.". $new_table->error;
+        $_SESSION['upload_error'] = "Oops something went wrong upload data to database.". $new_table->error. query_handler::$error;
         
     }
 

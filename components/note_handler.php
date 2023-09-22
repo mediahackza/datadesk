@@ -1,10 +1,14 @@
 <?php
 
 function check_note_data() {
+    $table = $GLOBALS['table'];
     if (!isset($_POST['table_id']) || $_POST['table_id'] == "") {
+        $_SESSION['note_error'] = "NO table selected";
         return false;
     }
+
     if (!isset($_POST['author']) || $_POST['author'] == "") {
+        $_SESSION['note_error'] = "No author set";
         return false;
     }
 
@@ -19,18 +23,19 @@ function check_note_data() {
     $note->set_date(date("Y-m-d H:i:s"));
     $note->set_author($_POST['author']);
     $note->set_note($_POST['note']);
+    $note->set_type($_POST['type']);
+
+
     
-    query_handler::add_note($note);
-
-
+    $table->add_note($note);
+    $GLOBALS['table'] = $table;
     return true;
 }
 
-if (isset($_POST['save_note'])) {
+if (isset($_POST['save_note'])) { // if save not ebutton was clicked
+    if (check_note_data()) { // check the note data's validity
 
-    if (check_note_data()) {
-
-        unset($_POST['save_note']);
+        unset($_POST['save_note']); 
 
         // Utils::navigate("home");
     } 
