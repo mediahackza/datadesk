@@ -81,15 +81,11 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
                 $table->set_source($_POST['source']);
                 break;
             case 'csv_file':
-
-                var_dump($_FILES);
-                echo "<br/>";
     
                 if (!isset($_FILES['source']) && $_FILES['source']['size'] == 0) {
                     break;
                 }
                 
-                echo "tryign to update file <br/>";
                 $target_dir = "uploaded_files/";
                 $file_name = basename($_FILES["source"]["name"]);
                 $file_name  = Utils::check_chars($file_name);
@@ -122,7 +118,9 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
     }
     
     if (isset($_POST['update'])) {
-        query_handler::update_meta($table);
+        if (query_handler::update_meta($table)) {
+            Utils::navigate('home');
+        }
     }
     
     

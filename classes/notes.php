@@ -20,6 +20,7 @@ class Note {
         $this->set_author($row['author']);
         $this->set_note($row['note']);
         $this->set_table_id($row['table_id']);
+        $this->set_type($row['type']);
 
     }
 
