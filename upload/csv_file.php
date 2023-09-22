@@ -8,8 +8,6 @@
 
     $GLOBALS['new_table'] = unserialize($_SESSION['new_table']);
 
-
-
     function save_data() {
 
         if (!global_save_data()) {
@@ -51,6 +49,7 @@
         }
     
         if ($res  = query_handler::insert_meta_data($new_table)) {
+            $new_table->save_notes();
             unset($_SESSION['new_table']);
             return true;
         }
@@ -85,6 +84,10 @@
         <tr>
         <td class="table-label">Source link:</td>
         <td><input type="text" name="source_link" value="<?php echo $GLOBALS['new_table']->get_source_link() ?>" /></td></tr>
+        <tr>
+            <td class="table-label">Date published:</td>
+            <td><input type="text" name="published_date" value="<?php echo $GLOBALS['new_table']->get_published_date() ?>" /></td>
+        </tr>
         <tr><td class="table-label">Tags:</td><td>
         <?php
         include_once("components/tag_selector.php");

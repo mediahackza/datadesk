@@ -271,6 +271,10 @@ class sql_table {
                     $col_string .= $column . ",";
                     $val_string .= $value . ",";
                     break;
+                default:
+                    $col_string .= $column. ",";
+                    $val_string .= $value . ",";
+                    break;
                 }    
         }
 

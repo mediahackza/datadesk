@@ -23,10 +23,11 @@ function save_data() {
     $new_table->set_source($_POST['data']);
 
         if ($res  = query_handler::insert_meta_data($new_table)) {
+            $new_table->save_notes();
             unset($_SESSION['new_table']);
             return true;
         } 
-        $_SESSION['upload_error'] = "Oops something went wrong upload data to database.". $new_table->error;
+        $_SESSION['upload_error'] = "Oops something went wrong upload data to database.". $new_table->error. query_handler::$error;
         
     }
 
@@ -57,6 +58,10 @@ if (isset($_POST['save_link'])) {
         <tr>
         <td class="table-label">Source link:</td>
         <td><input type="text" name="source_link" value="<?php echo $GLOBALS['new_table']->get_source_link() ?>" /></td></tr>
+        <tr>
+            <td class="table-label">Date published:</td>
+            <td><input type="text" name="published_date" value="<?php echo $GLOBALS['new_table']->get_published_date() ?>" /></td>
+        </tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
         include_once("components/tag_selector.php");

@@ -57,6 +57,8 @@ if ($res = $tables->query()) {
                 $post['id'] = $t['id'];
                 include('meta_notes.php');
                 $t['notes'] = $out_notes;
+                $t['citing_notes'] = $out_citing_notes;
+                $t['data_notes'] = $out_data_notes;
                 include('meta_tags.php');
                 $t['tags'] = $out_tags;
 

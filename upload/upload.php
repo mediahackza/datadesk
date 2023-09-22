@@ -1,11 +1,6 @@
 
 <?php
-
-//    unset($_SESSION['new_table']);
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    
 
     if (!isset($_SESSION['upload_error'])) { //  init upload error for session
         $_SESSION['upload_error'] = "";
@@ -108,6 +103,7 @@ error_reporting(E_ALL);
         $new_table->set_description($_POST['description']);
         $new_table->set_uploader_id(user_obj()->get_id());
         $new_table->set_created_date(date("Y-m-d H:i:s"));
+        $new_table->set_published_date($_POST['published_date']);
 
         $_SESSION['new_table'] = serialize($new_table);
 
@@ -144,13 +140,33 @@ switch ($type) {
         break;
 } 
 
-    // $new_table->set_uploader_id(user_obj()->get_id());
+    $note_types = [
+        'citing' => "Citing note",
+        'data' => 'Data note'
+    ];
+    $GLOBALS['table'] = unserialize($_SESSION['new_table']);
 
-    
+    include_once('components/note_handler.php'); 
 
-    // if (($_SERVER['REQUEST_METHOD'] == 'POST')) {
-    //     save_data();
-    // }
+    $t = $GLOBALS['table']; // set table to $t to be used in not.php
+    echo "<div class='block-note'>"; 
+    $show_all = true;
+    foreach($t->get_notes() as $key=>$value) {
+        $note_data = $value;
+        $edit_note = true;
+        // echo $note_data . "<br/>";
+        include('components/note.php');
+        if (!$show_all) {
+            break;
+        }
+    }
+echo "</div>";
+
+$_SESSION['new_table'] = serialize($t);
+
+    include_once('components/note_input.php');
+    $_SESSION['new_table'] = serialize($GLOBALS['table']);
+    var_dump(unserialize($_SESSION['new_table'])->get_notes());
 
 ?>
 

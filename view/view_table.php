@@ -109,6 +109,7 @@ if (!isset($params['table_id'])) {
         <tr><td class="table-label">Category</td><td><?php echo $table->get_category() ?></td></tr>
         <tr><td class="table-label">Source name:</td><td><?php echo $table->get_source_name(); ?></td></tr>
         <tr><td class="table-label">Source Link:</td><td><?php echo $table->get_source_link(); ?></td></tr>
+        <tr><td class="table-label">Source published:</td><td><?php echo $table->get_published_date(); ?> </td></tr>
         <tr><td class="table-label">Uploaded by</td><td><?php echo get_account($table->get_uploader_id())->get_full_name(); ?></td></tr>
         <tr><td class="table-label">Uploaded on</td><td><?php echo $table->get_created_date(); ?></td></tr>
         <tr><td class="table-label">Last updated</td><td><?php echo $table->get_update(); ?></td></tr>  

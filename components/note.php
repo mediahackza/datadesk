@@ -1,6 +1,7 @@
 <?php
 
     if (isset($_POST['delete_note_' . $note_data->get_id()])) {
+        $t->delete_note($note_data);
         $note_data->delete();
         unset($_POST['delete_note' . $note_data->get_id()]);
     } else {
@@ -12,7 +13,7 @@
     <?php echo get_account($note_data->get_author())->get_full_name(); ?> | 
         <?php echo $note_data->get_date(); ?>
     </div>
-
+        <div class='type meta-container'><?php echo $note_data->get_type(); ?> note</div>
     <div class="author-container">
         
     </div>
