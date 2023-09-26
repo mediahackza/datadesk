@@ -22,31 +22,30 @@ function save_data() {
 
     $new_table->set_source($_POST['data']);
 
-        if ($res  = query_handler::insert_meta_data($new_table)) {
-            $new_table->save_notes();
+       return $new_table;
+    }
+
+
+    if (isset($_POST['save_link']) || isset($_POST['save_note'])) {
+        if ($res = save_data()) {
+            $GLOBALS['new_table'] = $res;
+        }
+    }
+
+    if (isset($_POST['save_link'])) {
+        if ($res  = query_handler::insert_meta_data($GLOBALS['new_table'])) {
+            $GLOBALS['new_table']->save_notes();
             unset($_SESSION['new_table']);
-            return true;
-        } 
-        $_SESSION['upload_error'] = "Oops something went wrong upload data to database.". $new_table->error. query_handler::$error;
-        
+            Utils::navigate('home');
+        } else {
+            $_SESSION['upload_error'] = "Something went wrong uploading the table. ".$GLOBALS['new_table']->error;
+            header('Refresh: 0');
+        }
     }
 
-
-if (isset($_POST['save_link'])) {
-    if (save_data()){
-        Utils::navigate('home');   
-    } else {
-        header("Refresh: 0");
-    }
-}
 
 ?>
     
-<div class="container">
- 
-
-    <form method="post" class="inner-container">
-    <table>
         <tr><td class="table-label">Save in Datadesk as</td>
         <td><input placehoder="table name" type="text" name="db_name" value="<?php echo $GLOBALS['new_table']->get_name() ?>" /></td></tr>
         <tr><td class="table-label">Link to google sheet</td><td>
@@ -82,11 +81,6 @@ if (isset($_POST['save_link'])) {
         <!-- <input type="submit" name="print_json" value="print to json" /> -->
        <a href="/"><button class="cancel" type="" name="Cancel" value="cancel" >Cancel</button></a>
 </td></tr>
-</table>
-    </form>
-
-
-</div>
 
 <style>
     .container { 

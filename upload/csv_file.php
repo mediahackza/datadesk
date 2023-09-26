@@ -48,31 +48,28 @@
             $new_table->set_delimiter(",");
         }
     
-        if ($res  = query_handler::insert_meta_data($new_table)) {
-            $new_table->save_notes();
-            unset($_SESSION['new_table']);
-            return true;
-        }
+        return $new_table;
+    }
 
-        $_SESSION['upload_error'] = "Something went wrong uploading data to database." . $new_table->error;
-        return false;
+    if (isset($_POST['save_link']) || isset($_POST['save_note'])) {
+        if ($res = save_data()) {
+            $GLOBALS['new_table'] = $res;
+        }
     }
 
     if (isset($_POST['save_link'])) {
-        if (save_data()) {
+        if ($res  = query_handler::insert_meta_data($GLOBALS['new_table'])) {
+            $GLOBALS['new_table']->save_notes();
+            unset($_SESSION['new_table']);
             Utils::navigate('home');
         } else {
-            header("Refresh: 0");
+            $_SESSION['upload_error'] = "Something went wrong uploading the table. ".$GLOBALS['new_table']->error;
+            header('Refresh: 0');
         }
-        
     }
 
 ?>
-<div class="container">
 
-
-    <form method="post" class="inner-container" enctype="multipart/form-data">
-    <table>
         <tr><td class="table-label">Save in Datadesk as:</td><td>
         <input placehoder="table name" type="text" name="db_name" value="<?php echo $GLOBALS['new_table']->get_name() ?>" /> </td></tr>
         <tr><td class="table-label">CSV file:</td><td>
@@ -108,11 +105,6 @@
         <!-- <input type="submit" name="print_json" value="print to json" /> -->
         <a href="/"><button class="cancel" type="" name="cancel" value="cancel" >Cancel</button></a>
 </td></tr>
-</table>
-    </form>
-
-
-</div>
 
 <style>
      .container { 

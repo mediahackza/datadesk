@@ -10,8 +10,6 @@ if (!isset($note_types)) {
 }
     
 ?>
-
-<form method="post" >
     <select name="type">
         <?php
             foreach ($note_types as $key=>$value) {
@@ -23,5 +21,4 @@ if (!isset($note_types)) {
     <input type="hidden" name="table_id" value="<?php echo $t->get_id(); ?>" />
     <input type="hidden" name="author" value="<?php echo user_obj()->get_id(); ?>" />
     <textarea maxlength="1000" name="note" placeholder="Type note... "></textarea>
-    <br/><button type="submit" name="save_note" value="save note">Save Note</button>
-</form>
+    <br/><button type="submit" name="save_note" value="save note">Add this note</button>

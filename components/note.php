@@ -27,9 +27,9 @@
     if (isset($edit_note) && $edit_note) {
 
         ?>
-    <form method="post" class="note-form">
+    <!-- <form method="post" class="note-form"> -->
         <button type="submit" name='delete_note_<?php echo $note_data->get_id()?>'>Delete Note</button>
-    </form>
+    <!-- </form> -->
 
     <?php 
     }?>

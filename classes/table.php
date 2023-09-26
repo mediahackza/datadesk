@@ -49,7 +49,6 @@
 
         function save_notes() {
             foreach($this->notes as $key=>$value) {
-                var_dump($value);
                 $value->save_note();      
             }
         }
@@ -190,6 +189,7 @@
                 foreach($res as $row) {
                     $note = new Note();
                     $note->set_data_from_row($row);
+                    $note->set_saved(true);
                     $this->notes[] = $note;
                 }
             }

@@ -125,9 +125,14 @@
             
     </div>
    </div>
+
+   <div class="container">
+    
+
+   <form method="post" class="inner-container">
+    <table>
     <?php
 
-   
 switch ($type) {
     default:
         include_once('google_sheet.php');
@@ -139,36 +144,46 @@ switch ($type) {
         include_once('csv_file.php');
         break;
 } 
+?>
 
-    $note_types = [
-        'citing' => "Citing note",
-        'data' => 'Data note'
-    ];
-    $GLOBALS['table'] = unserialize($_SESSION['new_table']);
 
-    include_once('components/note_handler.php'); 
+</table>
 
-    $t = $GLOBALS['table']; // set table to $t to be used in not.php
-    echo "<div class='block-note'>"; 
-    $show_all = true;
-    foreach($t->get_notes() as $key=>$value) {
-        $note_data = $value;
-        $edit_note = true;
-        // echo $note_data . "<br/>";
-        include('components/note.php');
-        if (!$show_all) {
-            break;
-        }
+<?php
+
+$note_types = [
+    'citing' => "Citing note",
+    'data' => 'Data note'
+];
+$GLOBALS['table'] = unserialize($_SESSION['new_table']);
+
+include_once('components/note_handler.php'); 
+
+$t = $GLOBALS['table']; // set table to $t to be used in not.php
+echo "<div class='block-note'>"; 
+$show_all = true;
+foreach($t->get_notes() as $key=>$value) {
+    $note_data = $value;
+    $edit_note = true;
+    // echo $note_data . "<br/>";
+    include('components/note.php');
+    if (!$show_all) {
+        break;
     }
+}
 echo "</div>";
 
 $_SESSION['new_table'] = serialize($t);
 
-    include_once('components/note_input.php');
-    $_SESSION['new_table'] = serialize($GLOBALS['table']);
-    var_dump(unserialize($_SESSION['new_table'])->get_notes());
+include_once('components/note_input.php');
+$_SESSION['new_table'] = serialize($GLOBALS['table']);
 
 ?>
+
+    </form>
+
+
+</div>
 
 <script>
     const type_form = document.getElementById('type_form');

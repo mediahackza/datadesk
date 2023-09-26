@@ -13,8 +13,6 @@ function make_tag($tag, $tags_list) {
 
         if ($value->get_name() == $tag->get_name()) {
             $tag->set_id($value->get_id());
-
-            var_dump($tag);
             echo "<br/><br/>";
             return $tag;
         }
@@ -41,10 +39,13 @@ if ($res = $tags->query()) { // run the query to fetch the list of tags
 
 
 if (!isset($_SESSION['edit_table']) || unserialize($_SESSION['edit_table'])->get_id() != $params['table_id']) { // check for correct table in session 
+    echo "getting the table<br/>";
     $_SESSION['edit_table'] = serialize(Utils::fetch_table($params['table_id'])); // fetch the table from database if it's not in session
 }
 
 $table = unserialize($_SESSION['edit_table']); // get table from session
+
+var_dump($table->get_notes());
 
     function save_data($table) {
         global $base;
@@ -105,20 +106,26 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
         $table->set_source_link($_POST['source_link']);
         $table->set_category($_POST['category']);
         $table->set_published_date($_POST['published_date']);
-        $table->save_notes();
+        // $table->save_notes();
         return $table;
 
         
     }
 
-    if (isset($_POST['update'])) {
+    if (isset($_POST['update']) || isset($_POST['save_note'])) {
         if ($res = save_data($table)) {
             $table = $res;
         }
     }
+
+    $GLOBALS['table'] = $table;
     
+    include_once('components/note_handler.php');
+
     if (isset($_POST['update'])) {
         if (query_handler::update_meta($table)) {
+            $table->save_notes();
+            unset($_SESSION['edit_table']);
             Utils::navigate('home');
         }
     }
@@ -179,19 +186,13 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
         <tr><td colspan="2"><button type="submit" name="update" value="update" >Update</button></td></tr>
 
 </table> 
-   
-</form>
-
-
 
 <?php
-    $GLOBALS['table'] = $table; // set global table to table
-    include('components/note_handler.php');  // include not handler
-
     $t = $GLOBALS['table']; // set table to $t to be used in not.php
     echo "<div class='block-note'>"; 
     $show_all = true;
     foreach($t->get_notes() as $key=>$value) {
+        var_dump($value);
         $note_data = $value;
         $edit_note = true;
         // echo $note_data . "<br/>";
@@ -209,6 +210,12 @@ echo "</div>";
 
     
 ?>
+   
+</form>
+
+
+
+
 
 </div>
 
