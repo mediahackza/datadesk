@@ -13,14 +13,12 @@ function make_tag($tag, $tags_list) {
 
         if ($value->get_name() == $tag->get_name()) {
             $tag->set_id($value->get_id());
-            echo "<br/><br/>";
             return $tag;
         }
     }
 
     $tags->insert(array('name' => $tag->get_name()));
     $id = $tags->query();
-    echo "new id: ". $id . "<br/>";
     $tag->set_id($id);
     return $tag;
     
@@ -45,7 +43,6 @@ if (!isset($_SESSION['edit_table']) || unserialize($_SESSION['edit_table'])->get
 
 $table = unserialize($_SESSION['edit_table']); // get table from session
 
-var_dump($table->get_notes());
 
     function save_data($table) {
         global $base;
@@ -192,7 +189,6 @@ var_dump($table->get_notes());
     echo "<div class='block-note'>"; 
     $show_all = true;
     foreach($t->get_notes() as $key=>$value) {
-        var_dump($value);
         $note_data = $value;
         $edit_note = true;
         // echo $note_data . "<br/>";
