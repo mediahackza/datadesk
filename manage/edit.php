@@ -37,7 +37,6 @@ if ($res = $tags->query()) { // run the query to fetch the list of tags
 
 
 if (!isset($_SESSION['edit_table']) || unserialize($_SESSION['edit_table'])->get_id() != $params['table_id']) { // check for correct table in session 
-    echo "getting the table<br/>";
     $_SESSION['edit_table'] = serialize(Utils::fetch_table($params['table_id'])); // fetch the table from database if it's not in session
 }
 
