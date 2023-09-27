@@ -15,7 +15,7 @@ $tags = $GLOBALS['tags'];
 
 if (isset($post['verbose']) || isset($_GET['verbose'])) {
     $verbose = true;
-    $tables->columns(array('*'));
+    $tables->columns(array('*', 'published_date as source_published_date'));
 } else {
     $verbose = false;
     $tables->columns(array('id', 'str_name', 'description'));
