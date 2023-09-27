@@ -58,8 +58,13 @@ function save_data() {
         <td class="table-label">Source link:</td>
         <td><input type="text" name="source_link" value="<?php echo $GLOBALS['new_table']->get_source_link() ?>" /></td></tr>
         <tr>
-            <td class="table-label">Date published:</td>
-            <td><input type="text" name="published_date" value="<?php echo $GLOBALS['new_table']->get_published_date() ?>" /></td>
+            <td class="table-label">Last published:<br/><span class='note'>the date the source last updated this data.</span></td>
+            <td><input type="text" name="published_date" value="<?php echo $GLOBALS['new_table']->get_published_date() ?>" />
+            <span class="note">
+           preferred formats:  
+                </br> - 12 September 2023
+                </br> - September 2023
+                </br> - 2023</span></td>
         </tr>
         <tr><td class="table-label">Tags</td><td>
         <?php
@@ -106,5 +111,12 @@ function save_data() {
         background: #eee;
         color: #000;
     }
+
+    .note {
+        color: grey;
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+
     
 </style>
