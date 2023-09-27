@@ -422,11 +422,21 @@ class query_handler {
          return false;
     }
 
+    static function remove_table_notes($id) {
+        $sql = "DELETE FROM notes WHERE table_id = " . $id;
+
+        if ($res = self::$db->query($sql)) {
+            return true;
+        }
+
+        return false;
+    }
+
     static function remove_table_meta($id) {
         $query = "DELETE FROM " . self::$meta_table_name . " WHERE id=" . $id;
         if ($res = self::$db->query($query)) {
             
-                return self::remove_table_tags($id);
+                return (self::remove_table_tags($id) && self::remove_table_notes($id));
         }
 
         return false;
