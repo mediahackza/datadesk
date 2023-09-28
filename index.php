@@ -36,6 +36,18 @@ if (isset($_POST['delete'])) {
     echo $_POST['delete'];
 }
 
+if (!isset($_SESSION['show_deleted'])) {
+    $_SESSION['show_deleted'] = false;
+}
+
+if (isset($_POST['check_deleted'])) {
+    if (isset($_POST['show_deleted'])) {
+        $_SESSION['show_deleted'] = true;
+    } else {
+        $_SESSION['show_deleted'] = false;
+    }
+}
+
 $data = array();
 
 
@@ -141,6 +153,20 @@ if (isset($_POST['search'])) {
         <div class="filter-item">
         <?php include('components/tag_list.php'); ?>
         </div>
+
+        <div class="filter-item">
+            <form method="post" id="show_deleted_form" >
+                <input type="hidden" name="check_deleted" value="temp" />
+                <label for="show_deleted"><?php 
+                    if ($_SESSION['show_deleted'] === true) {
+                        echo "Hide deleted tables";
+                    } else {
+                        echo "Show deleted tables";
+                    }
+                ?></label>
+                <input id="show_deleted_cbx" name='show_deleted' type="checkbox" value='1' <?php if ($_SESSION['show_deleted'] === true) { echo "checked='checked'";} ?>/>           
+            </form>
+        </div>
     
 </div>
 <!-- Data Filters End -->
@@ -154,6 +180,9 @@ if (isset($_POST['search'])) {
     const filter_select = filter_form.elements['sorting'];
     const cat_filter_select = category_filter.elements['category_sorting'];
 
+    const show_deleted_checkbox = document.getElementById('show_deleted_cbx');
+    const show_deleted_form = document.getElementById('show_deleted_form');
+
     console.log(filter_select);
 
     filter_select.addEventListener('change', () => {
@@ -163,6 +192,10 @@ if (isset($_POST['search'])) {
 
     cat_filter_select.addEventListener('change' , () => {
         category_filter.submit();
+    })
+
+    show_deleted_checkbox.addEventListener('click', () => {
+        show_deleted_form.submit();
     })
 
 </script>
@@ -187,6 +220,10 @@ if (isset($_POST['show_deleted']) && ($_POST['show_deleted'] == 'true')) {
 $_SESSION['home-data'] = $data;
 
 // include('components/tag_list.php');
+
+if ($_SESSION['show_deleted'] === false) {
+    $tables->add_where('status' , 'deleted', '<>');
+}
 
 foreach($_SESSION['active_tags'] as $id=>$t_id) {
     $table_tags->add_where('tag_id', $id, '=', "OR");

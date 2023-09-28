@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 
 // this extends the mysli class in order to keep the name of initialised database available to the query creator
 class database extends mysqli {
@@ -497,7 +493,7 @@ class join_table extends sql_table{
         $col_string = "";
         $this->type = 'select';
 
-        // this uses a resursive to construct all the copullmns to be selected
+        // this uses a resursive to construct all the coullmns to be selected
         $ss = $this->select_string();
 
         $from_string = $this->from();
