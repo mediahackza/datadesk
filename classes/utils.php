@@ -185,6 +185,17 @@
 
             return false;
         }
+
+        static function is_selected($dir) {
+            $current_dir = $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+
+            if (strpos($current_dir, $dir) === false) {
+                return false;
+            } else {
+                return true;
+            } 
+    
+        }
     }
 
 ?>

@@ -40,13 +40,7 @@ if (!isset($_SESSION['show_deleted'])) {
     $_SESSION['show_deleted'] = false;
 }
 
-if (isset($_POST['check_deleted'])) {
-    if (isset($_POST['show_deleted'])) {
-        $_SESSION['show_deleted'] = true;
-    } else {
-        $_SESSION['show_deleted'] = false;
-    }
-}
+
 
 $data = array();
 
@@ -154,7 +148,7 @@ if (isset($_POST['search'])) {
         <?php include('components/tag_list.php'); ?>
         </div>
 
-        <div class="filter-item">
+        <!-- <div class="filter-item">
             <form method="post" id="show_deleted_form" >
                 <input type="hidden" name="check_deleted" value="temp" />
                 <label for="show_deleted"><?php 
@@ -166,7 +160,7 @@ if (isset($_POST['search'])) {
                 ?></label>
                 <input id="show_deleted_cbx" name='show_deleted' type="checkbox" value='1' <?php if ($_SESSION['show_deleted'] === true) { echo "checked='checked'";} ?>/>           
             </form>
-        </div>
+        </div> -->
     
 </div>
 <!-- Data Filters End -->
@@ -221,9 +215,12 @@ $_SESSION['home-data'] = $data;
 
 // include('components/tag_list.php');
 
-if ($_SESSION['show_deleted'] === false) {
+if (Utils::is_selected('/trash')) {
+    $tables->add_where('status', 'deleted', '=');
+} else {
     $tables->add_where('status' , 'deleted', '<>');
 }
+
 
 foreach($_SESSION['active_tags'] as $id=>$t_id) {
     $table_tags->add_where('tag_id', $id, '=', "OR");

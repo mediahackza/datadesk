@@ -1,5 +1,9 @@
 <?php
 
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 if (isset($_POST['menu_choice'])) {
     $_SESSION['account_nav_data'] = $_POST['menu_choice'];
     switch ($_POST['menu_choice']) {
@@ -14,37 +18,23 @@ if (isset($_POST['menu_choice'])) {
         case 'collections':
             Utils::navigate('collections');
             break;
+        case 'trash':
+            Utils::navigate('trash');
+            break;
     }
 }
 
-$current_dir = $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
-$temp_base = str_replace("http://", "", $base);
-$temp_base = str_replace("https://", "", $temp_base);
-
-function is_selected($dir) {
-    global $current_dir, $temp_base;
-
-    
-    // echo $current_dir;
-    // echo " === " . $temp_base . $dir;
-    // echo "<br/><br/>";
-
-    if ($current_dir == $temp_base . $dir) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 ?>
 
 <form id="account-menu" method="post">
     <select name="menu_choice" id="account-menu" onchange="submitAccountForm()">
-        <option value='account' <?php if(is_selected("")) { echo "selected";} ?> >my account</option>
-        <option value=''>my profile</option>
+        <option value='account'  >My account</option>
+        <option value=''>My profile</option>
         <option value="collections" >Collections</option>
-        <option value='bookmarks' <?php if (is_selected('/bookmarks')) { echo "selected";} ?> >my bookmarks</option>
-        <option value="logout">logout</option>
+        <option value='bookmarks' <?php if (Utils::is_selected('/bookmarks')) { echo "selected";} ?> >My bookmarks</option>
+        <option value="trash" <?php if (Utils::is_selected('/trash')) {echo "selected" ;} ?> >Trash</options>
+        <option value="logout">Logout</option>
     </select>
 </form>
 

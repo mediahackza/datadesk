@@ -148,6 +148,7 @@
     $route->add("/register", 'account/register.php');
     $route->add('add-bookmark', 'account/add-bookmark.php', true);
     $route->add('delete-table', 'manage/delete.php', true);
+    $route->add('/trash', 'index.php', true, true);
 
     $route->notFound('welcome.php');
 
