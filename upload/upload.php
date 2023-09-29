@@ -98,6 +98,32 @@
             $new_table->set_source_link($_POST['source_link']);
         }
 
+        if (isset($_POST['citing_note'])) {
+            $note = new Note();
+
+            // $note->set_table_id($_POST['table_id']);
+            
+            $note->set_date(date("Y-m-d H:i:s"));
+            $note->set_author(user_obj()->get_id());
+            $note->set_note($_POST['citing_note']);
+            $note->set_type('citing');
+
+            $new_table->set_citing_note($note);
+        }
+
+        if (isset($_POST['data_note'])) {
+            $note = new Note();
+
+            // $note->set_table_id($_POST['table_id']);
+            
+            $note->set_date(date("Y-m-d H:i:s"));
+            $note->set_author(user_obj()->get_id());
+            $note->set_note($_POST['data_note']);
+            $note->set_type('data');
+
+            $new_table->set_data_note($note);   
+        }
+
         $new_table->set_category($_POST['category']);
         $new_table->set_name($_POST['db_name']);
         $new_table->set_description($_POST['description']);

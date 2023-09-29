@@ -24,9 +24,9 @@
  $notes->select();
 
  if ($res = $notes->query()) {
-   $out_citing_notes = $res;
+   $out_citing_notes = $res[0];
  } else {
-   $out_citing_notes = array();
+   $out_citing_notes = '';
  }
 
  $notes->clear_where();
@@ -35,9 +35,9 @@
  $notes->select();
 
  if ($res = $notes->query()) {
-   $out_data_notes = $res;
+   $out_data_notes = $res[0];
  } else {
-   $out_data_notes = array();
+   $out_data_notes = '';
  }
 
 ?>

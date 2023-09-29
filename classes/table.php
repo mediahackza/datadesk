@@ -25,7 +25,37 @@
         public $row_count;
 
         private $notes = array();
+        private $citing_note;
+        private $data_note;
         private $tags = array();
+
+        function get_citing_note() {
+            return $this->citing_note;
+        }
+
+        function set_citing_note($note) {
+            $note->set_table_id($this->id);
+            $this->citing_note = $note;
+        }
+
+        function update_citing_note($note) {
+            $this->citing_note->set_note($note);
+            $this->citing_note->update();  
+        }
+
+        function update_data_note($note) {
+            $this->data_note->set_note($note);
+            $this->data_note->update();  
+        }
+
+        function set_data_note($note) {
+            $note->set_table_id($this->id);
+            $this->data_note = $note;
+        }
+
+        function get_data_note() {
+            return $this->data_note;
+        }
 
         function get_link() {
             return $this->source;
@@ -48,7 +78,13 @@
         }
 
         function save_notes() {
+            $this->get_citing_note()->set_table_id($this->id);
+            $this->get_citing_note()->save_note();
+            $this->get_data_note()->set_table_id($this->id);
+            $this->get_data_note()->save_note();
+
             foreach($this->notes as $key=>$value) {
+                $value->set_table_id($this->id);
                 $value->save_note();      
             }
         }
@@ -190,7 +226,17 @@
                     $note = new Note();
                     $note->set_data_from_row($row);
                     $note->set_saved(true);
-                    $this->notes[] = $note;
+                    switch ($note->get_type()) {
+                        case 'citing':
+                            $this->set_citing_note($note);
+                            break;
+                        case 'data':
+                            $this->set_data_note($note);
+                            break;
+                        default:
+                            $this->notes[] = $note;
+                    }
+                    
                 }
             }
         }

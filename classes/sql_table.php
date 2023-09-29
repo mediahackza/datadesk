@@ -50,8 +50,6 @@ class sql_table {
         $this->table = $table;  
         $this->db = $db;
 
-        // var_dump($db);
-
         $sql = "SELECT `COLUMN_NAME`, `DATA_TYPE` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='".  $this->db->database ."' AND `TABLE_NAME`='". $this->table  ."'";
         if ($res = $this->db->query($sql)) {
             $this->headings = array();

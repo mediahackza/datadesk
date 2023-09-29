@@ -44,7 +44,6 @@ if (isset($_POST['menu_choice'])) {
 
 
     function submitAccountForm() {
-        console.log('chnage in scciount select has occured');
         form.submit();
     }
 </script>

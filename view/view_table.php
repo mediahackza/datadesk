@@ -113,7 +113,11 @@ if (!isset($params['table_id'])) {
         <tr><td class="table-label">Uploaded by</td><td><?php echo get_account($table->get_uploader_id())->get_full_name(); ?></td></tr>
         <tr><td class="table-label">Uploaded on</td><td><?php echo $table->get_created_date(); ?></td></tr>
         <tr><td class="table-label">Last updated</td><td><?php echo $table->get_update(); ?></td></tr>  
-        
+        </table>
+
+        <table>
+            <tr><td class="table-label" >Citing note:</td><td><?php echo $table->get_citing_note()->get_note() ?></td></tr>
+            <tr><td class="table-label" >Data note:</td><td><?php echo $table->get_data_note()->get_note(); ?></td></tr>
         </table>
 
         <div class='detail-container' style="margin-top: 20px; margin-bottom: 20px">

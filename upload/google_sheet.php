@@ -34,7 +34,7 @@ function save_data() {
 
     if (isset($_POST['save_link'])) {
         if ($res  = query_handler::insert_meta_data($GLOBALS['new_table'])) {
-            $GLOBALS['new_table']->save_notes();
+            // $GLOBALS['new_table']->save_notes();
             unset($_SESSION['new_table']);
             Utils::navigate('home');
         } else {
@@ -66,6 +66,13 @@ function save_data() {
                 </br> - September 2023
                 </br> - 2023</span></td>
         </tr>
+
+        <tr><td class="table-label">Citing note:</td>
+        <td><textarea name="citing_note" maxlength= "1000" ><?php echo $GLOBALS['new_table']->get_citing_note() ?></textarea> </td></tr>
+        
+        <tr><td class="table-label">Data note:</td>
+        <td><textarea name="data_note" maxlength= "1000" ><?php echo $GLOBALS['new_table']->get_data_note() ?></textarea></td></tr>
+        
         <tr><td class="table-label">Tags</td><td>
         <?php
         include_once("components/tag_selector.php");

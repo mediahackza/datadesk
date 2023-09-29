@@ -1,5 +1,8 @@
 <?php
 // Utils::add_location('previous', $base);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 include_once('components/note_handler.php');
 include_once('classes/notes.php');
@@ -263,8 +266,7 @@ $table_tags->columns(array('table_id'));
 $join = new join_table('left', array($tables, $table_tags),array(array($tables->get_col('id'), $table_tags->get_col('table_id'))));
 $join->select();
 
-
-if ($tabs = $join->query()) {;
+if ($tabs = $join->query()) {
     foreach($tabs as $key=>$value) {
         $t = $tf->create_table($value);
         print_row($t);

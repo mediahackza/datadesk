@@ -1,6 +1,11 @@
 <?php
 
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $tags = $GLOBALS['tags']; // get the $tags sql_table
 $tags->columns(array('*')); // set the selection to all columns from tags table
 $tags->select(); // genertate select query
@@ -102,6 +107,8 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
         $table->set_source_link($_POST['source_link']);
         $table->set_category($_POST['category']);
         $table->set_published_date($_POST['published_date']);
+        $table->update_citing_note($_POST['citing_note']);
+        $table->update_data_note($_POST['data_note']);
         // $table->save_notes();
         return $table;
 
@@ -161,6 +168,13 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
                 </br> - September 2023
                 </br> - 2023</span>
     </td></tr>
+    <tr><td class="table-label">Citing note:</td>
+        <td><textarea name="citing_note" maxlength= "1000" ><?php echo $table->get_citing_note()->get_note(); ?></textarea> </td></tr>
+        
+        <tr><td class="table-label">Data note:</td>
+        <td><textarea name="data_note" maxlength= "1000" ><?php echo $table->get_data_note()->get_note();?></textarea></td></tr>
+        
+
         <tr><td class="table-label">Tags</td><td>
         <?php
         include('components/tag_selector.php');

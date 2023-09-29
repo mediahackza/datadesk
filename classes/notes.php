@@ -80,6 +80,24 @@ class Note {
         return $this->id;
     }
 
+    function update() {
+        global $notes;
+
+        $data = [
+            'note' => $this->get_note()
+        ];
+        $notes->clear_where();
+        $notes->add_where('id', $this->id, '=');
+        $notes->update($data);
+
+        if ($res = $notes->query()) {
+            return true;
+        }
+
+        return false;
+
+    }
+
     function save_note() {
 
         if ($this->saved) {
@@ -97,9 +115,6 @@ class Note {
 
             $notes->insert($data);  
         
-
-        echo $notes->query;
-
         if ($res = $notes->query()) {
             $this->set_id($res);
             $this->set_saved(true);
