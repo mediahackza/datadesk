@@ -195,6 +195,9 @@ class sql_table {
 
         if ($res = $this->db->query($this->query)) {
             switch ($this->type) {
+                case 'update':
+                    return true;
+                    break;
                 case 'insert':
                     $this->last_insert = $this->db->insert_id;
                     return $this->db->insert_id;

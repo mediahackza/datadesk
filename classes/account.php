@@ -142,12 +142,11 @@ include_once('utils.php');
             $users->clear_where();
             $users->add_where('id', $this->get_id(), '=');
             $users->update(array('token' => $data['token']));
-
             if ($res = $users->query()) {
                 $this->set_token($data['token']);
                 setcookie('login_session', $token, time() + 1209600, "/");
                 return true;
-            }   
+            }
             return false;
         }
 
