@@ -47,6 +47,82 @@ if (!isset($params['table_id'])) {
 
 ?>
 
+<style>
+    .view-wrap { 
+        width: 90%; 
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .note {
+        padding: 10px;
+
+    }
+    
+    .copied {
+        background: #00a5a2;
+        color: #fff;
+    }
+
+    .share-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;   
+    }
+    .share-box > * {
+        padding: 10px 0px;
+    }
+
+    .type {
+        /* font-size: 10px; */
+    }
+
+    .button {
+        /* border: 1px solid red; */
+    }
+    .data-table { 
+        /* display: none !important; */
+        max-width: 100%; 
+        max-height: 90vh;
+        overflow-x: auto;
+        /* overflow: auto; */
+    }
+    .ddtable { 
+        width: 500px; 
+        /* background: red; */
+    }
+    .view-controls { 
+        background: #eee; 
+        padding: 40px 40px;
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .controls-item { 
+        display: inline-block;
+      
+    }
+    .view-controls-title { 
+        font-weight: 700; 
+        font-size: 1rem;
+        margin-bottom: 10px;
+       
+    
+
+
+    }
+    .views-text { 
+        color: gray;
+        margin-top: 5px; 
+        margin-bottom: 15px;
+        max-width: 500px; 
+
+    }
+    .view-controls input { 
+        margin-top: 0px;
+    }
+</style>
+
 <div class="view-wrap">
 <div class="view-controls">
     <div>
@@ -116,8 +192,8 @@ if (!isset($params['table_id'])) {
         </table>
 
         <table>
-            <tr><td class="table-label" >Citing note:</td><td><?php echo $table->get_citing_note()->get_note() ?></td></tr>
-            <tr><td class="table-label" >Data note:</td><td><?php echo $table->get_data_note()->get_note(); ?></td></tr>
+            <tr><td class="table-label" >Citing note:</td><td><?php if (!empty($table->get_citing_note())) {echo $table->get_citing_note()->get_note();} ?></td></tr>
+            <tr><td class="table-label" >Data note:</td><td><?php if(!empty($table->get_data_note())){ echo $table->get_data_note()->get_note(); }?></td></tr>
         </table>
 
         <div class='detail-container' style="margin-top: 20px; margin-bottom: 20px">
@@ -211,78 +287,3 @@ if (!isset($params['table_id'])) {
         })
     </script>
 
-<style>
-    .view-wrap { 
-        width: 90%; 
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .note {
-        padding: 10px;
-
-    }
-    
-    .copied {
-        background: #00a5a2;
-        color: #fff;
-    }
-
-    .share-box {
-        display: flex;
-        flex-direction: row;
-        align-items: center;   
-    }
-    .share-box > * {
-        padding: 10px 0px;
-    }
-
-    .type {
-        /* font-size: 10px; */
-    }
-
-    .button {
-        /* border: 1px solid red; */
-    }
-    .data-table { 
-        /* display: none !important; */
-        max-width: 100%; 
-        max-height: 90vh;
-        overflow-x: auto;
-        /* overflow: auto; */
-    }
-    .ddtable { 
-        width: 500px; 
-        /* background: red; */
-    }
-    .view-controls { 
-        background: #eee; 
-        padding: 40px 40px;
-        display: grid; 
-        grid-template-columns: 1fr 1fr;
-
-    }
-    .controls-item { 
-        display: inline-block;
-      
-    }
-    .view-controls-title { 
-        font-weight: 700; 
-        font-size: 1rem;
-        margin-bottom: 10px;
-       
-    
-
-
-    }
-    .views-text { 
-        color: gray;
-        margin-top: 5px; 
-        margin-bottom: 15px;
-        max-width: 500px; 
-
-    }
-    .view-controls input { 
-        margin-top: 0px;
-    }
-</style>
