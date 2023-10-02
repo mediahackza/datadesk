@@ -136,6 +136,37 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
     
 
 ?>
+
+<style>
+
+    .note {
+        color: grey;
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+
+.edit-wrap { 
+   
+    width: 90%; 
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding-bottom: 100px;
+    /* text-align: center; */
+}
+input { 
+    width: 300px;
+}
+textarea {
+    width: 600px;
+    height: 100px; 
+}
+.block-note { 
+    margin-top: 30px;
+}
+
+
+    </style>
+
 <div class="edit-wrap">
 <form method="post" enctype="multipart/form-data">
 <table>
@@ -169,10 +200,10 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
                 </br> - 2023</span>
     </td></tr>
     <tr><td class="table-label">Citing note:</td>
-        <td><textarea name="citing_note" maxlength= "1000" ><?php echo $table->get_citing_note()->get_note(); ?></textarea> </td></tr>
+        <td><textarea name="citing_note" maxlength= "1000" ><?php if (!empty($table->get_citing_note())) { echo $table->get_citing_note()->get_note(); }?></textarea> </td></tr>
         
         <tr><td class="table-label">Data note:</td>
-        <td><textarea name="data_note" maxlength= "1000" ><?php echo $table->get_data_note()->get_note();?></textarea></td></tr>
+        <td><textarea name="data_note" maxlength= "1000" ><?php if (!empty($table->get_data_note())) { echo $table->get_data_note()->get_note(); }?></textarea></td></tr>
         
 
         <tr><td class="table-label">Tags</td><td>
@@ -236,32 +267,3 @@ echo "</div>";
 
 </div>
 
-<style>
-
-    .note {
-        color: grey;
-        font-size: 0.8rem;
-        font-weight: 300;
-    }
-
-.edit-wrap { 
-   
-    width: 90%; 
-    max-width: 1000px; 
-    margin: 0 auto;
-    padding-bottom: 100px;
-    /* text-align: center; */
-}
-input { 
-    width: 300px;
-}
-textarea {
-    width: 600px;
-    height: 100px; 
-}
-.block-note { 
-    margin-top: 30px;
-}
-
-
-    </style>

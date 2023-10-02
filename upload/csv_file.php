@@ -92,10 +92,10 @@
         </tr>
 
         <tr><td class="table-label">Citing note:</td>
-        <td><textarea name="citing_note" maxlength= "1000" ><?php echo $GLOBALS['new_table']->get_citing_note()->get_note() ?></textarea> </td></tr>
+        <td><textarea name="citing_note" maxlength= "1000" ><?php if (!empty($GLOBALS['new_table']->get_citing_note())) {echo $GLOBALS['new_table']->get_citing_note()->get_note(); }?></textarea> </td></tr>
         
         <tr><td class="table-label">Data note:</td>
-        <td><textarea name="data_note" maxlength= "1000" ><?php echo $GLOBALS['new_table']->get_data_note()->get_note() ?></textarea></td></tr>
+        <td><textarea name="data_note" maxlength= "1000" ><?php if (!empty($GLOBALS['new_table']->get_data_note())) { echo $GLOBALS['new_table']->get_data_note()->get_note(); }?></textarea></td></tr>
         
         <tr><td class="table-label">Tags:</td><td>
         <?php
