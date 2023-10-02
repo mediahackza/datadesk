@@ -107,8 +107,36 @@ $table = unserialize($_SESSION['edit_table']); // get table from session
         $table->set_source_link($_POST['source_link']);
         $table->set_category($_POST['category']);
         $table->set_published_date($_POST['published_date']);
-        $table->update_citing_note($_POST['citing_note']);
-        $table->update_data_note($_POST['data_note']);
+        if (isset($_POST['citing_note'])  && $_POST['citing_note'] != '') {
+            if (isset($_POST['citing_note']) && empty($table->get_citing_note())) {
+                $note = new Note();
+                $note->set_date(date("Y-m-d H:i:s"));
+                $note->set_author(user_obj()->get_id());
+                $note->set_note($_POST['citing_note']);
+                $note->set_type('citing');
+    
+                $table->set_citing_note($note);
+            } else {
+                $table->update_citing_note($_POST['citing_note']);
+            }
+        }
+        
+        
+        if (isset($_POST['data_note']) && $_POST['data_note'] != '' ) {
+            if (empty($table->get_data_note())) {
+                $note = new Note();
+                $note->set_date(date("Y-m-d H:i:s"));
+                $note->set_author(user_obj()->get_id());
+                $note->set_note($_POST['data_note']);
+                $note->set_type('data');
+    
+                $table->set_data_note($note); 
+            } else {
+                $table->update_data_note($_POST['data_note']);
+            }
+        }
+        
+        
         // $table->save_notes();
         return $table;
 

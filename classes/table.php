@@ -78,10 +78,16 @@
         }
 
         function save_notes() {
-            $this->get_citing_note()->set_table_id($this->id);
-            $this->get_citing_note()->save_note();
-            $this->get_data_note()->set_table_id($this->id);
-            $this->get_data_note()->save_note();
+            if (!empty($this->citing_note)) {
+                $this->get_citing_note()->set_table_id($this->id);
+                $this->get_citing_note()->save_note();
+            }
+            
+            if (!empty($this->data_note)) {
+                $this->get_data_note()->set_table_id($this->id);
+                $this->get_data_note()->save_note();
+            }
+            
 
             foreach($this->notes as $key=>$value) {
                 $value->set_table_id($this->id);

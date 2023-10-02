@@ -101,7 +101,7 @@ error_reporting(E_ALL);
             $new_table->set_source_link($_POST['source_link']);
         }
 
-        if (isset($_POST['citing_note'])) {
+        if (isset($_POST['citing_note']) && $_POST['citing_note'] != '') {
             $note = new Note();
 
             // $note->set_table_id($_POST['table_id']);
@@ -114,7 +114,7 @@ error_reporting(E_ALL);
             $new_table->set_citing_note($note);
         }
 
-        if (isset($_POST['data_note'])) {
+        if (isset($_POST['data_note']) && $_POST['data_note'] != '') {
             $note = new Note();
 
             // $note->set_table_id($_POST['table_id']);
