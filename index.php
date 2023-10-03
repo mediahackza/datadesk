@@ -219,6 +219,7 @@ $_SESSION['home-data'] = $data;
 // include('components/tag_list.php');
 
 if (Utils::is_selected('/trash')) {
+    Utils::add_location('previous', $base.'/trash');
     $tables->add_where('status', 'deleted', '=');
 } else {
     $tables->add_where('status' , 'deleted', '<>');
