@@ -58,7 +58,7 @@
     }
 
     ?>
-    <tr><td class='table-label'>Source file</td><td><a href='<?php echo $t->get_link();?>' target="_blank">Link</a></td></tr>
+    <tr><td class='table-label'>Data link</td><td><a href='<?php echo $t->get_link();?>' target="_blank">Link</a></td></tr>
  </table>
  </div>
 

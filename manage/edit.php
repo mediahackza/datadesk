@@ -243,22 +243,38 @@ textarea {
         $table_cat_data = $table;
         include('components/category_selector.php');
         ?></td></tr>
-        <tr><td class="table-label">Data link</td>
-        <td>
-        <?php
-            if ($table->get_type() == 'google_sheet') {
-        ?>
-             <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
 
-        <?php
-            } else if ($table->get_type() == 'csv_file') {
+        <?php 
+        
+            switch ($table->get_type()) {
+                case 'google_sheet':
+                ?>
+                    <tr><td class="table-label">Link to google sheet</td>
+                    <td>
+                        <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
+                    
+                <?php
+                break;
+                case 'csv_file':
+                    ?>
+                    <tr><td class="table-label">Csv data file</td>
+                    <td>
+                    <input type="file" name="source" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
+        
+                <?php
+                break;
+                default:
+                    ?>
+                        <tr><td class="table-label">Data link</td>
+                        <td>
+                        <input type="file" name="source" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
+        
+                    <?php
+                }
         ?>
-            <input type="file" name="source" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
-        <?php
-            }
-        ?>
-
         </td></tr>
+
+        
         <!-- <input type="text" name="source" value="<?php echo $table->source; ?>" /> <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a></td></tr> -->
         <tr><td colspan="2"><button type="submit" name="update" value="update" >Update</button></td></tr>
 
