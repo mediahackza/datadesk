@@ -174,7 +174,7 @@ if (!isset($params['table_id'])) {
 
         <table>
         
-        <tr><td class="table-label">Source</td><td>
+        <tr><td class="table-label">Data link</td><td>
         <a href="<?php echo $table->get_link(); ?>" target="_blank">Link</a>
         </td></tr>
  

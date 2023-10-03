@@ -243,7 +243,7 @@ textarea {
         $table_cat_data = $table;
         include('components/category_selector.php');
         ?></td></tr>
-        <tr><td class="table-label">Source</td>
+        <tr><td class="table-label">Data link</td>
         <td>
         <?php
             if ($table->get_type() == 'google_sheet') {
