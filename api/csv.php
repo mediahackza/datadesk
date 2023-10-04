@@ -31,7 +31,7 @@ include_once('../classes/query_handler.php'); // include query handler class
 
         if (isset($_GET['download'])) { // if the user specifies that a download is required
             header("Content-type: text/csv"); // set the header to csv
-            header("Content-Disposition: attachment; filename=".$table->get_name().".csv"); // set the filename to the table name and make it available for download
+            header('Content-Disposition: attachment; filename="'.$table->get_name().'.csv"'); // set the filename to the table name and make it available for download
         }
         echo $csv_array; // print the csv data to the page for the user
     } else {

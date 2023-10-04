@@ -48,7 +48,7 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
 
         if (isset($_GET['download'])) { // if the user has requested a download
             header("Content-type: text/json"); // set the header to json
-            header("Content-Disposition: attachment; filename=".$table->get_name().".json"); // set the filename to the table name and make it available for download
+            header('Content-Disposition: attachment; filename="'.$table->get_name().'.json"'); // set the filename to the table name and make it available for download
         }
 
         echo json_encode($json_array); // print the json array to the page for the user
