@@ -132,7 +132,18 @@ if (isset($_POST['search'])) {
             ?>
             <form method="post" id="category_filter_form" >
                 <select name="category_sorting">
-                    <option value="">Sort by category</option>
+                    <?php 
+                        if (isset($_SESSION['category_sorting']) && $_SESSION['category_sorting'] == '') {
+                            ?>
+                             <option value="">Sort by category</option>
+                            <?php
+                        } else{
+                            ?>
+                            <option value="">Show all</option>
+                            <?php
+                        }
+                    ?>
+                   
                     <?php 
                         foreach($categories_list as $key=>$value) {
                             $opt = "<option value='". $value ."'";
