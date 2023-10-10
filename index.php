@@ -21,6 +21,7 @@ if (isset($_POST['cancel_search'])) {
     unset($_SESSION['search']);
     unset($_POST['sorting']);
     unset($_SESSION['sorting']);
+    unset($_SESSION['category_sorting']);
 }
 
 if (!isset($_SESSION['search'])) {
