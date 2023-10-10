@@ -9,6 +9,9 @@ if (isset($_POST['menu_choice'])) {
     switch ($_POST['menu_choice']) {
         default:
             break;
+        case 'datasets':
+            header('Location:'. $base);
+            break;
         case 'logout':
             header("Location: ".$base."/logout");
             break;
@@ -29,6 +32,7 @@ if (isset($_POST['menu_choice'])) {
 
 <form id="account-menu" method="post">
     <select name="menu_choice" id="account-menu" onchange="submitAccountForm()">
+        <option value="datasets" <?php if (Utils::is_selected('/')) { echo "selected"; }?>>Datasets</option>
         <option value='account'  >My account</option>
         <option value=''>My profile</option>
         <option value="collections" >Collections</option>
