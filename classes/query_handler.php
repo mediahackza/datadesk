@@ -323,6 +323,21 @@ class query_handler {
         return $table;  
     }
 
+    static function fetch_table_ids() {
+        $query = "SELECT id from " . self::$meta_table_name;
+
+        $id_list = array();
+
+        if ($res = self::$db->query($query)) {
+            while ($row = $res->fetch_assoc()) {
+                $id_list[] = $row["id"];
+            }
+            return $id_list;
+        }
+
+        return false;
+    }
+
     static function fetch_table_by_id($id) {
         $query = "SELECT *, ".self::$meta_table_name.".id as table_id FROM " . self::$meta_table_name . " INNER JOIN " . self::$user_table_name . " ON ".self::$meta_table_name.".upload_user_id = ". self::$user_table_name . ".id AND " . self::$meta_table_name . ".id=" . $id;
         if ($res = self::$db->query($query)) {
