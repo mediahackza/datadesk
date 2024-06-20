@@ -61,7 +61,7 @@
             try {
                 $data = file_get_contents($link);
             } catch (Exception $e) {
-                $this->set_error($e->getMessage());
+                $this->error = $e->getMessage();
                 return false;
             }
 

@@ -19,7 +19,6 @@ if (isset($_GET['limit'])) {
 }
 
 $results = array();
-$results['info'] = array();
 
 function save_file($data,$file_name, $ext) {
     $fp = fopen($GLOBALS['directory']. $file_name . $ext, "x");
@@ -42,8 +41,12 @@ if (isset($_GET['table'])) {
     $table = query_handler::fetch_table_by_id($_GET['table']);
     $results[$_GET['table']] = array();
 
-    if ($table->set_data($table->get_source()) == false) {
+    if (($data = $table->get_source()) === FALSE) {
         $results[$_GET['table']]["error"]  = $table->error;
+        die(json_encode($results));   
+    } else if ($table->set_data($data) === false) {
+        $results[$_GET['table']]["error"]  = $table->error;
+        die(json_encode($results));
     }
 
     // $diff = strtotime($table->get_local_update()) - strtotime(date("Y-m-d H:i:s"));
@@ -65,7 +68,7 @@ if (isset($_GET['table'])) {
     query_handler::set_local_update_time($_GET['table']);
 
 } else {
-
+    $results['info'] = array();
     // var_dump(query_handler::fetch_table_ids($_SESSION['last_id'], $GLOBALS['chunk_size']) === FALSE);
     
     if (($id_list = query_handler::fetch_table_ids($_SESSION['last_id'], $GLOBALS['chunk_size'])) !== FALSE) {
@@ -73,6 +76,7 @@ if (isset($_GET['table'])) {
 
         $results['info']['total_updates'] = sizeof($id_list);
         $results['info']['chunk_size'] = $GLOBALS['chunk_size'];
+        $results['info']['updated_ids'] = $id_list;
         if (sizeof($id_list) == 0) {
             $_SESSION['last_id'] = 0;
             header("Refresh:0"); 
@@ -84,11 +88,11 @@ if (isset($_GET['table'])) {
             $table = query_handler::fetch_table_by_id($id);
             $results[$id] = array();
             
-            if (($data = $table->get_source()) == false) {
+            if (($data = $table->get_source()) === FALSE) {
                 $results[$id]['error'] = $table->error;
                 $_SESSION['last_id'] = $id;
                 continue;
-            } else if ($table->set_data($data) == false) {
+            } else if ($table->set_data($data) == FALSE) {
                 $results[$id]["error"]  = $table->error;
                 $_SESSION['last_id'] = $id;
                 continue;
