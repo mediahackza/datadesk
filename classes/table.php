@@ -23,6 +23,7 @@
         private $publish_date;
         public $col_count;
         public $row_count;
+        public $last_local_update;
 
         private $notes = array();
         private $citing_note;
@@ -312,6 +313,17 @@
             }
         }
 
+        function set_local_update($date) {
+            if (utils::validateDate($date)) {
+                $this->last_local_update = date($date);
+                return;
+            }
+        }
+
+        function get_local_update() {
+            return $this->last_local_update;
+        }
+
         function get_csv_string($array = null, $headings = null) {
             if ($array == null) {
                 $array = $this->get_data();
@@ -476,6 +488,10 @@
             $this->set_published_date($row['published_date']);
             $this->fetch_notes(); 
             $this->fetch_tags();
+        }
+
+        function set_error($err) {
+            $this->error = $err;
         }
 
     }

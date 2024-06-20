@@ -8,7 +8,18 @@ include_once("../classes/query_handler.php");
 $GLOBALS['directory'] = "../local_data/";
 $GLOBALS['archive_dir'] = "../local_data/archive/";
 
+$GLOBALS['chunk_size'] = 10;
+
+if (!isset($_SESSION['last_id'])) {
+    $_SESSION['last_id'] = 0;
+}
+
+if (isset($_GET['limit'])) {
+    $GLOBALS['chunk_size'] = $_GET['limit'];
+}
+
 $results = array();
+$results['info'] = array();
 
 function save_file($data,$file_name, $ext) {
     $fp = fopen($GLOBALS['directory']. $file_name . $ext, "x");
@@ -35,28 +46,61 @@ if (isset($_GET['table'])) {
         $results[$_GET['table']]["error"]  = $table->error;
     }
 
+    // $diff = strtotime($table->get_local_update()) - strtotime(date("Y-m-d H:i:s"));
+    // echo $diff;
+    // echo "<br/>";
+
+    // $years = abs(floor($diff/31536000));
+    // $days = abs(floor(($diff-($years * 31536000))/86400));
+    // $hours = abs(floor($diff/3600));
+    // $mins = abs(floor($diff/60));
+    // echo "<p>Time Passed: " . $years . " Years, " . $days . " Days, " . $hours . " Hours, " . $mins . " Minutes.</p>";
+    // die();
+
     save_file($table->get_csv_string(), $table->get_id(), ".csv");
     $results[$_GET['table']]["csv"] = "successfully updated " . $table->get_name() . " csv local file.";
     save_file(json_encode($table->generate_json()), $table->get_id(), ".json");
     $results[$_GET['table']]['json'] = "successfully updated " . $table->get_name() . " json local file.";
 
+    query_handler::set_local_update_time($_GET['table']);
+
 } else {
-    if ($id_list = query_handler::fetch_table_ids()) {
+
+    if ($id_list = query_handler::fetch_table_ids($_SESSION['last_id'], $GLOBALS['chunk_size'])) {
+
+        $results['info']['chunk_size'] = $GLOBALS['chunk_size'];
+        $results['info']['chunk_start_id'] = $id_list[0];
+                
+        if (sizeof($id_list) == 0) {
+            $_SESSION['last_id'] = 0;
+            header("Refresh:0"); 
+        } 
 
         foreach ($id_list as $id){
             $table = query_handler::fetch_table_by_id($id);
             $results[$id] = array();
             
-            if ($table->set_data($table->get_source()) == false) {
+            if (($data = $table->get_source()) == false) {
+                $results[$id]['error'] = $table->error;
+                $_SESSION['last_id'] = $id;
+                continue;
+            } else if ($table->set_data($data) == false) {
                 $results[$id]["error"]  = $table->error;
+                $_SESSION['last_id'] = $id;
+                continue;
             }
 
             save_file($table->get_csv_string(), $table->get_id(), ".csv");
             $results[$id]["csv"] = "successfully updated " . $table->get_name() . " csv local file.";
             save_file(json_encode($table->generate_json()), $table->get_id(), ".json");
             $results[$id]['json'] = "successfully updated " . $table->get_name() . " json local file.";
+
+            query_handler::set_local_update_time($id);
+            $_SESSION['last_id'] = $id;
         }
     }
+
+    $results['info']['chunk_end_id'] = $_SESSION['last_id'];
 }
 
 echo json_encode($results);

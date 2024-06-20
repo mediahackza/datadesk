@@ -58,7 +58,12 @@
             } else {
                 $this->set_delimiter(",");
             }
-            $data = file_get_contents($link);
+            try {
+                $data = file_get_contents($link);
+            } catch (Exception $e) {
+                $this->set_error($e->getMessage());
+                return false;
+            }
 
             // $this->set_delimiter($data);
             // $this->set_data($data);

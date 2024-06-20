@@ -62,7 +62,7 @@
             try {
                 $data = file_get_contents($link_csv);
             } catch (Exception $e) {
-                echo $this->error;
+                $this->error = $e->getMessage();
                 return false;
             }
 
