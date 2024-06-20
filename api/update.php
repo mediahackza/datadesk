@@ -66,15 +66,19 @@ if (isset($_GET['table'])) {
 
 } else {
 
-    if ($id_list = query_handler::fetch_table_ids($_SESSION['last_id'], $GLOBALS['chunk_size'])) {
+    // var_dump(query_handler::fetch_table_ids($_SESSION['last_id'], $GLOBALS['chunk_size']) === FALSE);
+    
+    if (($id_list = query_handler::fetch_table_ids($_SESSION['last_id'], $GLOBALS['chunk_size'])) !== FALSE) {
+        // var_dump($id_list);
 
+        $results['info']['total_updates'] = sizeof($id_list);
         $results['info']['chunk_size'] = $GLOBALS['chunk_size'];
-        $results['info']['chunk_start_id'] = $id_list[0];
-                
         if (sizeof($id_list) == 0) {
             $_SESSION['last_id'] = 0;
             header("Refresh:0"); 
+            die();
         } 
+        $results['info']['chunk_start_id'] = $id_list[0];
 
         foreach ($id_list as $id){
             $table = query_handler::fetch_table_by_id($id);
