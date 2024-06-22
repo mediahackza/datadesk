@@ -58,11 +58,11 @@
             } else {
                 $this->set_delimiter(",");
             }
-            try {
-                $data = file_get_contents($link);
-            } catch (Exception $e) {
-                $this->error = $e->getMessage();
-                return false;
+
+            $data = file_get_contents($link);
+
+            if ($data === FALSE) {
+                $this->error = "Failed to fetch data from source";
             }
 
             // $this->set_delimiter($data);
