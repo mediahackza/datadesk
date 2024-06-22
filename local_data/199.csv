@@ -1,0 +1,42 @@
+year	number_of_incidents	incident_type	start_date	end_date	total_deaths	number_of_people_affected	description_of_event	link_1	link_2	link_3
+1987	1	Flood	1987-09-25	1987-09-29	506	65000	Extremely high rainfall was caused by a cut-off low. 800mm of rain fell in five days. The flood was described as the worst since 1917. It caused extensive damage and an island in the Umgeni River was washed away.	https://www.youtube.com/watch?v=VBjtGbsFxX8		
+1988	0		1988	1988						
+1989	0		1989	1989						
+1990	0		1990	1990						
+1991	0		1991	1991						
+1992	0		1992	1992						
+1993	0		1993	1993						
+1994	0		1994	1994						
+1995	0		1995	1995						
+1996	1	Flood	1996-02-09	1996-02-19	27	7000	Exceptionally high rainfall caused extensive flooding in Durban and many other parts of South Africa. 	https://discover.sabinet.co.za/document/4136517 	https://www.wrc.org.za/wp-content/uploads/mdocs/805-1-99.pdf	
+1997	0		1997	1997						
+1998	0		1998	1998						
+1999	1	Flood	1999-10-26	1999-10-28	4	300	Brief torrential rain caused flash floods in informal settlements, damaging roads, bridges and other infrastructure.	https://mg.co.za/article/1999-10-26-three-dead-as-rain-causes-chaos-in-kwazulu-natal/		
+1999	1	Flood	1999-12-21	1999-12-23	23	2000	Heavy rain caused riverine floods and landslides in Durban destroying homes in informal settlements and damaging roads and other infrastructure. The event was declared a national disaster. 	https://www.chijournal.org/Journals/PDF/R220-25		
+2000	0		2000	2000						
+2001	0		2001	2001						
+2002	0		2002	2002						
+2003	0		2003	2003						
+2004	0		2004	2004						
+2005	0		2005	2005						
+2006	0		2006	2006						
+2007	1	Storm surge	2007-03-19	2007-03-20	No data	No data	A cut-off low on 18 March resulted in "monster" waves of over 7m in height washing over houses and businesses along the beach, causing extensive flooding from North Coast down to Margate.	https://ports.co.za/shippingworld/article_2007_03_21_3337.html	https://www.iol.co.za/news/south-africa/big-wave-may-have-knocked-over-harbour-crane-436942	https://www.coastkzn.co.za/themes/coastal-risk-and-vulnerability/extreme-events/
+2008	1	Storm	2008-11-14	2008-11-14	5	3576	Rain, hail and strong winds cut a path of destruction in parts of eThekwini, destroying houses and reportedly buckling telephone poles.	https://www.iol.co.za/news/south-africa/molweni-declared-disaster-area-426910	https://mg.co.za/article/2008-11-14-durban-storm-leaves-trail-of-destruction/	
+2009	1	Storm surge	2009-09-03	2009-09-04	18	No data	A cut-off low resulted in waves 4 to 5 m along Durban's beaches, knocking down a crane on Durban's south pier. Waves usually average 2m around Durban.	https://www.iol.co.za/news/south-africa/big-wave-may-have-knocked-over-harbour-crane-436942		
+2010	0		2010	2010						
+2011	1	Flood	2011-12-09	2011-12-11	No data	No data	Heavy thunderstorms caused severe flooding that damaged homes, roads, bridges and other infrastructure. A provincial state of disaster was declared.	http://www.ndmc.gov.za/AnnualReports/NDMC%20Annual%20Report%202012-2013.pdf (page 32)		
+2012	0		2012	2012						
+2013	0		2013	2013						
+2014	0		2014	2014						
+2015	0		2015	2015						
+2016	1	Flood	2016-07-25	2016-08-03	7	6900	Heavy rains caused flash floods in Durban.	https://www.nsri.org.za/2016/07/durban-responds-to-multiple-flooding-incidents/		
+2017	1	Flood	2017-05-25	2017-05-19	3	200	Several days of heavy rain in KwaZulu-Natal led to floods. Durban received over 100mm of rain over a 24-hour period.  	https://floodlist.com/africa/south-africa-floods-kwazulu-natal-may-2017		
+2017	1	Storm	2017-10-09	2017-10-10	11	518	Strong winds, hail and heavy rain (108mm in 24 hours) caused rivers to flood. The KwaZulu-Natal provincial government declared a state of disaster.	http://www.ndmc.gov.za/AnnualReports/NDMC%20Annual%20Report%202017-18.pdf	https://floodlist.com/africa/kwazulu-natal-durban-flood-october-2017	
+2018	0		2018	2018						
+2019	1	Storm	2019-11-11	2019-11-12	4	20	Heavy rains caused flash floods. Roads were closed. Strong winds damaged homes and downed trees and power lines.	https://floodlist.com/africa/south-africa-floods-durban-november-2019		
+2019	1	Flood	2019-03-08	2019-03-12	10	No data	Heavy rains caused floods that damaged homes and infrastructure.	https://floodlist.com/africa/south-africa-floods-kwazulu-natal-march-2019	https://www.thesouthafrican.com/news/kzn-floods-plastic-pollution-durban-photos-march-2019/?utm_content=buffer29bf0&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer	
+2019	1	Flood	2019-04-21	2019-04-25	73	1000	Floods and mudslides, collapsed homes and destroyed roads and other infrastructure. Roads and schools were closed. Durban received 165mm of rain on 23 April.	https://floodlist.com/africa/south-africa-floods-kzn-eastern-cape-april-2019	https://www.gov.za/speeches/kwazulu-natal-floods-classified-provincial-disaster-3-may-2019-0000	https://www.sansa.org.za/2019/04/29/update-on-recent-floodingin-kzn-and-eastern-cape-using-satellite-imagery/
+2020	1	Storm	2020-11-17	2020-11-21	10	210	Severe storms in KwaZulu-Natal cause rivers to flood in Durban	https://www.sabcnews.com/sabcnews/body-of-a-missing-woman-found-in-umlazi/	https://www.citizen.co.za/witness/news/widespread-damage-as-pietermaritzburg-midlands-battered-by-hail-stones-the-size-of-tennis-balls-20201119/	
+2021	0		2021	2021						
+2022	1	Flood	2022-04-08	2022-04-18	544	142290	Heavy rain over several days caused by a cut-off low caused floods and landslides. In some places 300mm of rain fell between 11 and 12 April, reportedly the province’s heaviest single-day deluge in 60 years.	https://floodlist.com/africa/south-africa-floods-mudslides-kwazulu-natal-april-2022	https://earthobservatory.nasa.gov/images/149720/deluge-in-south-africa	
+2022	1	Flood	2022-05-22	2022-05-22	No data	200	Heavy rain caused flooding and damage to homes, roads and other infrastructure. People were evacuated from their homes in some areas. 202mm of rain fell in Durban. 	https://floodlist.com/africa/south-africa-floodi-kwazulu-natal-may-2022		

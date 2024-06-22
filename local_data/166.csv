@@ -1,0 +1,180 @@
+country,iso_code,year,variable,emissions_mtco2
+Kenya,KEN,2022,Fossil,0.88
+Nigeria,NGA,2022,Fossil,11.61
+South Africa,ZAF,2022,Fossil,150.58
+Angola,AGO,2021,Fossil,2.91
+Botswana,BWA,2021,Fossil,1.74
+Kenya,KEN,2021,Fossil,0.68
+Namibia,NAM,2021,Fossil,0.05
+Nigeria,NGA,2021,Fossil,11.67
+South Africa,ZAF,2021,Fossil,158.87
+Zambia,ZMB,2021,Fossil,1.07
+Zimbabwe,ZWE,2021,Fossil,2.96
+Angola,AGO,2020,Fossil,2.75
+Botswana,BWA,2020,Fossil,1.64
+Kenya,KEN,2020,Fossil,0.64
+Namibia,NAM,2020,Fossil,0.04
+Nigeria,NGA,2020,Fossil,10.96
+South Africa,ZAF,2020,Fossil,161.81
+Zambia,ZMB,2020,Fossil,1.55
+Zimbabwe,ZWE,2020,Fossil,2.79
+Angola,AGO,2019,Fossil,2.68
+Botswana,BWA,2019,Fossil,2.44
+Kenya,KEN,2019,Fossil,0.88
+Namibia,NAM,2019,Fossil,0.03
+Nigeria,NGA,2019,Fossil,11.56
+South Africa,ZAF,2019,Fossil,170.74
+Zambia,ZMB,2019,Fossil,1.59
+Zimbabwe,ZWE,2019,Fossil,3
+Angola,AGO,2018,Fossil,1.79
+Botswana,BWA,2018,Fossil,2.36
+Kenya,KEN,2018,Fossil,1.02
+Namibia,NAM,2018,Fossil,0.02
+Nigeria,NGA,2018,Fossil,12.02
+South Africa,ZAF,2018,Fossil,175.56
+Zambia,ZMB,2018,Fossil,1.74
+Zimbabwe,ZWE,2018,Fossil,3.06
+Angola,AGO,2017,Fossil,1.82
+Botswana,BWA,2017,Fossil,2.27
+Kenya,KEN,2017,Fossil,1.6
+Namibia,NAM,2017,Fossil,0.04
+Nigeria,NGA,2017,Fossil,12.51
+South Africa,ZAF,2017,Fossil,174.46
+Zambia,ZMB,2017,Fossil,1.4
+Zimbabwe,ZWE,2017,Fossil,2.5
+Angola,AGO,2016,Fossil,2.94
+Botswana,BWA,2016,Fossil,2.02
+Kenya,KEN,2016,Fossil,1
+Namibia,NAM,2016,Fossil,0.04
+Nigeria,NGA,2016,Fossil,11.92
+South Africa,ZAF,2016,Fossil,174.73
+Zambia,ZMB,2016,Fossil,0.51
+Zimbabwe,ZWE,2016,Fossil,2.87
+Angola,AGO,2015,Fossil,2.82
+Botswana,BWA,2015,Fossil,2.23
+Kenya,KEN,2015,Fossil,1
+Namibia,NAM,2015,Fossil,0.03
+Nigeria,NGA,2015,Fossil,12.53
+South Africa,ZAF,2015,Fossil,175.85
+Zambia,ZMB,2015,Fossil,0.26
+Zimbabwe,ZWE,2015,Fossil,3.29
+Angola,AGO,2014,Fossil,2.79
+Botswana,BWA,2014,Fossil,1.73
+Kenya,KEN,2014,Fossil,1.17
+Namibia,NAM,2014,Fossil,0.02
+Nigeria,NGA,2014,Fossil,12.66
+South Africa,ZAF,2014,Fossil,177.73
+Zambia,ZMB,2014,Fossil,0.24
+Zimbabwe,ZWE,2014,Fossil,3.21
+Angola,AGO,2013,Fossil,2.27
+Botswana,BWA,2013,Fossil,0.68
+Kenya,KEN,2013,Fossil,1.81
+Namibia,NAM,2013,Fossil,0.04
+Nigeria,NGA,2013,Fossil,11.1
+South Africa,ZAF,2013,Fossil,181.77
+Zambia,ZMB,2013,Fossil,0.04
+Zimbabwe,ZWE,2013,Fossil,3.2
+Angola,AGO,2012,Fossil,1.6
+Botswana,BWA,2012,Fossil,0.25
+Kenya,KEN,2012,Fossil,1.42
+Namibia,NAM,2012,Fossil,0.03
+Nigeria,NGA,2012,Fossil,10.88
+South Africa,ZAF,2012,Fossil,185.25
+Zambia,ZMB,2012,Fossil,0.04
+Zimbabwe,ZWE,2012,Fossil,2.66
+Angola,AGO,2011,Fossil,1.09
+Botswana,BWA,2011,Fossil,0.34
+Kenya,KEN,2011,Fossil,1.68
+Namibia,NAM,2011,Fossil,0.03
+Nigeria,NGA,2011,Fossil,10.03
+South Africa,ZAF,2011,Fossil,187.48
+Zambia,ZMB,2011,Fossil,0.04
+Zimbabwe,ZWE,2011,Fossil,2.81
+Angola,AGO,2010,Fossil,1.15
+Botswana,BWA,2010,Fossil,0.39
+Kenya,KEN,2010,Fossil,1.48
+Namibia,NAM,2010,Fossil,0.04
+Nigeria,NGA,2010,Fossil,9.36
+South Africa,ZAF,2010,Fossil,186.34
+Zambia,ZMB,2010,Fossil,0.04
+Zimbabwe,ZWE,2010,Fossil,2.04
+Angola,AGO,2009,Fossil,1.08
+Botswana,BWA,2009,Fossil,0.32
+Kenya,KEN,2009,Fossil,1.91
+Namibia,NAM,2009,Fossil,0.06
+Nigeria,NGA,2009,Fossil,7.23
+South Africa,ZAF,2009,Fossil,178.89
+Zambia,ZMB,2009,Fossil,0.04
+Zimbabwe,ZWE,2009,Fossil,1.29
+Angola,AGO,2008,Fossil,0.67
+Botswana,BWA,2008,Fossil,0.45
+Kenya,KEN,2008,Fossil,1.55
+Namibia,NAM,2008,Fossil,0.13
+Nigeria,NGA,2008,Fossil,7.31
+South Africa,ZAF,2008,Fossil,185.54
+Zambia,ZMB,2008,Fossil,0.03
+Zimbabwe,ZWE,2008,Fossil,1.31
+Angola,AGO,2007,Fossil,0.48
+Botswana,BWA,2007,Fossil,0.48
+Kenya,KEN,2007,Fossil,1.31
+Namibia,NAM,2007,Fossil,0.03
+Nigeria,NGA,2007,Fossil,7.98
+South Africa,ZAF,2007,Fossil,190.84
+Zambia,ZMB,2007,Fossil,0.04
+Zimbabwe,ZWE,2007,Fossil,1.53
+Angola,AGO,2006,Fossil,0.42
+Botswana,BWA,2006,Fossil,0.62
+Kenya,KEN,2006,Fossil,1.29
+Namibia,NAM,2006,Fossil,0.07
+Nigeria,NGA,2006,Fossil,8.04
+South Africa,ZAF,2006,Fossil,183.06
+Zambia,ZMB,2006,Fossil,0.06
+Zimbabwe,ZWE,2006,Fossil,1.83
+Angola,AGO,2005,Fossil,0.37
+Botswana,BWA,2005,Fossil,0.66
+Kenya,KEN,2005,Fossil,1.18
+Namibia,NAM,2005,Fossil,0.03
+Nigeria,NGA,2005,Fossil,7.53
+South Africa,ZAF,2005,Fossil,176.47
+Zambia,ZMB,2005,Fossil,0.06
+Zimbabwe,ZWE,2005,Fossil,3.15
+Angola,AGO,2004,Fossil,0.32
+Botswana,BWA,2004,Fossil,0.61
+Kenya,KEN,2004,Fossil,1.02
+Namibia,NAM,2004,Fossil,0
+Nigeria,NGA,2004,Fossil,7.75
+South Africa,ZAF,2004,Fossil,174.36
+Zambia,ZMB,2004,Fossil,0.05
+Zimbabwe,ZWE,2004,Fossil,2.98
+Angola,AGO,2003,Fossil,0.5
+Botswana,BWA,2003,Fossil,0.56
+Kenya,KEN,2003,Fossil,0.69
+Namibia,NAM,2003,Fossil,0.01
+Nigeria,NGA,2003,Fossil,6.11
+South Africa,ZAF,2003,Fossil,167.61
+Zambia,ZMB,2003,Fossil,0.06
+Zimbabwe,ZWE,2003,Fossil,2.44
+Angola,AGO,2002,Fossil,0.41
+Botswana,BWA,2002,Fossil,0.69
+Kenya,KEN,2002,Fossil,0.77
+Namibia,NAM,2002,Fossil,0
+Nigeria,NGA,2002,Fossil,6.38
+South Africa,ZAF,2002,Fossil,154.81
+Zambia,ZMB,2002,Fossil,0.06
+Zimbabwe,ZWE,2002,Fossil,3.38
+Angola,AGO,2001,Fossil,0.41
+Botswana,BWA,2001,Fossil,0.78
+Kenya,KEN,2001,Fossil,1.06
+Namibia,NAM,2001,Fossil,0
+Nigeria,NGA,2001,Fossil,4.6
+South Africa,ZAF,2001,Fossil,150.36
+Zambia,ZMB,2001,Fossil,0.05
+Zimbabwe,ZWE,2001,Fossil,3.55
+Angola,AGO,2000,Fossil,0.35
+Botswana,BWA,2000,Fossil,0.73
+Kenya,KEN,2000,Fossil,1.41
+Namibia,NAM,2000,Fossil,0.03
+Nigeria,NGA,2000,Fossil,4.32
+South Africa,ZAF,2000,Fossil,148.98
+Zambia,ZMB,2000,Fossil,0.05
+Zimbabwe,ZWE,2000,Fossil,2.71

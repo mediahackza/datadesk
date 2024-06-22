@@ -1,0 +1,56 @@
+,iso_code,location,region_1,region_2
+1,DZA,Algeria,north,na
+2,AGO,Angola,central,ssa
+3,BEN,Benin,west,ssa
+4,BWA,Botswana,south,ssa
+5,BFA,Burkina Faso,west,ssa
+6,BDI,Burundi,east,ssa
+7,CMR,Cameroon,central,ssa
+8,CPV,Cape Verde,west,ssa
+9,CAF,Central African Republic,central,ssa
+10,TCD,Chad,central,ssa
+11,COM,Comoros,east,ssa
+12,COG,Congo,central,ssa
+13,CIV,Cote d'Ivoire,west,ssa
+14,COD,Democratic Republic of Congo,central,ssa
+15,DJI,Djibouti,east,na
+16,EGY,Egypt,north,na
+17,GNQ,Equatorial Guinea,central,ssa
+18,ERI,Eritrea,east,ssa
+19,SWZ,Eswatini,south,ssa
+20,ETH,Ethiopia,east,ssa
+21,GAB,Gabon,central,ssa
+22,GMB,Gambia,west,ssa
+23,GHA,Ghana,west,ssa
+24,GIN,Guinea,west,ssa
+25,GNB,Guinea-Bissau,west,ssa
+26,KEN,Kenya,east,ssa
+27,LSO,Lesotho,south,ssa
+28,LBR,Liberia,west,ssa
+29,LBY,Libya,north,na
+30,MDG,Madagascar,east,ssa
+31,MWI,Malawi,south,ssa
+32,MLI,Mali,west,ssa
+33,MRT,Mauritania,north,ssa
+34,MUS,Mauritius,east,ssa
+35,MAR,Morocco,north,na
+36,MOZ,Mozambique,south,ssa
+37,NAM,Namibia,south,ssa
+38,NER,Niger,west,ssa
+39,NGA,Nigeria,west,ssa
+40,RWA,Rwanda,east,ssa
+41,SHN,Saint Helena,south,
+42,STP,Sao Tome and Principe,central,ssa
+43,SEN,Senegal,west,ssa
+44,SYC,Seychelles,east,ssa
+45,SLE,Sierra Leone,west,ssa
+46,SOM,Somalia,east,ssa
+47,ZAF,South Africa,south,ssa
+48,SSD,South Sudan,east,ssa
+49,SDN,Sudan,north,ssa
+50,TZA,Tanzania,east,ssa
+51,TGO,Togo,west,ssa
+52,TUN,Tunisia,north,na
+53,UGA,Uganda,east,ssa
+54,ZMB,Zambia,south,ssa
+55,ZWE,Zimbabwe,south,ssa
