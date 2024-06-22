@@ -28,10 +28,10 @@ function save_file($data,$file_name, $ext) {
     $fp = fopen($GLOBALS['directory']. $file_name . $ext, "x");
 
     if ($fp === false) {
-        $zip = new ZipArchive();
-        $zip->open($GLOBALS['archive_dir'].$file_name."_archive.zip", ZipArchive::CREATE);
-        $zip->addFile($GLOBALS['directory'] . $file_name . $ext, str_replace(" ", "_", date('Y-m-d_H_i_s')."_".$file_name.$ext));
-        $zip->close();
+        // $zip = new ZipArchive();
+        // $zip->open($GLOBALS['archive_dir'].$file_name."_archive.zip", ZipArchive::CREATE);
+        // $zip->addFile($GLOBALS['directory'] . $file_name . $ext, str_replace(" ", "_", date('Y-m-d_H_i_s')."_".$file_name.$ext));
+        // $zip->close();
 
         $fp = fopen($GLOBALS['directory']. $file_name . $ext, "w");
     }
