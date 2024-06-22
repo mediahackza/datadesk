@@ -9,6 +9,15 @@ include_once('../init.php'); // include initialisations
 include_once('../classes/query_handler.php'); // include query handler class
 
     if (isset($_GET['table'])) { // if there is a table id in the url
+
+
+        if (file_exists("../local_data/" . $_GET['table'] . ".csv")) {
+            $fp = fopen("../local_data/" . $_GET['table'] . ".csv", "r");
+            echo fread($fp, filesize("../local_data/" . $_GET['table'] . ".csv"));
+            fclose($fp);
+            die();
+        }
+
         $table = query_handler::fetch_table_by_id($_GET['table']); // find the table from the database using the given id
 
         if ($table->set_data($table->get_source()) == false){

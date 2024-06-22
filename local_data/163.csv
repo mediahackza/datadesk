@@ -1,0 +1,409 @@
+country,iso_code,year,variable,measure,generation
+Angola,AGO,2000,Wind and solar,percentage,0
+Angola,AGO,2001,Wind and solar,percentage,0
+Angola,AGO,2002,Wind and solar,percentage,0
+Angola,AGO,2003,Wind and solar,percentage,0
+Angola,AGO,2004,Wind and solar,percentage,0
+Angola,AGO,2005,Wind and solar,percentage,0
+Angola,AGO,2006,Wind and solar,percentage,0
+Angola,AGO,2007,Wind and solar,percentage,0
+Angola,AGO,2008,Wind and solar,percentage,0
+Angola,AGO,2009,Wind and solar,percentage,0
+Angola,AGO,2010,Wind and solar,percentage,0.19
+Angola,AGO,2011,Wind and solar,percentage,0.18
+Angola,AGO,2012,Wind and solar,percentage,0.17
+Angola,AGO,2013,Wind and solar,percentage,0.13
+Angola,AGO,2014,Wind and solar,percentage,0.22
+Angola,AGO,2015,Wind and solar,percentage,0.21
+Angola,AGO,2016,Wind and solar,percentage,0.2
+Angola,AGO,2017,Wind and solar,percentage,0.19
+Angola,AGO,2018,Wind and solar,percentage,0.16
+Angola,AGO,2019,Wind and solar,percentage,0.13
+Angola,AGO,2020,Wind and solar,percentage,0.12
+Angola,AGO,2021,Wind and solar,percentage,0.12
+Angola,AGO,2021,Wind and solar,percentage,0.12
+Angola,AGO,2000,Wind and solar,twh,0
+Angola,AGO,2001,Wind and solar,twh,0
+Angola,AGO,2002,Wind and solar,twh,0
+Angola,AGO,2003,Wind and solar,twh,0
+Angola,AGO,2004,Wind and solar,twh,0
+Angola,AGO,2005,Wind and solar,twh,0
+Angola,AGO,2006,Wind and solar,twh,0
+Angola,AGO,2007,Wind and solar,twh,0
+Angola,AGO,2008,Wind and solar,twh,0
+Angola,AGO,2009,Wind and solar,twh,0
+Angola,AGO,2010,Wind and solar,twh,0.01
+Angola,AGO,2011,Wind and solar,twh,0.01
+Angola,AGO,2012,Wind and solar,twh,0.01
+Angola,AGO,2013,Wind and solar,twh,0.01
+Angola,AGO,2014,Wind and solar,twh,0.02
+Angola,AGO,2015,Wind and solar,twh,0.02
+Angola,AGO,2016,Wind and solar,twh,0.02
+Angola,AGO,2017,Wind and solar,twh,0.02
+Angola,AGO,2018,Wind and solar,twh,0.02
+Angola,AGO,2019,Wind and solar,twh,0.02
+Angola,AGO,2020,Wind and solar,twh,0.02
+Angola,AGO,2021,Wind and solar,twh,0.02
+Angola,AGO,2022,Wind and solar,twh,0.02
+Botswana,BWA,2000,Wind and solar,percentage,0
+Botswana,BWA,2001,Wind and solar,percentage,0
+Botswana,BWA,2002,Wind and solar,percentage,0
+Botswana,BWA,2003,Wind and solar,percentage,0
+Botswana,BWA,2004,Wind and solar,percentage,0
+Botswana,BWA,2005,Wind and solar,percentage,0
+Botswana,BWA,2006,Wind and solar,percentage,0
+Botswana,BWA,2007,Wind and solar,percentage,0
+Botswana,BWA,2008,Wind and solar,percentage,0
+Botswana,BWA,2009,Wind and solar,percentage,0
+Botswana,BWA,2010,Wind and solar,percentage,0
+Botswana,BWA,2011,Wind and solar,percentage,0
+Botswana,BWA,2012,Wind and solar,percentage,0
+Botswana,BWA,2013,Wind and solar,percentage,0
+Botswana,BWA,2014,Wind and solar,percentage,0
+Botswana,BWA,2015,Wind and solar,percentage,0
+Botswana,BWA,2016,Wind and solar,percentage,0
+Botswana,BWA,2017,Wind and solar,percentage,0
+Botswana,BWA,2018,Wind and solar,percentage,0.32
+Botswana,BWA,2019,Wind and solar,percentage,0.4
+Botswana,BWA,2020,Wind and solar,percentage,0.46
+Botswana,BWA,2021,Wind and solar,percentage,0.4
+Botswana,BWA,2000,Wind and solar,twh,0
+Botswana,BWA,2001,Wind and solar,twh,0
+Botswana,BWA,2002,Wind and solar,twh,0
+Botswana,BWA,2003,Wind and solar,twh,0
+Botswana,BWA,2004,Wind and solar,twh,0
+Botswana,BWA,2005,Wind and solar,twh,0
+Botswana,BWA,2006,Wind and solar,twh,0
+Botswana,BWA,2007,Wind and solar,twh,0
+Botswana,BWA,2008,Wind and solar,twh,0
+Botswana,BWA,2009,Wind and solar,twh,0
+Botswana,BWA,2010,Wind and solar,twh,0
+Botswana,BWA,2011,Wind and solar,twh,0
+Botswana,BWA,2012,Wind and solar,twh,0
+Botswana,BWA,2013,Wind and solar,twh,0
+Botswana,BWA,2014,Wind and solar,twh,0
+Botswana,BWA,2015,Wind and solar,twh,0
+Botswana,BWA,2016,Wind and solar,twh,0
+Botswana,BWA,2017,Wind and solar,twh,0
+Botswana,BWA,2018,Wind and solar,twh,0.01
+Botswana,BWA,2019,Wind and solar,twh,0.01
+Botswana,BWA,2020,Wind and solar,twh,0.01
+Botswana,BWA,2021,Wind and solar,twh,0.01
+Botswana,BWA,2022,Wind and solar,twh,0.01
+Botswana,BWA,2022,Wind and solar,percentage,0.38
+Kenya,KEN,2000,Wind and solar,percentage,0
+Kenya,KEN,2001,Wind and solar,percentage,0
+Kenya,KEN,2002,Wind and solar,percentage,0
+Kenya,KEN,2003,Wind and solar,percentage,0
+Kenya,KEN,2004,Wind and solar,percentage,0
+Kenya,KEN,2005,Wind and solar,percentage,0
+Kenya,KEN,2006,Wind and solar,percentage,0
+Kenya,KEN,2007,Wind and solar,percentage,0
+Kenya,KEN,2008,Wind and solar,percentage,0
+Kenya,KEN,2009,Wind and solar,percentage,0.15
+Kenya,KEN,2010,Wind and solar,percentage,0.28
+Kenya,KEN,2011,Wind and solar,percentage,0.39
+Kenya,KEN,2012,Wind and solar,percentage,0.24
+Kenya,KEN,2013,Wind and solar,percentage,0.49
+Kenya,KEN,2014,Wind and solar,percentage,0.76
+Kenya,KEN,2015,Wind and solar,percentage,1.12
+Kenya,KEN,2016,Wind and solar,percentage,1.24
+Kenya,KEN,2017,Wind and solar,percentage,1.21
+Kenya,KEN,2018,Wind and solar,percentage,4.17
+Kenya,KEN,2019,Wind and solar,percentage,14.2
+Kenya,KEN,2020,Wind and solar,percentage,12.25
+Kenya,KEN,2021,Wind and solar,percentage,17.9
+Kenya,KEN,2022,Wind and solar,percentage,20.38
+Kenya,KEN,2000,Wind and solar,twh,0
+Kenya,KEN,2001,Wind and solar,twh,0
+Kenya,KEN,2002,Wind and solar,twh,0
+Kenya,KEN,2003,Wind and solar,twh,0
+Kenya,KEN,2004,Wind and solar,twh,0
+Kenya,KEN,2005,Wind and solar,twh,0
+Kenya,KEN,2006,Wind and solar,twh,0
+Kenya,KEN,2007,Wind and solar,twh,0
+Kenya,KEN,2008,Wind and solar,twh,0
+Kenya,KEN,2009,Wind and solar,twh,0.01
+Kenya,KEN,2010,Wind and solar,twh,0.02
+Kenya,KEN,2011,Wind and solar,twh,0.03
+Kenya,KEN,2012,Wind and solar,twh,0.02
+Kenya,KEN,2013,Wind and solar,twh,0.04
+Kenya,KEN,2014,Wind and solar,twh,0.07
+Kenya,KEN,2015,Wind and solar,twh,0.11
+Kenya,KEN,2016,Wind and solar,twh,0.12
+Kenya,KEN,2017,Wind and solar,twh,0.13
+Kenya,KEN,2018,Wind and solar,twh,0.47
+Kenya,KEN,2019,Wind and solar,twh,1.65
+Kenya,KEN,2020,Wind and solar,twh,1.42
+Kenya,KEN,2021,Wind and solar,twh,2.16
+Kenya,KEN,2022,Wind and solar,twh,2.52
+Madagascar,MDG,2000,Wind and Solar,percentage,0
+Madagascar,MDG,2001,Wind and Solar,percentage,0
+Madagascar,MDG,2002,Wind and Solar,percentage,0
+Madagascar,MDG,2003,Wind and Solar,percentage,0
+Madagascar,MDG,2004,Wind and Solar,percentage,0
+Madagascar,MDG,2005,Wind and Solar,percentage,0
+Madagascar,MDG,2006,Wind and Solar,percentage,0
+Madagascar,MDG,2007,Wind and Solar,percentage,0
+Madagascar,MDG,2008,Wind and Solar,percentage,0
+Madagascar,MDG,2009,Wind and Solar,percentage,0
+Madagascar,MDG,2010,Wind and Solar,percentage,0
+Madagascar,MDG,2011,Wind and Solar,percentage,0
+Madagascar,MDG,2012,Wind and Solar,percentage,0
+Madagascar,MDG,2013,Wind and Solar,percentage,0.61
+Madagascar,MDG,2014,Wind and Solar,percentage,0.58
+Madagascar,MDG,2015,Wind and Solar,percentage,1.12
+Madagascar,MDG,2016,Wind and Solar,percentage,1.05
+Madagascar,MDG,2017,Wind and Solar,percentage,1.01
+Madagascar,MDG,2018,Wind and Solar,percentage,0.96
+Madagascar,MDG,2019,Wind and Solar,percentage,1.38
+Madagascar,MDG,2020,Wind and Solar,percentage,1.39
+Madagascar,MDG,2021,Wind and Solar,percentage,1.75
+Madagascar,MDG,2022,Wind and Solar,percentage,1.69
+Madagascar,MDG,2000,Wind and Solar,twh,0
+Madagascar,MDG,2001,Wind and Solar,twh,0
+Madagascar,MDG,2002,Wind and Solar,twh,0
+Madagascar,MDG,2003,Wind and Solar,twh,0
+Madagascar,MDG,2004,Wind and Solar,twh,0
+Madagascar,MDG,2005,Wind and Solar,twh,0
+Madagascar,MDG,2006,Wind and Solar,twh,0
+Madagascar,MDG,2007,Wind and Solar,twh,0
+Madagascar,MDG,2008,Wind and Solar,twh,0
+Madagascar,MDG,2009,Wind and Solar,twh,0
+Madagascar,MDG,2010,Wind and Solar,twh,0
+Madagascar,MDG,2011,Wind and Solar,twh,0
+Madagascar,MDG,2012,Wind and Solar,twh,0
+Madagascar,MDG,2013,Wind and Solar,twh,0.01
+Madagascar,MDG,2014,Wind and Solar,twh,0.01
+Madagascar,MDG,2015,Wind and Solar,twh,0.02
+Madagascar,MDG,2016,Wind and Solar,twh,0.02
+Madagascar,MDG,2017,Wind and Solar,twh,0.02
+Madagascar,MDG,2018,Wind and Solar,twh,0.02
+Madagascar,MDG,2019,Wind and Solar,twh,0.03
+Madagascar,MDG,2020,Wind and Solar,twh,0.03
+Madagascar,MDG,2021,Wind and Solar,twh,0.04
+Madagascar,MDG,2022,Wind and Solar,twh,0.04
+Namibia,NAM,2000,Wind and solar,twh,0
+Namibia,NAM,2000,Wind and solar,percentage,0
+Namibia,NAM,2001,Wind and solar,twh,0
+Namibia,NAM,2001,Wind and solar,percentage,0
+Namibia,NAM,2002,Wind and solar,twh,0
+Namibia,NAM,2002,Wind and solar,percentage,0
+Namibia,NAM,2003,Wind and solar,twh,0
+Namibia,NAM,2003,Wind and solar,percentage,0
+Namibia,NAM,2004,Wind and solar,twh,0
+Namibia,NAM,2004,Wind and solar,percentage,0
+Namibia,NAM,2005,Wind and solar,twh,0
+Namibia,NAM,2005,Wind and solar,percentage,0
+Namibia,NAM,2006,Wind and solar,twh,0
+Namibia,NAM,2006,Wind and solar,percentage,0
+Namibia,NAM,2007,Wind and solar,twh,0
+Namibia,NAM,2007,Wind and solar,percentage,0
+Namibia,NAM,2008,Wind and solar,twh,0
+Namibia,NAM,2008,Wind and solar,percentage,0
+Namibia,NAM,2009,Wind and solar,twh,0
+Namibia,NAM,2009,Wind and solar,percentage,0
+Namibia,NAM,2010,Wind and solar,twh,0.01
+Namibia,NAM,2010,Wind and solar,percentage,0.77
+Namibia,NAM,2011,Wind and solar,twh,0.01
+Namibia,NAM,2011,Wind and solar,percentage,0.7
+Namibia,NAM,2012,Wind and solar,twh,0.01
+Namibia,NAM,2012,Wind and solar,percentage,0.61
+Namibia,NAM,2013,Wind and solar,twh,0.02
+Namibia,NAM,2013,Wind and solar,percentage,1.49
+Namibia,NAM,2014,Wind and solar,twh,0.03
+Namibia,NAM,2014,Wind and solar,percentage,1.97
+Namibia,NAM,2015,Wind and solar,twh,0.04
+Namibia,NAM,2015,Wind and solar,percentage,2.56
+Namibia,NAM,2016,Wind and solar,twh,0.06
+Namibia,NAM,2016,Wind and solar,percentage,4.08
+Namibia,NAM,2017,Wind and solar,twh,0.1
+Namibia,NAM,2017,Wind and solar,percentage,5.75
+Namibia,NAM,2018,Wind and solar,twh,0.26
+Namibia,NAM,2018,Wind and solar,percentage,18.44
+Namibia,NAM,2019,Wind and solar,twh,0.37
+Namibia,NAM,2019,Wind and solar,percentage,27.21
+Namibia,NAM,2020,Wind and solar,twh,0.39
+Namibia,NAM,2020,Wind and solar,percentage,20
+Namibia,NAM,2021,Wind and solar,twh,0.4
+Namibia,NAM,2021,Wind and solar,percentage,25.47
+Nigeria,NGA,2000,Wind and solar,twh,0
+Nigeria,NGA,2000,Wind and solar,percentage,0
+Nigeria,NGA,2001,Wind and solar,twh,0
+Nigeria,NGA,2001,Wind and solar,percentage,0
+Nigeria,NGA,2002,Wind and solar,twh,0
+Nigeria,NGA,2002,Wind and solar,percentage,0
+Nigeria,NGA,2003,Wind and solar,twh,0
+Nigeria,NGA,2003,Wind and solar,percentage,0
+Nigeria,NGA,2004,Wind and solar,twh,0
+Nigeria,NGA,2004,Wind and solar,percentage,0
+Nigeria,NGA,2005,Wind and solar,twh,0
+Nigeria,NGA,2005,Wind and solar,percentage,0
+Nigeria,NGA,2006,Wind and solar,twh,0
+Nigeria,NGA,2006,Wind and solar,percentage,0
+Nigeria,NGA,2007,Wind and solar,twh,0
+Nigeria,NGA,2007,Wind and solar,percentage,0
+Nigeria,NGA,2008,Wind and solar,twh,0
+Nigeria,NGA,2008,Wind and solar,percentage,0
+Nigeria,NGA,2009,Wind and solar,twh,0
+Nigeria,NGA,2009,Wind and solar,percentage,0
+Nigeria,NGA,2010,Wind and solar,twh,0
+Nigeria,NGA,2010,Wind and solar,percentage,0
+Nigeria,NGA,2011,Wind and solar,twh,0
+Nigeria,NGA,2011,Wind and solar,percentage,0
+Nigeria,NGA,2012,Wind and solar,twh,0.02
+Nigeria,NGA,2012,Wind and solar,percentage,0.07
+Nigeria,NGA,2013,Wind and solar,twh,0.02
+Nigeria,NGA,2013,Wind and solar,percentage,0.07
+Nigeria,NGA,2014,Wind and solar,twh,0.02
+Nigeria,NGA,2014,Wind and solar,percentage,0.07
+Nigeria,NGA,2015,Wind and solar,twh,0.03
+Nigeria,NGA,2015,Wind and solar,percentage,0.1
+Nigeria,NGA,2016,Wind and solar,twh,0.03
+Nigeria,NGA,2016,Wind and solar,percentage,0.09
+Nigeria,NGA,2017,Wind and solar,twh,0.03
+Nigeria,NGA,2017,Wind and solar,percentage,0.09
+Nigeria,NGA,2018,Wind and solar,twh,0.03
+Nigeria,NGA,2018,Wind and solar,percentage,0.09
+Nigeria,NGA,2019,Wind and solar,twh,0.04
+Nigeria,NGA,2019,Wind and solar,percentage,0.13
+Nigeria,NGA,2020,Wind and solar,twh,0.04
+Nigeria,NGA,2020,Wind and solar,percentage,0.13
+Nigeria,NGA,2021,Wind and solar,twh,0.05
+Nigeria,NGA,2021,Wind and solar,percentage,0.16
+Nigeria,NGA,2022,Wind and solar,twh,0.05
+Nigeria,NGA,2022,Wind and solar,percentage,0.16
+South Africa,ZAF,2000,Wind and solar,twh,0
+South Africa,ZAF,2000,Wind and solar,percentage,0
+South Africa,ZAF,2001,Wind and solar,twh,0
+South Africa,ZAF,2001,Wind and solar,percentage,0
+South Africa,ZAF,2002,Wind and solar,twh,0.02
+South Africa,ZAF,2002,Wind and solar,percentage,0.01
+South Africa,ZAF,2003,Wind and solar,twh,0.03
+South Africa,ZAF,2003,Wind and solar,percentage,0.01
+South Africa,ZAF,2004,Wind and solar,twh,0.03
+South Africa,ZAF,2004,Wind and solar,percentage,0.01
+South Africa,ZAF,2005,Wind and solar,twh,0.03
+South Africa,ZAF,2005,Wind and solar,percentage,0.01
+South Africa,ZAF,2006,Wind and solar,twh,0.03
+South Africa,ZAF,2006,Wind and solar,percentage,0.01
+South Africa,ZAF,2007,Wind and solar,twh,0.03
+South Africa,ZAF,2007,Wind and solar,percentage,0.01
+South Africa,ZAF,2008,Wind and solar,twh,0.04
+South Africa,ZAF,2008,Wind and solar,percentage,0.02
+South Africa,ZAF,2009,Wind and solar,twh,0.05
+South Africa,ZAF,2009,Wind and solar,percentage,0.02
+South Africa,ZAF,2010,Wind and solar,twh,0.05
+South Africa,ZAF,2010,Wind and solar,percentage,0.02
+South Africa,ZAF,2011,Wind and solar,twh,0.06
+South Africa,ZAF,2011,Wind and solar,percentage,0.03
+South Africa,ZAF,2012,Wind and solar,twh,0.07
+South Africa,ZAF,2012,Wind and solar,percentage,0.03
+South Africa,ZAF,2013,Wind and solar,twh,0.06
+South Africa,ZAF,2013,Wind and solar,percentage,0.02
+South Africa,ZAF,2014,Wind and solar,twh,2.14
+South Africa,ZAF,2014,Wind and solar,percentage,0.91
+South Africa,ZAF,2015,Wind and solar,twh,4.9
+South Africa,ZAF,2015,Wind and solar,percentage,2.11
+South Africa,ZAF,2016,Wind and solar,twh,6.71
+South Africa,ZAF,2016,Wind and solar,percentage,2.85
+South Africa,ZAF,2017,Wind and solar,twh,8.86
+South Africa,ZAF,2017,Wind and solar,percentage,3.73
+South Africa,ZAF,2018,Wind and solar,twh,10.71
+South Africa,ZAF,2018,Wind and solar,percentage,4.52
+South Africa,ZAF,2019,Wind and solar,twh,11.43
+South Africa,ZAF,2019,Wind and solar,percentage,4.87
+South Africa,ZAF,2020,Wind and solar,twh,10.97
+South Africa,ZAF,2020,Wind and solar,percentage,4.95
+South Africa,ZAF,2021,Wind and solar,twh,15.01
+South Africa,ZAF,2021,Wind and solar,percentage,6.73
+South Africa,ZAF,2022,Wind and solar,twh,19.69
+South Africa,ZAF,2022,Wind and solar,percentage,9.22
+Zambia,ZMB,2000,Wind and solar,twh,0
+Zambia,ZMB,2000,Wind and solar,percentage,0
+Zambia,ZMB,2001,Wind and solar,twh,0
+Zambia,ZMB,2001,Wind and solar,percentage,0
+Zambia,ZMB,2002,Wind and solar,twh,0
+Zambia,ZMB,2002,Wind and solar,percentage,0
+Zambia,ZMB,2003,Wind and solar,twh,0
+Zambia,ZMB,2003,Wind and solar,percentage,0
+Zambia,ZMB,2004,Wind and solar,twh,0
+Zambia,ZMB,2004,Wind and solar,percentage,0
+Zambia,ZMB,2005,Wind and solar,twh,0
+Zambia,ZMB,2005,Wind and solar,percentage,0
+Zambia,ZMB,2006,Wind and solar,twh,0
+Zambia,ZMB,2006,Wind and solar,percentage,0
+Zambia,ZMB,2007,Wind and solar,twh,0
+Zambia,ZMB,2007,Wind and solar,percentage,0
+Zambia,ZMB,2008,Wind and solar,twh,0
+Zambia,ZMB,2008,Wind and solar,percentage,0
+Zambia,ZMB,2009,Wind and solar,twh,0
+Zambia,ZMB,2009,Wind and solar,percentage,0
+Zambia,ZMB,2010,Wind and solar,twh,0
+Zambia,ZMB,2010,Wind and solar,percentage,0
+Zambia,ZMB,2011,Wind and solar,twh,0
+Zambia,ZMB,2011,Wind and solar,percentage,0
+Zambia,ZMB,2012,Wind and solar,twh,0
+Zambia,ZMB,2012,Wind and solar,percentage,0
+Zambia,ZMB,2013,Wind and solar,twh,0
+Zambia,ZMB,2013,Wind and solar,percentage,0
+Zambia,ZMB,2014,Wind and solar,twh,0
+Zambia,ZMB,2014,Wind and solar,percentage,0
+Zambia,ZMB,2015,Wind and solar,twh,0
+Zambia,ZMB,2015,Wind and solar,percentage,0
+Zambia,ZMB,2016,Wind and solar,twh,0
+Zambia,ZMB,2016,Wind and solar,percentage,0
+Zambia,ZMB,2017,Wind and solar,twh,0
+Zambia,ZMB,2017,Wind and solar,percentage,0
+Zambia,ZMB,2018,Wind and solar,twh,0
+Zambia,ZMB,2018,Wind and solar,percentage,0
+Zambia,ZMB,2019,Wind and solar,twh,0.12
+Zambia,ZMB,2019,Wind and solar,percentage,0.82
+Zambia,ZMB,2020,Wind and solar,twh,0.15
+Zambia,ZMB,2020,Wind and solar,percentage,0.99
+Zambia,ZMB,2021,Wind and solar,twh,0.15
+Zambia,ZMB,2021,Wind and solar,percentage,0.85
+Zimbabwe,ZWE,2000,Wind and solar,twh,0
+Zimbabwe,ZWE,2000,Wind and solar,percentage,0
+Zimbabwe,ZWE,2001,Wind and solar,twh,0
+Zimbabwe,ZWE,2001,Wind and solar,percentage,0
+Zimbabwe,ZWE,2002,Wind and solar,twh,0
+Zimbabwe,ZWE,2002,Wind and solar,percentage,0
+Zimbabwe,ZWE,2003,Wind and solar,twh,0
+Zimbabwe,ZWE,2003,Wind and solar,percentage,0
+Zimbabwe,ZWE,2004,Wind and solar,twh,0
+Zimbabwe,ZWE,2004,Wind and solar,percentage,0
+Zimbabwe,ZWE,2005,Wind and solar,twh,0
+Zimbabwe,ZWE,2005,Wind and solar,percentage,0
+Zimbabwe,ZWE,2006,Wind and solar,twh,0
+Zimbabwe,ZWE,2006,Wind and solar,percentage,0
+Zimbabwe,ZWE,2007,Wind and solar,twh,0
+Zimbabwe,ZWE,2007,Wind and solar,percentage,0
+Zimbabwe,ZWE,2008,Wind and solar,twh,0
+Zimbabwe,ZWE,2008,Wind and solar,percentage,0
+Zimbabwe,ZWE,2009,Wind and solar,twh,0
+Zimbabwe,ZWE,2009,Wind and solar,percentage,0
+Zimbabwe,ZWE,2010,Wind and solar,twh,0
+Zimbabwe,ZWE,2010,Wind and solar,percentage,0
+Zimbabwe,ZWE,2011,Wind and solar,twh,0
+Zimbabwe,ZWE,2011,Wind and solar,percentage,0
+Zimbabwe,ZWE,2012,Wind and solar,twh,0
+Zimbabwe,ZWE,2012,Wind and solar,percentage,0
+Zimbabwe,ZWE,2013,Wind and solar,twh,0
+Zimbabwe,ZWE,2013,Wind and solar,percentage,0
+Zimbabwe,ZWE,2014,Wind and solar,twh,0
+Zimbabwe,ZWE,2014,Wind and solar,percentage,0
+Zimbabwe,ZWE,2015,Wind and solar,twh,0.01
+Zimbabwe,ZWE,2015,Wind and solar,percentage,0.11
+Zimbabwe,ZWE,2016,Wind and solar,twh,0.01
+Zimbabwe,ZWE,2016,Wind and solar,percentage,0.15
+Zimbabwe,ZWE,2017,Wind and solar,twh,0.01
+Zimbabwe,ZWE,2017,Wind and solar,percentage,0.14
+Zimbabwe,ZWE,2018,Wind and solar,twh,0.02
+Zimbabwe,ZWE,2018,Wind and solar,percentage,0.22
+Zimbabwe,ZWE,2019,Wind and solar,twh,0.03
+Zimbabwe,ZWE,2019,Wind and solar,percentage,0.36
+Zimbabwe,ZWE,2020,Wind and solar,twh,0.03
+Zimbabwe,ZWE,2020,Wind and solar,percentage,0.4
+Zimbabwe,ZWE,2021,Wind and solar,twh,0.04
+Zimbabwe,ZWE,2021,Wind and solar,percentage,0.5

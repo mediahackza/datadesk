@@ -312,6 +312,7 @@ class query_handler {
         $table->set_name($row['str_name']);
         $table->set_db_name($row['db_name']);
         $table->set_last_updated($row['last_updated']);
+        $table->set_local_update($row["last_local_update"]);
         $table->set_source($row['data_source']);
         $table->set_uploader_id($row['upload_user_id']);
         $table->set_status($row['status']);
@@ -321,6 +322,21 @@ class query_handler {
         $table->set_source_link($row['source_link']);
         $table->fetch_notes();
         return $table;  
+    }
+
+    static function fetch_table_ids($last_id, $chunk) {
+        $query = "SELECT id, last_local_update from " . self::$meta_table_name . " WHERE id > " . $last_id. " ORDER BY id ASC LIMIT " . $chunk;
+
+        $id_list = array();
+
+        if ($res = self::$db->query($query)) {
+            while ($row = $res->fetch_assoc()) {
+                $id_list[] = $row["id"];
+            }
+            return $id_list;
+        }
+
+        return false;
     }
 
     static function fetch_table_by_id($id) {
@@ -352,6 +368,16 @@ class query_handler {
             $string .= ") ";
         }
         return $string;
+    }
+
+    static function set_local_update_time($id) {
+        $query = "UPDATE tables SET last_local_update = NOW() WHERE id = " . $id;
+
+        if ($res = self::$db->query($query)) {
+            return true; 
+        }
+
+        return false;
     }
 
     static function fetch_tables() {

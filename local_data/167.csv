@@ -1,0 +1,817 @@
+country,iso_code,year,variable,measure,generation
+Angola,AGO,2000,Fossil,percentage,36.81
+Angola,AGO,2001,Fossil,percentage,37.8
+Angola,AGO,2002,Fossil,percentage,35.23
+Angola,AGO,2003,Fossil,percentage,37.69
+Angola,AGO,2004,Fossil,percentage,21.88
+Angola,AGO,2005,Fossil,percentage,15.59
+Angola,AGO,2006,Fossil,percentage,14.77
+Angola,AGO,2007,Fossil,percentage,23.15
+Angola,AGO,2008,Fossil,percentage,22.22
+Angola,AGO,2009,Fossil,percentage,33.4
+Angola,AGO,2010,Fossil,percentage,32.05
+Angola,AGO,2011,Fossil,percentage,28.98
+Angola,AGO,2012,Fossil,percentage,29.02
+Angola,AGO,2013,Fossil,percentage,41.96
+Angola,AGO,2014,Fossil,percentage,47.18
+Angola,AGO,2015,Fossil,percentage,45.4
+Angola,AGO,2016,Fossil,percentage,41.44
+Angola,AGO,2017,Fossil,percentage,28.58
+Angola,AGO,2018,Fossil,percentage,20.55
+Angola,AGO,2019,Fossil,percentage,26.8
+Angola,AGO,2020,Fossil,percentage,24.39
+Angola,AGO,2021,Fossil,percentage,24.57
+Angola,AGO,2022,Fossil,percentage,24.97
+Angola,AGO,2000,Fossil,twh,0.53
+Angola,AGO,2001,Fossil,twh,0.62
+Angola,AGO,2002,Fossil,twh,0.62
+Angola,AGO,2003,Fossil,twh,0.75
+Angola,AGO,2004,Fossil,twh,0.49
+Angola,AGO,2005,Fossil,twh,0.41
+Angola,AGO,2006,Fossil,twh,0.44
+Angola,AGO,2007,Fossil,twh,0.75
+Angola,AGO,2008,Fossil,twh,0.9
+Angola,AGO,2009,Fossil,twh,1.64
+Angola,AGO,2010,Fossil,twh,1.75
+Angola,AGO,2011,Fossil,twh,1.64
+Angola,AGO,2012,Fossil,twh,2.24
+Angola,AGO,2013,Fossil,twh,3.42
+Angola,AGO,2014,Fossil,twh,4.51
+Angola,AGO,2015,Fossil,twh,4.44
+Angola,AGO,2016,Fossil,twh,4.55
+Angola,AGO,2017,Fossil,twh,3.09
+Angola,AGO,2018,Fossil,twh,2.7
+Angola,AGO,2019,Fossil,twh,4.24
+Angola,AGO,2020,Fossil,twh,4.1
+Angola,AGO,2021,Fossil,twh,4.14
+Angola,AGO,2022,Fossil,twh,4.23
+Botswana,BWA,2000,Fossil,percentage,100
+Botswana,BWA,2001,Fossil,percentage,100
+Botswana,BWA,2002,Fossil,percentage,100
+Botswana,BWA,2003,Fossil,percentage,100
+Botswana,BWA,2004,Fossil,percentage,100
+Botswana,BWA,2005,Fossil,percentage,100
+Botswana,BWA,2006,Fossil,percentage,100
+Botswana,BWA,2007,Fossil,percentage,100
+Botswana,BWA,2008,Fossil,percentage,100
+Botswana,BWA,2009,Fossil,percentage,100
+Botswana,BWA,2010,Fossil,percentage,100
+Botswana,BWA,2011,Fossil,percentage,100
+Botswana,BWA,2012,Fossil,percentage,100
+Botswana,BWA,2013,Fossil,percentage,100
+Botswana,BWA,2014,Fossil,percentage,100
+Botswana,BWA,2015,Fossil,percentage,100
+Botswana,BWA,2016,Fossil,percentage,100
+Botswana,BWA,2017,Fossil,percentage,100
+Botswana,BWA,2018,Fossil,percentage,99.68
+Botswana,BWA,2019,Fossil,percentage,99.6
+Botswana,BWA,2020,Fossil,percentage,99.54
+Botswana,BWA,2021,Fossil,percentage,99.59
+Botswana,BWA,2022,Fossil,percentage,99.62
+Botswana,BWA,2000,Fossil,twh,1.14
+Botswana,BWA,2001,Fossil,twh,1.13
+Botswana,BWA,2002,Fossil,twh,1.15
+Botswana,BWA,2003,Fossil,twh,1.04
+Botswana,BWA,2004,Fossil,twh,0.97
+Botswana,BWA,2005,Fossil,twh,1.06
+Botswana,BWA,2006,Fossil,twh,0.99
+Botswana,BWA,2007,Fossil,twh,0.83
+Botswana,BWA,2008,Fossil,twh,0.7
+Botswana,BWA,2009,Fossil,twh,0.62
+Botswana,BWA,2010,Fossil,twh,0.53
+Botswana,BWA,2011,Fossil,twh,0.48
+Botswana,BWA,2012,Fossil,twh,0.35
+Botswana,BWA,2013,Fossil,twh,0.92
+Botswana,BWA,2014,Fossil,twh,2.31
+Botswana,BWA,2015,Fossil,twh,2.97
+Botswana,BWA,2016,Fossil,twh,2.69
+Botswana,BWA,2017,Fossil,twh,3.02
+Botswana,BWA,2018,Fossil,twh,3.1
+Botswana,BWA,2019,Fossil,twh,2.5
+Botswana,BWA,2020,Fossil,twh,2.17
+Kenya,KEN,2000,Fossil,percentage,59.63
+Kenya,KEN,2001,Fossil,percentage,40.54
+Kenya,KEN,2002,Fossil,percentage,23.3
+Kenya,KEN,2003,Fossil,percentage,18.07
+Kenya,KEN,2004,Fossil,percentage,29.55
+Kenya,KEN,2005,Fossil,percentage,33.28
+Kenya,KEN,2006,Fossil,percentage,37.15
+Kenya,KEN,2007,Fossil,percentage,25.94
+Kenya,KEN,2008,Fossil,percentage,27.32
+Kenya,KEN,2009,Fossil,percentage,39.39
+Kenya,KEN,2010,Fossil,percentage,25.56
+Kenya,KEN,2011,Fossil,percentage,30.78
+Kenya,KEN,2012,Fossil,percentage,22.52
+Kenya,KEN,2013,Fossil,percentage,21.66
+Kenya,KEN,2014,Fossil,percentage,23.59
+Kenya,KEN,2015,Fossil,percentage,10.19
+Kenya,KEN,2016,Fossil,percentage,10.74
+Kenya,KEN,2017,Fossil,percentage,19.11
+Kenya,KEN,2018,Fossil,percentage,10.83
+Kenya,KEN,2019,Fossil,percentage,9.38
+Kenya,KEN,2020,Fossil,percentage,5.78
+Kenya,KEN,2021,Fossil,percentage,7.87
+Kenya,KEN,2022,Fossil,percentage,8.01
+Kenya,KEN,2000,Fossil,twh,2.57
+Kenya,KEN,2001,Fossil,twh,1.95
+Kenya,KEN,2002,Fossil,twh,1.2
+Kenya,KEN,2003,Fossil,twh,0.99
+Kenya,KEN,2004,Fossil,twh,1.82
+Kenya,KEN,2005,Fossil,twh,2.23
+Kenya,KEN,2006,Fossil,twh,2.79
+Kenya,KEN,2007,Fossil,twh,1.73
+Kenya,KEN,2008,Fossil,twh,1.68
+Kenya,KEN,2009,Fossil,twh,2.58
+Kenya,KEN,2010,Fossil,twh,1.83
+Kenya,KEN,2011,Fossil,twh,2.41
+Kenya,KEN,2012,Fossil,twh,1.84
+Kenya,KEN,2013,Fossil,twh,1.75
+Kenya,KEN,2014,Fossil,twh,2.17
+Kenya,KEN,2015,Fossil,twh,1
+Kenya,KEN,2016,Fossil,twh,1.04
+Kenya,KEN,2017,Fossil,twh,2.07
+Kenya,KEN,2018,Fossil,twh,1.22
+Kenya,KEN,2019,Fossil,twh,1.09
+Kenya,KEN,2020,Fossil,twh,0.67
+Kenya,KEN,2021,Fossil,twh,0.95
+Kenya,KEN,2022,Fossil,twh,0.99
+Madagascar,MDG,2000,Fossil,percentage,36.05
+Madagascar,MDG,2001,Fossil,percentage,38.64
+Madagascar,MDG,2002,Fossil,percentage,36.05
+Madagascar,MDG,2003,Fossil,percentage,36.46
+Madagascar,MDG,2004,Fossil,percentage,39.05
+Madagascar,MDG,2005,Fossil,percentage,38.68
+Madagascar,MDG,2006,Fossil,percentage,40.19
+Madagascar,MDG,2007,Fossil,percentage,35.71
+Madagascar,MDG,2008,Fossil,percentage,40.68
+Madagascar,MDG,2009,Fossil,percentage,37.82
+Madagascar,MDG,2010,Fossil,percentage,45.38
+Madagascar,MDG,2011,Fossil,percentage,52.38
+Madagascar,MDG,2012,Fossil,percentage,50.64
+Madagascar,MDG,2013,Fossil,percentage,49.7
+Madagascar,MDG,2014,Fossil,percentage,47.09
+Madagascar,MDG,2015,Fossil,percentage,45.81
+Madagascar,MDG,2016,Fossil,percentage,51.58
+Madagascar,MDG,2017,Fossil,percentage,58.08
+Madagascar,MDG,2018,Fossil,percentage,51.19
+Madagascar,MDG,2019,Fossil,percentage,55.97
+Madagascar,MDG,2020,Fossil,percentage,58.79
+Madagascar,MDG,2021,Fossil,percentage,62.45
+Madagascar,MDG,2000,Fossil,twh,0.31
+Madagascar,MDG,2001,Fossil,twh,0.34
+Madagascar,MDG,2002,Fossil,twh,0.31
+Madagascar,MDG,2003,Fossil,twh,0.35
+Madagascar,MDG,2004,Fossil,twh,0.41
+Madagascar,MDG,2005,Fossil,twh,0.41
+Madagascar,MDG,2006,Fossil,twh,0.43
+Madagascar,MDG,2007,Fossil,twh,0.4
+Madagascar,MDG,2008,Fossil,twh,0.48
+Madagascar,MDG,2009,Fossil,twh,0.45
+Madagascar,MDG,2010,Fossil,twh,0.59
+Madagascar,MDG,2011,Fossil,twh,0.77
+Madagascar,MDG,2012,Fossil,twh,0.79
+Madagascar,MDG,2013,Fossil,twh,0.82
+Madagascar,MDG,2014,Fossil,twh,0.81
+Madagascar,MDG,2015,Fossil,twh,0.82
+Madagascar,MDG,2016,Fossil,twh,0.98
+Madagascar,MDG,2017,Fossil,twh,1.15
+Madagascar,MDG,2018,Fossil,twh,1.07
+Madagascar,MDG,2019,Fossil,twh,1.22
+Madagascar,MDG,2020,Fossil,twh,1.27
+Madagascar,MDG,2021,Fossil,twh,1.43
+Namibia,NAM,2000,Fossil,percentage,2.84
+Namibia,NAM,2000,Fossil,twh,0.04
+Namibia,NAM,2001,Fossil,percentage,0
+Namibia,NAM,2001,Fossil,twh,0
+Namibia,NAM,2002,Fossil,percentage,0
+Namibia,NAM,2002,Fossil,twh,0
+Namibia,NAM,2003,Fossil,percentage,0.66
+Namibia,NAM,2003,Fossil,twh,0.01
+Namibia,NAM,2004,Fossil,percentage,0
+Namibia,NAM,2004,Fossil,twh,0
+Namibia,NAM,2005,Fossil,percentage,2.39
+Namibia,NAM,2005,Fossil,twh,0.04
+Namibia,NAM,2006,Fossil,percentage,5.36
+Namibia,NAM,2006,Fossil,twh,0.09
+Namibia,NAM,2007,Fossil,percentage,2.51
+Namibia,NAM,2007,Fossil,twh,0.04
+Namibia,NAM,2008,Fossil,percentage,10.3
+Namibia,NAM,2008,Fossil,twh,0.17
+Namibia,NAM,2009,Fossil,percentage,5.44
+Namibia,NAM,2009,Fossil,twh,0.08
+Namibia,NAM,2010,Fossil,percentage,3.85
+Namibia,NAM,2010,Fossil,twh,0.05
+Namibia,NAM,2011,Fossil,percentage,2.1
+Namibia,NAM,2011,Fossil,twh,0.03
+Namibia,NAM,2012,Fossil,percentage,1.84
+Namibia,NAM,2012,Fossil,twh,0.03
+Namibia,NAM,2013,Fossil,percentage,4.48
+Namibia,NAM,2013,Fossil,twh,0.06
+Namibia,NAM,2014,Fossil,percentage,1.32
+Namibia,NAM,2014,Fossil,twh,0.02
+Namibia,NAM,2015,Fossil,percentage,1.92
+Namibia,NAM,2015,Fossil,twh,0.03
+Namibia,NAM,2016,Fossil,percentage,4.08
+Namibia,NAM,2016,Fossil,twh,0.06
+Namibia,NAM,2017,Fossil,percentage,3.45
+Namibia,NAM,2017,Fossil,twh,0.06
+Namibia,NAM,2018,Fossil,percentage,1.42
+Namibia,NAM,2018,Fossil,twh,0.02
+Namibia,NAM,2019,Fossil,percentage,2.95
+Namibia,NAM,2019,Fossil,twh,0.04
+Namibia,NAM,2020,Fossil,percentage,3.08
+Namibia,NAM,2020,Fossil,twh,0.06
+Namibia,NAM,2021,Fossil,percentage,4.45
+Namibia,NAM,2021,Fossil,twh,0.07
+Nigeria,NGA,2000,Fossil,percentage,59.72
+Nigeria,NGA,2000,Fossil,twh,8.45
+Nigeria,NGA,2001,Fossil,percentage,60.51
+Nigeria,NGA,2001,Fossil,twh,8.98
+Nigeria,NGA,2002,Fossil,percentage,60.53
+Nigeria,NGA,2002,Fossil,twh,12.51
+Nigeria,NGA,2003,Fossil,percentage,61.86
+Nigeria,NGA,2003,Fossil,twh,11.97
+Nigeria,NGA,2004,Fossil,percentage,65.38
+Nigeria,NGA,2004,Fossil,twh,15.2
+Nigeria,NGA,2005,Fossil,percentage,65.82
+Nigeria,NGA,2005,Fossil,twh,14.83
+Nigeria,NGA,2006,Fossil,percentage,71.83
+Nigeria,NGA,2006,Fossil,twh,15.83
+Nigeria,NGA,2007,Fossil,percentage,71.84
+Nigeria,NGA,2007,Fossil,twh,15.74
+Nigeria,NGA,2008,Fossil,percentage,71.85
+Nigeria,NGA,2008,Fossil,twh,14.47
+Nigeria,NGA,2009,Fossil,percentage,76.14
+Nigeria,NGA,2009,Fossil,twh,14.33
+Nigeria,NGA,2010,Fossil,percentage,74.56
+Nigeria,NGA,2010,Fossil,twh,18.56
+Nigeria,NGA,2011,Fossil,percentage,77.29
+Nigeria,NGA,2011,Fossil,twh,19.88
+Nigeria,NGA,2012,Fossil,percentage,79.34
+Nigeria,NGA,2012,Fossil,twh,21.66
+Nigeria,NGA,2013,Fossil,percentage,80.66
+Nigeria,NGA,2013,Fossil,twh,22.14
+Nigeria,NGA,2014,Fossil,percentage,82.55
+Nigeria,NGA,2014,Fossil,twh,25.26
+Nigeria,NGA,2015,Fossil,percentage,81.47
+Nigeria,NGA,2015,Fossil,twh,25.1
+Nigeria,NGA,2016,Fossil,percentage,74.63
+Nigeria,NGA,2016,Fossil,twh,23.89
+Nigeria,NGA,2017,Fossil,percentage,76.44
+Nigeria,NGA,2017,Fossil,twh,25.06
+Nigeria,NGA,2018,Fossil,percentage,75.7
+Nigeria,NGA,2018,Fossil,twh,24.11
+Nigeria,NGA,2019,Fossil,percentage,73.17
+Nigeria,NGA,2019,Fossil,twh,23.16
+Nigeria,NGA,2020,Fossil,percentage,73.93
+Nigeria,NGA,2020,Fossil,twh,21.98
+Nigeria,NGA,2021,Fossil,percentage,74.34
+Nigeria,NGA,2021,Fossil,twh,23.39
+Nigeria,NGA,2022,Fossil,percentage,72.5
+Nigeria,NGA,2022,Fossil,twh,23.27
+South Africa,ZAF,2000,Fossil,percentage,92.47
+South Africa,ZAF,2000,Fossil,twh,181.68
+South Africa,ZAF,2001,Fossil,percentage,93.3
+South Africa,ZAF,2001,Fossil,twh,183.37
+South Africa,ZAF,2002,Fossil,percentage,92.74
+South Africa,ZAF,2002,Fossil,twh,188.79
+South Africa,ZAF,2003,Fossil,percentage,93.65
+South Africa,ZAF,2003,Fossil,twh,204.4
+South Africa,ZAF,2004,Fossil,percentage,93.16
+South Africa,ZAF,2004,Fossil,twh,212.63
+South Africa,ZAF,2005,Fossil,percentage,93.9
+South Africa,ZAF,2005,Fossil,twh,215.24
+South Africa,ZAF,2006,Fossil,percentage,94.36
+South Africa,ZAF,2006,Fossil,twh,223.25
+South Africa,ZAF,2007,Fossil,percentage,94.37
+South Africa,ZAF,2007,Fossil,twh,232.92
+South Africa,ZAF,2008,Fossil,percentage,94.01
+South Africa,ZAF,2008,Fossil,twh,226.32
+South Africa,ZAF,2009,Fossil,percentage,94.2
+South Africa,ZAF,2009,Fossil,twh,218.17
+South Africa,ZAF,2010,Fossil,percentage,93.66
+South Africa,ZAF,2010,Fossil,twh,227.58
+South Africa,ZAF,2011,Fossil,percentage,93.69
+South Africa,ZAF,2011,Fossil,twh,229.06
+South Africa,ZAF,2012,Fossil,percentage,94.17
+South Africa,ZAF,2012,Fossil,twh,226.85
+South Africa,ZAF,2013,Fossil,percentage,93.62
+South Africa,ZAF,2013,Fossil,twh,223.29
+South Africa,ZAF,2014,Fossil,percentage,92.34
+South Africa,ZAF,2014,Fossil,twh,218.42
+South Africa,ZAF,2015,Fossil,percentage,92.69
+South Africa,ZAF,2015,Fossil,twh,214.99
+South Africa,ZAF,2016,Fossil,percentage,90.29
+South Africa,ZAF,2016,Fossil,twh,213.09
+South Africa,ZAF,2017,Fossil,percentage,89.44
+South Africa,ZAF,2017,Fossil,twh,212.77
+South Africa,ZAF,2018,Fossil,percentage,90.4
+South Africa,ZAF,2018,Fossil,twh,214.26
+South Africa,ZAF,2019,Fossil,percentage,88.84
+South Africa,ZAF,2019,Fossil,twh,208.4
+South Africa,ZAF,2020,Fossil,percentage,89
+South Africa,ZAF,2020,Fossil,twh,197.53
+South Africa,ZAF,2021,Fossil,percentage,87
+South Africa,ZAF,2021,Fossil,twh,194.18
+South Africa,ZAF,2022,Fossil,percentage,84.43
+South Africa,ZAF,2022,Fossil,twh,180.35
+Zambia,ZMB,2000,Fossil,percentage,0.9
+Zambia,ZMB,2000,Fossil,twh,0.07
+Zambia,ZMB,2001,Fossil,percentage,0.89
+Zambia,ZMB,2001,Fossil,twh,0.07
+Zambia,ZMB,2002,Fossil,percentage,0.99
+Zambia,ZMB,2002,Fossil,twh,0.08
+Zambia,ZMB,2003,Fossil,percentage,0.97
+Zambia,ZMB,2003,Fossil,twh,0.08
+Zambia,ZMB,2004,Fossil,percentage,0.83
+Zambia,ZMB,2004,Fossil,twh,0.07
+Zambia,ZMB,2005,Fossil,percentage,0.9
+Zambia,ZMB,2005,Fossil,twh,0.08
+Zambia,ZMB,2006,Fossil,percentage,0.83
+Zambia,ZMB,2006,Fossil,twh,0.08
+Zambia,ZMB,2007,Fossil,percentage,0.63
+Zambia,ZMB,2007,Fossil,twh,0.06
+Zambia,ZMB,2008,Fossil,percentage,0.42
+Zambia,ZMB,2008,Fossil,twh,0.04
+Zambia,ZMB,2009,Fossil,percentage,0.51
+Zambia,ZMB,2009,Fossil,twh,0.05
+Zambia,ZMB,2010,Fossil,percentage,0.48
+Zambia,ZMB,2010,Fossil,twh,0.05
+Zambia,ZMB,2011,Fossil,percentage,0.44
+Zambia,ZMB,2011,Fossil,twh,0.05
+Zambia,ZMB,2012,Fossil,percentage,0.49
+Zambia,ZMB,2012,Fossil,twh,0.06
+Zambia,ZMB,2013,Fossil,percentage,0.38
+Zambia,ZMB,2013,Fossil,twh,0.05
+Zambia,ZMB,2014,Fossil,percentage,2.44
+Zambia,ZMB,2014,Fossil,twh,0.35
+Zambia,ZMB,2015,Fossil,percentage,2.7
+Zambia,ZMB,2015,Fossil,twh,0.36
+Zambia,ZMB,2016,Fossil,percentage,5.6
+Zambia,ZMB,2016,Fossil,twh,0.65
+Zambia,ZMB,2017,Fossil,percentage,12.47
+Zambia,ZMB,2017,Fossil,twh,1.8
+Zambia,ZMB,2018,Fossil,percentage,13.89
+Zambia,ZMB,2018,Fossil,twh,2.24
+Zambia,ZMB,2019,Fossil,percentage,13.97
+Zambia,ZMB,2019,Fossil,twh,2.05
+Zambia,ZMB,2020,Fossil,percentage,13.24
+Zambia,ZMB,2020,Fossil,twh,2
+Zambia,ZMB,2021,Fossil,percentage,7.79
+Zambia,ZMB,2021,Fossil,twh,1.38
+Zimbabwe,ZWE,2000,Fossil,percentage,48.96
+Zimbabwe,ZWE,2000,Fossil,twh,3.3
+Zimbabwe,ZWE,2001,Fossil,percentage,57.12
+Zimbabwe,ZWE,2001,Fossil,twh,4.33
+Zimbabwe,ZWE,2002,Fossil,percentage,49.88
+Zimbabwe,ZWE,2002,Fossil,twh,4.12
+Zimbabwe,ZWE,2003,Fossil,percentage,34.89
+Zimbabwe,ZWE,2003,Fossil,twh,2.98
+Zimbabwe,ZWE,2004,Fossil,percentage,38.58
+Zimbabwe,ZWE,2004,Fossil,twh,3.63
+Zimbabwe,ZWE,2005,Fossil,percentage,42.48
+Zimbabwe,ZWE,2005,Fossil,twh,3.84
+Zimbabwe,ZWE,2006,Fossil,percentage,29.04
+Zimbabwe,ZWE,2006,Fossil,twh,2.23
+Zimbabwe,ZWE,2007,Fossil,percentage,25.31
+Zimbabwe,ZWE,2007,Fossil,twh,1.86
+Zimbabwe,ZWE,2008,Fossil,percentage,21.65
+Zimbabwe,ZWE,2008,Fossil,twh,1.6
+Zimbabwe,ZWE,2009,Fossil,percentage,22.08
+Zimbabwe,ZWE,2009,Fossil,twh,1.57
+Zimbabwe,ZWE,2010,Fossil,percentage,29.5
+Zimbabwe,ZWE,2010,Fossil,twh,2.49
+Zimbabwe,ZWE,2011,Fossil,percentage,38.37
+Zimbabwe,ZWE,2011,Fossil,twh,3.43
+Zimbabwe,ZWE,2012,Fossil,percentage,36.4
+Zimbabwe,ZWE,2012,Fossil,twh,3.25
+Zimbabwe,ZWE,2013,Fossil,percentage,42.11
+Zimbabwe,ZWE,2013,Fossil,twh,3.9
+Zimbabwe,ZWE,2014,Fossil,percentage,40.37
+Zimbabwe,ZWE,2014,Fossil,twh,3.92
+Zimbabwe,ZWE,2015,Fossil,percentage,42.82
+Zimbabwe,ZWE,2015,Fossil,twh,4.02
+Zimbabwe,ZWE,2016,Fossil,percentage,51.32
+Zimbabwe,ZWE,2016,Fossil,twh,3.5
+Zimbabwe,ZWE,2017,Fossil,percentage,41.5
+Zimbabwe,ZWE,2017,Fossil,twh,3.05
+Zimbabwe,ZWE,2018,Fossil,percentage,40.59
+Zimbabwe,ZWE,2018,Fossil,twh,3.73
+Zimbabwe,ZWE,2019,Fossil,percentage,44.42
+Zimbabwe,ZWE,2019,Fossil,twh,3.66
+Zimbabwe,ZWE,2020,Fossil,percentage,44.8
+Zimbabwe,ZWE,2020,Fossil,twh,3.4
+Zimbabwe,ZWE,2021,Fossil,percentage,44.96
+Zimbabwe,ZWE,2021,Fossil,twh,3.61
+Botswana,BWA,2021,Fossil,twh,2.48
+Botswana,BWA,2022,Fossil,twh,2.62
+Madagascar,MDG,2022,Fossil,twh,1.49
+Madagascar,MDG,2022,Fossil,percentage,63.14
+Angola,AGO,2000,Wind and solar,percentage,0
+Angola,AGO,2001,Wind and solar,percentage,0
+Angola,AGO,2002,Wind and solar,percentage,0
+Angola,AGO,2003,Wind and solar,percentage,0
+Angola,AGO,2004,Wind and solar,percentage,0
+Angola,AGO,2005,Wind and solar,percentage,0
+Angola,AGO,2006,Wind and solar,percentage,0
+Angola,AGO,2007,Wind and solar,percentage,0
+Angola,AGO,2008,Wind and solar,percentage,0
+Angola,AGO,2009,Wind and solar,percentage,0
+Angola,AGO,2010,Wind and solar,percentage,0.19
+Angola,AGO,2011,Wind and solar,percentage,0.18
+Angola,AGO,2012,Wind and solar,percentage,0.17
+Angola,AGO,2013,Wind and solar,percentage,0.13
+Angola,AGO,2014,Wind and solar,percentage,0.22
+Angola,AGO,2015,Wind and solar,percentage,0.21
+Angola,AGO,2016,Wind and solar,percentage,0.2
+Angola,AGO,2017,Wind and solar,percentage,0.19
+Angola,AGO,2018,Wind and solar,percentage,0.16
+Angola,AGO,2019,Wind and solar,percentage,0.13
+Angola,AGO,2020,Wind and solar,percentage,0.12
+Angola,AGO,2021,Wind and solar,percentage,0.12
+Angola,AGO,2021,Wind and solar,percentage,0.12
+Angola,AGO,2000,Wind and solar,twh,0
+Angola,AGO,2001,Wind and solar,twh,0
+Angola,AGO,2002,Wind and solar,twh,0
+Angola,AGO,2003,Wind and solar,twh,0
+Angola,AGO,2004,Wind and solar,twh,0
+Angola,AGO,2005,Wind and solar,twh,0
+Angola,AGO,2006,Wind and solar,twh,0
+Angola,AGO,2007,Wind and solar,twh,0
+Angola,AGO,2008,Wind and solar,twh,0
+Angola,AGO,2009,Wind and solar,twh,0
+Angola,AGO,2010,Wind and solar,twh,0.01
+Angola,AGO,2011,Wind and solar,twh,0.01
+Angola,AGO,2012,Wind and solar,twh,0.01
+Angola,AGO,2013,Wind and solar,twh,0.01
+Angola,AGO,2014,Wind and solar,twh,0.02
+Angola,AGO,2015,Wind and solar,twh,0.02
+Angola,AGO,2016,Wind and solar,twh,0.02
+Angola,AGO,2017,Wind and solar,twh,0.02
+Angola,AGO,2018,Wind and solar,twh,0.02
+Angola,AGO,2019,Wind and solar,twh,0.02
+Angola,AGO,2020,Wind and solar,twh,0.02
+Angola,AGO,2021,Wind and solar,twh,0.02
+Angola,AGO,2022,Wind and solar,twh,0.02
+Botswana,BWA,2000,Wind and solar,percentage,0
+Botswana,BWA,2001,Wind and solar,percentage,0
+Botswana,BWA,2002,Wind and solar,percentage,0
+Botswana,BWA,2003,Wind and solar,percentage,0
+Botswana,BWA,2004,Wind and solar,percentage,0
+Botswana,BWA,2005,Wind and solar,percentage,0
+Botswana,BWA,2006,Wind and solar,percentage,0
+Botswana,BWA,2007,Wind and solar,percentage,0
+Botswana,BWA,2008,Wind and solar,percentage,0
+Botswana,BWA,2009,Wind and solar,percentage,0
+Botswana,BWA,2010,Wind and solar,percentage,0
+Botswana,BWA,2011,Wind and solar,percentage,0
+Botswana,BWA,2012,Wind and solar,percentage,0
+Botswana,BWA,2013,Wind and solar,percentage,0
+Botswana,BWA,2014,Wind and solar,percentage,0
+Botswana,BWA,2015,Wind and solar,percentage,0
+Botswana,BWA,2016,Wind and solar,percentage,0
+Botswana,BWA,2017,Wind and solar,percentage,0
+Botswana,BWA,2018,Wind and solar,percentage,0.32
+Botswana,BWA,2019,Wind and solar,percentage,0.4
+Botswana,BWA,2020,Wind and solar,percentage,0.46
+Botswana,BWA,2021,Wind and solar,percentage,0.4
+Botswana,BWA,2000,Wind and solar,twh,0
+Botswana,BWA,2001,Wind and solar,twh,0
+Botswana,BWA,2002,Wind and solar,twh,0
+Botswana,BWA,2003,Wind and solar,twh,0
+Botswana,BWA,2004,Wind and solar,twh,0
+Botswana,BWA,2005,Wind and solar,twh,0
+Botswana,BWA,2006,Wind and solar,twh,0
+Botswana,BWA,2007,Wind and solar,twh,0
+Botswana,BWA,2008,Wind and solar,twh,0
+Botswana,BWA,2009,Wind and solar,twh,0
+Botswana,BWA,2010,Wind and solar,twh,0
+Botswana,BWA,2011,Wind and solar,twh,0
+Botswana,BWA,2012,Wind and solar,twh,0
+Botswana,BWA,2013,Wind and solar,twh,0
+Botswana,BWA,2014,Wind and solar,twh,0
+Botswana,BWA,2015,Wind and solar,twh,0
+Botswana,BWA,2016,Wind and solar,twh,0
+Botswana,BWA,2017,Wind and solar,twh,0
+Botswana,BWA,2018,Wind and solar,twh,0.01
+Botswana,BWA,2019,Wind and solar,twh,0.01
+Botswana,BWA,2020,Wind and solar,twh,0.01
+Botswana,BWA,2021,Wind and solar,twh,0.01
+Kenya,KEN,2000,Wind and solar,percentage,0
+Kenya,KEN,2001,Wind and solar,percentage,0
+Kenya,KEN,2002,Wind and solar,percentage,0
+Kenya,KEN,2003,Wind and solar,percentage,0
+Kenya,KEN,2004,Wind and solar,percentage,0
+Kenya,KEN,2005,Wind and solar,percentage,0
+Kenya,KEN,2006,Wind and solar,percentage,0
+Kenya,KEN,2007,Wind and solar,percentage,0
+Kenya,KEN,2008,Wind and solar,percentage,0
+Kenya,KEN,2009,Wind and solar,percentage,0.15
+Kenya,KEN,2010,Wind and solar,percentage,0.28
+Kenya,KEN,2011,Wind and solar,percentage,0.39
+Kenya,KEN,2012,Wind and solar,percentage,0.24
+Kenya,KEN,2013,Wind and solar,percentage,0.49
+Kenya,KEN,2014,Wind and solar,percentage,0.76
+Kenya,KEN,2015,Wind and solar,percentage,1.12
+Kenya,KEN,2016,Wind and solar,percentage,1.24
+Kenya,KEN,2017,Wind and solar,percentage,1.21
+Kenya,KEN,2018,Wind and solar,percentage,4.17
+Kenya,KEN,2019,Wind and solar,percentage,14.2
+Kenya,KEN,2020,Wind and solar,percentage,12.25
+Kenya,KEN,2021,Wind and solar,percentage,17.9
+Kenya,KEN,2022,Wind and solar,percentage,20.38
+Kenya,KEN,2000,Wind and solar,twh,0
+Kenya,KEN,2001,Wind and solar,twh,0
+Kenya,KEN,2002,Wind and solar,twh,0
+Kenya,KEN,2003,Wind and solar,twh,0
+Kenya,KEN,2004,Wind and solar,twh,0
+Kenya,KEN,2005,Wind and solar,twh,0
+Kenya,KEN,2006,Wind and solar,twh,0
+Kenya,KEN,2007,Wind and solar,twh,0
+Kenya,KEN,2008,Wind and solar,twh,0
+Kenya,KEN,2009,Wind and solar,twh,0.01
+Kenya,KEN,2010,Wind and solar,twh,0.02
+Kenya,KEN,2011,Wind and solar,twh,0.03
+Kenya,KEN,2012,Wind and solar,twh,0.02
+Kenya,KEN,2013,Wind and solar,twh,0.04
+Kenya,KEN,2014,Wind and solar,twh,0.07
+Kenya,KEN,2015,Wind and solar,twh,0.11
+Kenya,KEN,2016,Wind and solar,twh,0.12
+Kenya,KEN,2017,Wind and solar,twh,0.13
+Kenya,KEN,2018,Wind and solar,twh,0.47
+Kenya,KEN,2019,Wind and solar,twh,1.65
+Kenya,KEN,2020,Wind and solar,twh,1.42
+Kenya,KEN,2021,Wind and solar,twh,2.16
+Kenya,KEN,2022,Wind and solar,twh,2.52
+Namibia,NAM,2000,Wind and solar,twh,0
+Namibia,NAM,2000,Wind and solar,percentage,0
+Namibia,NAM,2001,Wind and solar,twh,0
+Namibia,NAM,2001,Wind and solar,percentage,0
+Namibia,NAM,2002,Wind and solar,twh,0
+Namibia,NAM,2002,Wind and solar,percentage,0
+Namibia,NAM,2003,Wind and solar,twh,0
+Namibia,NAM,2003,Wind and solar,percentage,0
+Namibia,NAM,2004,Wind and solar,twh,0
+Namibia,NAM,2004,Wind and solar,percentage,0
+Namibia,NAM,2005,Wind and solar,twh,0
+Namibia,NAM,2005,Wind and solar,percentage,0
+Namibia,NAM,2006,Wind and solar,twh,0
+Namibia,NAM,2006,Wind and solar,percentage,0
+Namibia,NAM,2007,Wind and solar,twh,0
+Namibia,NAM,2007,Wind and solar,percentage,0
+Namibia,NAM,2008,Wind and solar,twh,0
+Namibia,NAM,2008,Wind and solar,percentage,0
+Namibia,NAM,2009,Wind and solar,twh,0
+Namibia,NAM,2009,Wind and solar,percentage,0
+Namibia,NAM,2010,Wind and solar,twh,0.01
+Namibia,NAM,2010,Wind and solar,percentage,0.77
+Namibia,NAM,2011,Wind and solar,twh,0.01
+Namibia,NAM,2011,Wind and solar,percentage,0.7
+Namibia,NAM,2012,Wind and solar,twh,0.01
+Namibia,NAM,2012,Wind and solar,percentage,0.61
+Namibia,NAM,2013,Wind and solar,twh,0.02
+Namibia,NAM,2013,Wind and solar,percentage,1.49
+Namibia,NAM,2014,Wind and solar,twh,0.03
+Namibia,NAM,2014,Wind and solar,percentage,1.97
+Namibia,NAM,2015,Wind and solar,twh,0.04
+Namibia,NAM,2015,Wind and solar,percentage,2.56
+Namibia,NAM,2016,Wind and solar,twh,0.06
+Namibia,NAM,2016,Wind and solar,percentage,4.08
+Namibia,NAM,2017,Wind and solar,twh,0.1
+Namibia,NAM,2017,Wind and solar,percentage,5.75
+Namibia,NAM,2018,Wind and solar,twh,0.26
+Namibia,NAM,2018,Wind and solar,percentage,18.44
+Namibia,NAM,2019,Wind and solar,twh,0.37
+Namibia,NAM,2019,Wind and solar,percentage,27.21
+Namibia,NAM,2020,Wind and solar,twh,0.39
+Namibia,NAM,2020,Wind and solar,percentage,20
+Namibia,NAM,2021,Wind and solar,twh,0.4
+Namibia,NAM,2021,Wind and solar,percentage,25.47
+Nigeria,NGA,2000,Wind and solar,twh,0
+Nigeria,NGA,2000,Wind and solar,percentage,0
+Nigeria,NGA,2001,Wind and solar,twh,0
+Nigeria,NGA,2001,Wind and solar,percentage,0
+Nigeria,NGA,2002,Wind and solar,twh,0
+Nigeria,NGA,2002,Wind and solar,percentage,0
+Nigeria,NGA,2003,Wind and solar,twh,0
+Nigeria,NGA,2003,Wind and solar,percentage,0
+Nigeria,NGA,2004,Wind and solar,twh,0
+Nigeria,NGA,2004,Wind and solar,percentage,0
+Nigeria,NGA,2005,Wind and solar,twh,0
+Nigeria,NGA,2005,Wind and solar,percentage,0
+Nigeria,NGA,2006,Wind and solar,twh,0
+Nigeria,NGA,2006,Wind and solar,percentage,0
+Nigeria,NGA,2007,Wind and solar,twh,0
+Nigeria,NGA,2007,Wind and solar,percentage,0
+Nigeria,NGA,2008,Wind and solar,twh,0
+Nigeria,NGA,2008,Wind and solar,percentage,0
+Nigeria,NGA,2009,Wind and solar,twh,0
+Nigeria,NGA,2009,Wind and solar,percentage,0
+Nigeria,NGA,2010,Wind and solar,twh,0
+Nigeria,NGA,2010,Wind and solar,percentage,0
+Nigeria,NGA,2011,Wind and solar,twh,0
+Nigeria,NGA,2011,Wind and solar,percentage,0
+Nigeria,NGA,2012,Wind and solar,twh,0.02
+Nigeria,NGA,2012,Wind and solar,percentage,0.07
+Nigeria,NGA,2013,Wind and solar,twh,0.02
+Nigeria,NGA,2013,Wind and solar,percentage,0.07
+Nigeria,NGA,2014,Wind and solar,twh,0.02
+Nigeria,NGA,2014,Wind and solar,percentage,0.07
+Nigeria,NGA,2015,Wind and solar,twh,0.03
+Nigeria,NGA,2015,Wind and solar,percentage,0.1
+Nigeria,NGA,2016,Wind and solar,twh,0.03
+Nigeria,NGA,2016,Wind and solar,percentage,0.09
+Nigeria,NGA,2017,Wind and solar,twh,0.03
+Nigeria,NGA,2017,Wind and solar,percentage,0.09
+Nigeria,NGA,2018,Wind and solar,twh,0.03
+Nigeria,NGA,2018,Wind and solar,percentage,0.09
+Nigeria,NGA,2019,Wind and solar,twh,0.04
+Nigeria,NGA,2019,Wind and solar,percentage,0.13
+Nigeria,NGA,2020,Wind and solar,twh,0.04
+Nigeria,NGA,2020,Wind and solar,percentage,0.13
+Nigeria,NGA,2021,Wind and solar,twh,0.05
+Nigeria,NGA,2021,Wind and solar,percentage,0.16
+Nigeria,NGA,2022,Wind and solar,twh,0.05
+Nigeria,NGA,2022,Wind and solar,percentage,0.16
+South Africa,ZAF,2000,Wind and solar,twh,0
+South Africa,ZAF,2000,Wind and solar,percentage,0
+South Africa,ZAF,2001,Wind and solar,twh,0
+South Africa,ZAF,2001,Wind and solar,percentage,0
+South Africa,ZAF,2002,Wind and solar,twh,0.02
+South Africa,ZAF,2002,Wind and solar,percentage,0.01
+South Africa,ZAF,2003,Wind and solar,twh,0.03
+South Africa,ZAF,2003,Wind and solar,percentage,0.01
+South Africa,ZAF,2004,Wind and solar,twh,0.03
+South Africa,ZAF,2004,Wind and solar,percentage,0.01
+South Africa,ZAF,2005,Wind and solar,twh,0.03
+South Africa,ZAF,2005,Wind and solar,percentage,0.01
+South Africa,ZAF,2006,Wind and solar,twh,0.03
+South Africa,ZAF,2006,Wind and solar,percentage,0.01
+South Africa,ZAF,2007,Wind and solar,twh,0.03
+South Africa,ZAF,2007,Wind and solar,percentage,0.01
+South Africa,ZAF,2008,Wind and solar,twh,0.04
+South Africa,ZAF,2008,Wind and solar,percentage,0.02
+South Africa,ZAF,2009,Wind and solar,twh,0.05
+South Africa,ZAF,2009,Wind and solar,percentage,0.02
+South Africa,ZAF,2010,Wind and solar,twh,0.05
+South Africa,ZAF,2010,Wind and solar,percentage,0.02
+South Africa,ZAF,2011,Wind and solar,twh,0.06
+South Africa,ZAF,2011,Wind and solar,percentage,0.03
+South Africa,ZAF,2012,Wind and solar,twh,0.07
+South Africa,ZAF,2012,Wind and solar,percentage,0.03
+South Africa,ZAF,2013,Wind and solar,twh,0.06
+South Africa,ZAF,2013,Wind and solar,percentage,0.02
+South Africa,ZAF,2014,Wind and solar,twh,2.14
+South Africa,ZAF,2014,Wind and solar,percentage,0.91
+South Africa,ZAF,2015,Wind and solar,twh,4.9
+South Africa,ZAF,2015,Wind and solar,percentage,2.11
+South Africa,ZAF,2016,Wind and solar,twh,6.71
+South Africa,ZAF,2016,Wind and solar,percentage,2.85
+South Africa,ZAF,2017,Wind and solar,twh,8.86
+South Africa,ZAF,2017,Wind and solar,percentage,3.73
+South Africa,ZAF,2018,Wind and solar,twh,10.71
+South Africa,ZAF,2018,Wind and solar,percentage,4.52
+South Africa,ZAF,2019,Wind and solar,twh,11.43
+South Africa,ZAF,2019,Wind and solar,percentage,4.87
+South Africa,ZAF,2020,Wind and solar,twh,10.97
+South Africa,ZAF,2020,Wind and solar,percentage,4.95
+South Africa,ZAF,2021,Wind and solar,twh,15.01
+South Africa,ZAF,2021,Wind and solar,percentage,6.73
+South Africa,ZAF,2022,Wind and solar,twh,19.69
+South Africa,ZAF,2022,Wind and solar,percentage,9.22
+Zambia,ZMB,2000,Wind and solar,twh,0
+Zambia,ZMB,2000,Wind and solar,percentage,0
+Zambia,ZMB,2001,Wind and solar,twh,0
+Zambia,ZMB,2001,Wind and solar,percentage,0
+Zambia,ZMB,2002,Wind and solar,twh,0
+Zambia,ZMB,2002,Wind and solar,percentage,0
+Zambia,ZMB,2003,Wind and solar,twh,0
+Zambia,ZMB,2003,Wind and solar,percentage,0
+Zambia,ZMB,2004,Wind and solar,twh,0
+Zambia,ZMB,2004,Wind and solar,percentage,0
+Zambia,ZMB,2005,Wind and solar,twh,0
+Zambia,ZMB,2005,Wind and solar,percentage,0
+Zambia,ZMB,2006,Wind and solar,twh,0
+Zambia,ZMB,2006,Wind and solar,percentage,0
+Zambia,ZMB,2007,Wind and solar,twh,0
+Zambia,ZMB,2007,Wind and solar,percentage,0
+Zambia,ZMB,2008,Wind and solar,twh,0
+Zambia,ZMB,2008,Wind and solar,percentage,0
+Zambia,ZMB,2009,Wind and solar,twh,0
+Zambia,ZMB,2009,Wind and solar,percentage,0
+Zambia,ZMB,2010,Wind and solar,twh,0
+Zambia,ZMB,2010,Wind and solar,percentage,0
+Zambia,ZMB,2011,Wind and solar,twh,0
+Zambia,ZMB,2011,Wind and solar,percentage,0
+Zambia,ZMB,2012,Wind and solar,twh,0
+Zambia,ZMB,2012,Wind and solar,percentage,0
+Zambia,ZMB,2013,Wind and solar,twh,0
+Zambia,ZMB,2013,Wind and solar,percentage,0
+Zambia,ZMB,2014,Wind and solar,twh,0
+Zambia,ZMB,2014,Wind and solar,percentage,0
+Zambia,ZMB,2015,Wind and solar,twh,0
+Zambia,ZMB,2015,Wind and solar,percentage,0
+Zambia,ZMB,2016,Wind and solar,twh,0
+Zambia,ZMB,2016,Wind and solar,percentage,0
+Zambia,ZMB,2017,Wind and solar,twh,0
+Zambia,ZMB,2017,Wind and solar,percentage,0
+Zambia,ZMB,2018,Wind and solar,twh,0
+Zambia,ZMB,2018,Wind and solar,percentage,0
+Zambia,ZMB,2019,Wind and solar,twh,0.12
+Zambia,ZMB,2019,Wind and solar,percentage,0.82
+Zambia,ZMB,2020,Wind and solar,twh,0.15
+Zambia,ZMB,2020,Wind and solar,percentage,0.99
+Zambia,ZMB,2021,Wind and solar,twh,0.15
+Zambia,ZMB,2021,Wind and solar,percentage,0.85
+Zimbabwe,ZWE,2000,Wind and solar,twh,0
+Zimbabwe,ZWE,2000,Wind and solar,percentage,0
+Zimbabwe,ZWE,2001,Wind and solar,twh,0
+Zimbabwe,ZWE,2001,Wind and solar,percentage,0
+Zimbabwe,ZWE,2002,Wind and solar,twh,0
+Zimbabwe,ZWE,2002,Wind and solar,percentage,0
+Zimbabwe,ZWE,2003,Wind and solar,twh,0
+Zimbabwe,ZWE,2003,Wind and solar,percentage,0
+Zimbabwe,ZWE,2004,Wind and solar,twh,0
+Zimbabwe,ZWE,2004,Wind and solar,percentage,0
+Zimbabwe,ZWE,2005,Wind and solar,twh,0
+Zimbabwe,ZWE,2005,Wind and solar,percentage,0
+Zimbabwe,ZWE,2006,Wind and solar,twh,0
+Zimbabwe,ZWE,2006,Wind and solar,percentage,0
+Zimbabwe,ZWE,2007,Wind and solar,twh,0
+Zimbabwe,ZWE,2007,Wind and solar,percentage,0
+Zimbabwe,ZWE,2008,Wind and solar,twh,0
+Zimbabwe,ZWE,2008,Wind and solar,percentage,0
+Zimbabwe,ZWE,2009,Wind and solar,twh,0
+Zimbabwe,ZWE,2009,Wind and solar,percentage,0
+Zimbabwe,ZWE,2010,Wind and solar,twh,0
+Zimbabwe,ZWE,2010,Wind and solar,percentage,0
+Zimbabwe,ZWE,2011,Wind and solar,twh,0
+Zimbabwe,ZWE,2011,Wind and solar,percentage,0
+Zimbabwe,ZWE,2012,Wind and solar,twh,0
+Zimbabwe,ZWE,2012,Wind and solar,percentage,0
+Zimbabwe,ZWE,2013,Wind and solar,twh,0
+Zimbabwe,ZWE,2013,Wind and solar,percentage,0
+Zimbabwe,ZWE,2014,Wind and solar,twh,0
+Zimbabwe,ZWE,2014,Wind and solar,percentage,0
+Zimbabwe,ZWE,2015,Wind and solar,twh,0.01
+Zimbabwe,ZWE,2015,Wind and solar,percentage,0.11
+Zimbabwe,ZWE,2016,Wind and solar,twh,0.01
+Zimbabwe,ZWE,2016,Wind and solar,percentage,0.15
+Zimbabwe,ZWE,2017,Wind and solar,twh,0.01
+Zimbabwe,ZWE,2017,Wind and solar,percentage,0.14
+Zimbabwe,ZWE,2018,Wind and solar,twh,0.02
+Zimbabwe,ZWE,2018,Wind and solar,percentage,0.22
+Zimbabwe,ZWE,2019,Wind and solar,twh,0.03
+Zimbabwe,ZWE,2019,Wind and solar,percentage,0.36
+Zimbabwe,ZWE,2020,Wind and solar,twh,0.03
+Zimbabwe,ZWE,2020,Wind and solar,percentage,0.4
+Zimbabwe,ZWE,2021,Wind and solar,twh,0.04
+Zimbabwe,ZWE,2021,Wind and solar,percentage,0.5
+Botswana,BWA,2022,Wind and solar,twh,0.01
+Botswana,BWA,2022,Wind and solar,percentage,0.38
+Madagascar,MDG,2000,Wind and Solar,percentage,0
+Madagascar,MDG,2001,Wind and Solar,percentage,0
+Madagascar,MDG,2002,Wind and Solar,percentage,0
+Madagascar,MDG,2003,Wind and Solar,percentage,0
+Madagascar,MDG,2004,Wind and Solar,percentage,0
+Madagascar,MDG,2005,Wind and Solar,percentage,0
+Madagascar,MDG,2006,Wind and Solar,percentage,0
+Madagascar,MDG,2007,Wind and Solar,percentage,0
+Madagascar,MDG,2008,Wind and Solar,percentage,0
+Madagascar,MDG,2009,Wind and Solar,percentage,0
+Madagascar,MDG,2010,Wind and Solar,percentage,0
+Madagascar,MDG,2011,Wind and Solar,percentage,0
+Madagascar,MDG,2012,Wind and Solar,percentage,0
+Madagascar,MDG,2013,Wind and Solar,percentage,0.61
+Madagascar,MDG,2014,Wind and Solar,percentage,0.58
+Madagascar,MDG,2015,Wind and Solar,percentage,1.12
+Madagascar,MDG,2016,Wind and Solar,percentage,1.05
+Madagascar,MDG,2017,Wind and Solar,percentage,1.01
+Madagascar,MDG,2018,Wind and Solar,percentage,0.96
+Madagascar,MDG,2019,Wind and Solar,percentage,1.38
+Madagascar,MDG,2020,Wind and Solar,percentage,1.39
+Madagascar,MDG,2021,Wind and Solar,percentage,1.75
+Madagascar,MDG,2022,Wind and Solar,percentage,1.69
+Madagascar,MDG,2000,Wind and Solar,twh,0
+Madagascar,MDG,2001,Wind and Solar,twh,0
+Madagascar,MDG,2002,Wind and Solar,twh,0
+Madagascar,MDG,2003,Wind and Solar,twh,0
+Madagascar,MDG,2004,Wind and Solar,twh,0
+Madagascar,MDG,2005,Wind and Solar,twh,0
+Madagascar,MDG,2006,Wind and Solar,twh,0
+Madagascar,MDG,2007,Wind and Solar,twh,0
+Madagascar,MDG,2008,Wind and Solar,twh,0
+Madagascar,MDG,2009,Wind and Solar,twh,0
+Madagascar,MDG,2010,Wind and Solar,twh,0
+Madagascar,MDG,2011,Wind and Solar,twh,0
+Madagascar,MDG,2012,Wind and Solar,twh,0
+Madagascar,MDG,2013,Wind and Solar,twh,0.01
+Madagascar,MDG,2014,Wind and Solar,twh,0.01
+Madagascar,MDG,2015,Wind and Solar,twh,0.02
+Madagascar,MDG,2016,Wind and Solar,twh,0.02
+Madagascar,MDG,2017,Wind and Solar,twh,0.02
+Madagascar,MDG,2018,Wind and Solar,twh,0.02
+Madagascar,MDG,2019,Wind and Solar,twh,0.03
+Madagascar,MDG,2020,Wind and Solar,twh,0.03
+Madagascar,MDG,2021,Wind and Solar,twh,0.04
+Madagascar,MDG,2022,Wind and Solar,twh,0.04
