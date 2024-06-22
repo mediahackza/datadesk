@@ -3,3 +3,4 @@ server_scripts
 deploy.php
 deploy.sh
 .htaccess
+.DS_Store
