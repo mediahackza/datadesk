@@ -23,7 +23,7 @@ function save_data() {
     $new_table->set_source($_POST['data']);
 
        return $new_table;
-    }
+}
 
 
     if (isset($_POST['save_link']) || isset($_POST['save_note'])) {

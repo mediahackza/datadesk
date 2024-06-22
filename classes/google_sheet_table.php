@@ -59,11 +59,12 @@
             $link_csv .= "&output=csv";
             $link_tsv .= "&output=tsv";
 
-            try {
-                $data = file_get_contents($link_csv);
-            } catch (Exception $e) {
-                echo $this->error;
-                return false;
+            $data = file_get_contents($link_csv);
+
+            $this->error = "Failed to retrieve data from source";
+
+            if ($data == FALSE) {
+                return FALSE;
             }
 
             restore_error_handler();

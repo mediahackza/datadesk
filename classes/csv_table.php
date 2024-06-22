@@ -58,7 +58,12 @@
             } else {
                 $this->set_delimiter(",");
             }
+
             $data = file_get_contents($link);
+
+            if ($data === FALSE) {
+                $this->error = "Failed to fetch data from source";
+            }
 
             // $this->set_delimiter($data);
             // $this->set_data($data);

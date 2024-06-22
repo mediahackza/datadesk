@@ -15,6 +15,15 @@ $post = json_decode(file_get_contents('php://input'), true); // allow for post d
 
 
     if (isset($_GET['table'])) { // if there is a table id in the url
+
+        if (file_exists("../local_data/" . $_GET['table'] . ".json")) {
+            $fp = fopen("../local_data/" . $_GET['table'] . ".json", "r");
+            echo fread($fp, filesize("../local_data/" . $_GET['table'] . ".json"));
+            fclose($fp);
+            die();
+        }
+
+
         $table = query_handler::fetch_table_by_id($_GET['table']); // fetch the table from the database using the id in the url
         $json_array; // declare the json array
  // if the table is a googlesheet

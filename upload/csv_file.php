@@ -34,7 +34,7 @@
         echo $target_file . " " . $_FILES['data']['tmp_name'];
         if (move_uploaded_file($_FILES["data"]["tmp_name"], $target_file)) {
         } else {
-            $_SESSION['upload_error'] = "Oops. Something went wrong transfering you file";
+            $_SESSION['upload_error'] = "Oops. Something went wrong transfering your file";
             return false;
         }
 
