@@ -3,3 +3,6 @@ server_scripts
 deploy.php
 deploy.sh
 .htaccess
+local_data/*.json
+local_data/*.csv
+*/.DS_Store
