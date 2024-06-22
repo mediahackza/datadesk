@@ -1,6 +1,6 @@
 <?php
 
-$post = json_decode(file_get_contents("php:://input"), true);
+// $post = json_decode(file_get_contents("php:://input"), true);
 
 include_once('../init.php');
 include_once("../classes/query_handler.php");
